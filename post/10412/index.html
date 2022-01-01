@@ -1,0 +1,840 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+        <link rel="icon" href="/img/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+        <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+        <style>
+            .pace .pace-progress {
+                background: #FFAA8D;
+                /*进度条颜色*/
+                height: 3px;
+            }
+            
+            .pace .pace-progress-inner {
+                box-shadow: 0 0 10px #FFAA8D, 0 0 5px #FFAA8D;
+                /*阴影颜色*/
+            }
+            
+            .pace .pace-activity {
+                border-top-color: #FFAA8D;
+                /*上边框颜色*/
+                border-left-color: #FFAA8D;
+                /*左边框颜色*/
+            }
+        </style>
+        
+                <meta name="theme-color" content="#2f4154">
+                <meta name="description" content="一个小博客">
+                <meta name="author" content="Trotyl">
+                <meta name="keywords" content="">
+                
+                            <title>
+                                图｜Graph - Trotyl&#39;s Blog
+                            </title>
+
+                            <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+                                <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.trotyl.xyz","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":false,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"header":""},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true},"web_analytics":{"enable":true,"baidu":"919ac0fb0118c0ba89724ba53e0f3547","google":"UA-177561089-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"zcL2DBnP3JIFC9a8HE5uYMfm-MdYXbMMI","app_key":"fRsoWUTEoES4QglVrH0chpxV","server_url":null},"tajs":null},"search_path":"/local-search.xml"};
+  </script>
+                                    <script  src="/js/utils.js" ></script>
+                                        <script  src="/js/color-schema.js" ></script>
+
+                                        
+    <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Trotyl's Blog" type="application/atom+xml">
+</head>
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <strong>Trotyl</strong>
+        </a>
+
+        <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto text-center">
+                
+                    
+                        
+                            
+                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+                                        </li>
+                                        
+                                            
+                    
+                        
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-bookmark"></i>
+                Posts
+              </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/archives/">
+                    <i class="iconfont icon-archive-fill"></i>
+                    Archives
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/categories/">
+                    <i class="iconfont icon-category-fill"></i>
+                    Categories
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    Tags
+                  </a>
+                                                            
+                                        </div>
+                                    </li>
+                                    
+                                            
+                    
+                        
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Pages
+              </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/comment/">
+                    <i class="iconfont icon-addrcard"></i>
+                    留言板
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/shuoshuo/">
+                    <i class="iconfont icon-speakernotes"></i>
+                    碎碎念
+                  </a>
+                                                            
+                                        </div>
+                                    </li>
+                                    
+                                            
+                    
+                        
+                            
+                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+                                        </li>
+                                        
+                                            
+                                                
+                                                    <li class="nav-item" id="search-btn">
+                                                        <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+                                                    </li>
+                                                    
+                                                        
+                                                            <li class="nav-item" id="color-toggle-btn">
+                                                                <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+                                                            </li>
+                                                            
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="图｜Graph">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-08-16 21:40" pubdate>
+        August 16, 2020 9:40 PM
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      26
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">图｜Graph</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：November 28, 2020 12:57 PM
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>这是在看b站上的韩顺平老师的数据结构与算法<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="尚硅谷Java数据结构与java算法，韩顺平数据结构与算法
+">[1]</span></a></sup>时做的笔记。等我把后面的都更新完了以后会陆续把前面的补上。</p>
+<hr>
+<h1 id="一、基本介绍"><a href="#一、基本介绍" class="headerlink" title="一、基本介绍"></a>一、基本介绍</h1><h2 id="为什么要有图"><a href="#为什么要有图" class="headerlink" title="为什么要有图"></a>为什么要有图</h2><ol>
+<li>前面我们学了线性表和树</li>
+<li>线性表局限于一个前驱和一个后继的关系</li>
+<li>树也只能有一个直接前驱也就是父结点</li>
+<li>当我们需要表示多对多的关系时，这里我们就用到了图<br>图是一种数据结构，其中结点可以具有零个或者多个相邻元素。两个结点直接的链接称为边。结点也可以称为顶点。如图：<br><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/G1.png" srcset="/img/loading.gif" lazyload alt=""></li>
+</ol>
+<h1 id="二、常用概念"><a href="#二、常用概念" class="headerlink" title="二、常用概念"></a>二、常用概念</h1><p><strong>1） 顶点｜vertex</strong></p>
+<p><strong>2） 边｜edge</strong></p>
+<p><strong>3） 路径｜path</strong></p>
+<p><strong>4）无向图｜Undirected Graph（下图）</strong><br><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/G2.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>无向图：顶点之间的链接没有方向，比如A-B，既可以是A→B，也可以是B←A。</p>
+<p>路径：比如D→C的路径有</p>
+<ol>
+<li>D→B→C</li>
+<li>D→A→B→C</li>
+</ol>
+<p><strong>5） 有向图｜Directed Graph（下图）</strong><br><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/G3.png" srcset="/img/loading.gif" lazyload alt=""><br>有向图：顶点之间的链接有方向，比如A-B，只能是A→B，不能是B←A。</p>
+<p><strong>6）带权图｜Weighted Graph（下图）</strong><br><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/G4.png" srcset="/img/loading.gif" lazyload alt=""><br>带权图：这种边带权值的图也叫网</p>
+<h1 id="三、表示方式"><a href="#三、表示方式" class="headerlink" title="三、表示方式"></a>三、表示方式</h1><p>图的表示方式有两种：二维数组表示（邻接矩阵）；链表表示（邻接表）。</p>
+<h2 id="1-邻接矩阵"><a href="#1-邻接矩阵" class="headerlink" title="1. 邻接矩阵"></a>1. 邻接矩阵</h2><p>邻接矩阵是表示图形中顶点之间相邻关系的矩阵，对于n个顶点的图而言，矩阵的row和col表示的是1…n个点。<br><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/G5.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="2-邻接表"><a href="#2-邻接表" class="headerlink" title="2. 邻接表"></a>2. 邻接表</h2><p>1）邻接矩阵需要为每个顶点都分配n个边的空间，其实有很多边都是不存在,会造成空间的一定损失。</p>
+<p>2）邻接表的实现只关心存在的边，不关心不存在的边。因此没有空间浪费，邻接表由数组+链表组成。<br><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/G6.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><strong>说明：</strong></p>
+<ol>
+<li>标号为0的结点的相关联的结点为 1 2 3 4</li>
+<li>标号为1的结点的相关联结点为0 4，</li>
+<li>标号为2的结点相关联的结点为 0 4 5</li>
+<li>….</li>
+</ol>
+<h1 id="四、快速入门案例"><a href="#四、快速入门案例" class="headerlink" title="四、快速入门案例"></a>四、快速入门案例</h1><h2 id="1-要求"><a href="#1-要求" class="headerlink" title="1. 要求"></a>1. 要求</h2><p>代码实现如下图结构。<br><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/G2.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs tap">  A B C D E<br>A<span class="hljs-number"> 0 </span>1<span class="hljs-number"> 1 </span>0 0<br>B<span class="hljs-number"> 1 </span>0<span class="hljs-number"> 1 </span>1 1<br>C<span class="hljs-number"> 1 </span>1<span class="hljs-number"> 0 </span>0 0<br>D<span class="hljs-number"> 0 </span>1<span class="hljs-number"> 0 </span>0 0<br>E<span class="hljs-number"> 0 </span>1<span class="hljs-number"> 0 </span>0 0<br><br>//说明<br>//（1）1表示能直接链接<br>//（2）0表示不能直接链接<br><br></code></pre></td></tr></table></figure>
+<h2 id="2-思路分析"><a href="#2-思路分析" class="headerlink" title="2. 思路分析"></a>2. 思路分析</h2><ol>
+<li>存储顶点 String 使用 ArrayList</li>
+<li>保存 int[][] edges</li>
+</ol>
+<h2 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="3.代码实现"></a>3.代码实现</h2><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.Arrays;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Graph</span> &#123;</span><br><br>	<span class="hljs-keyword">private</span> ArrayList&lt;<span class="hljs-keyword">String</span>&gt; vertexList;<br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[][] edges;<br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> numOfEdges;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">String</span>[] args)</span> </span>&#123;<br>		<span class="hljs-keyword">int</span> n = <span class="hljs-number">5</span>;<span class="hljs-comment">// number of nodes</span><br>		<span class="hljs-keyword">String</span> vertices[] = &#123; <span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;D&quot;</span>, <span class="hljs-string">&quot;E&quot;</span> &#125;;<br>		Graph graph = <span class="hljs-keyword">new</span> Graph(n);<br>		<span class="hljs-comment">// add nodes</span><br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">String</span> vertex : vertices) &#123;<br>			graph.insertVertex(vertex);<br>		&#125;<br>		<span class="hljs-comment">// add edges</span><br>		<span class="hljs-comment">// A-B A-C B-C B-D B-E</span><br>		graph.insertEdge(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);<br>		graph.insertEdge(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>);<br>		graph.insertEdge(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>);<br>		graph.insertEdge(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>);<br>		graph.insertEdge(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>);<br><br>		graph.showGraph();<br>	&#125;<br><br>	<span class="hljs-comment">// constructor</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Graph</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>		edges = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n][n];<br>		vertexList = <span class="hljs-keyword">new</span> ArrayList&lt;<span class="hljs-keyword">String</span>&gt;(n);<br>		numOfEdges = <span class="hljs-number">0</span>;<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showGraph</span><span class="hljs-params">()</span> </span>&#123;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span>[] link : edges) &#123;<br>			System.out.<span class="hljs-built_in">println</span>(Arrays.toString(link));<br>		&#125;<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getNumOfVertex</span><span class="hljs-params">()</span> </span>&#123;<br>		<span class="hljs-keyword">return</span> vertexList.<span class="hljs-built_in">size</span>();<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getNumOfEdges</span><span class="hljs-params">()</span> </span>&#123;<br>		<span class="hljs-keyword">return</span> numOfEdges;<br>	&#125;<br><br>	<span class="hljs-comment">// 返回下标对应的数据 0-&gt;“A”</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">String</span> <span class="hljs-title">getValueByIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>&#123;<br>		<span class="hljs-keyword">return</span> vertexList.<span class="hljs-built_in">get</span>(i);<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getWeight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v1, <span class="hljs-keyword">int</span> v2)</span> </span>&#123;<br>		<span class="hljs-keyword">return</span> edges[v1][v2];<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insertVertex</span><span class="hljs-params">(<span class="hljs-keyword">String</span> vertex)</span> </span>&#123;<br>		vertexList.add(vertex);<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * </span><br><span class="hljs-comment">	 * @param v1 点的下标，以及是第几个顶点 “A”-“B” “A”-&gt;0 “B”-&gt;1</span><br><span class="hljs-comment">	 * @param v2 第二个顶点对应的下标</span><br><span class="hljs-comment">	 * @param weight 权值</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insertEdge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v1, <span class="hljs-keyword">int</span> v2, <span class="hljs-keyword">int</span> weight)</span> </span>&#123;<br>		edges[v1][v2] = weight;<br>		edges[v2][v1] = weight;<br>	&#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs json">[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]<br>[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>]<br>[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]<br>[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]<br>[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]<br></code></pre></td></tr></table></figure>
+<h1 id="五、图的遍历"><a href="#五、图的遍历" class="headerlink" title="五、图的遍历"></a>五、图的遍历</h1><p>所谓图的遍历，既是对结点的访问。一个图有那么多结点，如何遍历这些结点，需要特定策略，一般有两种访问策略：</p>
+<ul>
+<li>深度优先遍历｜Depth First Search</li>
+<li>广度优先遍历｜Broad First Search</li>
+</ul>
+<h2 id="深度优先遍历｜DFS"><a href="#深度优先遍历｜DFS" class="headerlink" title="深度优先遍历｜DFS"></a>深度优先遍历｜DFS</h2><h3 id="1-基本思想"><a href="#1-基本思想" class="headerlink" title="1. 基本思想"></a>1. 基本思想</h3><p><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/G7.gif" srcset="/img/loading.gif" lazyload alt=""><br>图的深度优先搜索</p>
+<ol>
+<li>深度优先遍历，从初始访问结点出发，初始访问结点可能有多个邻接结点，深度优先遍历的策略就是首先访问第一个邻接结点，然后再以这个被访问的邻接结点作为初始结点，访问它的第一个邻接结点， 可以这样理解：每次都在访问完<strong>当前结点</strong>后首先访问<strong>当前结点的第一个邻接结点</strong>。</li>
+<li>我们可以看到，这样的访问策略是优先往纵向挖掘深入，而不是对一个结点的所有邻接结点进行横向访问。</li>
+<li>显然，深度优先搜索是一个递归的过程</li>
+</ol>
+<h3 id="2-算法步骤"><a href="#2-算法步骤" class="headerlink" title="2. 算法步骤"></a>2. 算法步骤</h3><ol>
+<li>访问初始结点v，并标记结点v为已访问。</li>
+<li>查找结点v的第一个邻接结点w。</li>
+<li>若w存在，则继续执行4，如果w不存在，则回到第1步，将从v的下一个结点继续。</li>
+<li>若w未被访问，对w进行深度优先遍历递归（即把w当做另一个v，然后进行步骤123）。</li>
+<li>查找结点v的w邻接结点的下一个邻接结点，转到步骤3。 </li>
+</ol>
+<h3 id="3-代码实现-1"><a href="#3-代码实现-1" class="headerlink" title="3.代码实现"></a>3.代码实现</h3><h4 id="添加代码"><a href="#添加代码" class="headerlink" title="添加代码"></a>添加代码</h4><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">private</span> <span class="hljs-built_in">bool</span>ean[] isVisited;<br></code></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * </span><br><span class="hljs-comment"> * @param index</span><br><span class="hljs-comment"> * @return 如果存在就返回对应的下标，否则返回-1</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getFirstNeighbor</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; vertexList.<span class="hljs-built_in">size</span>(); j++) &#123;<br>		<span class="hljs-keyword">if</span> (edges[index][j] &gt; <span class="hljs-number">0</span>) &#123;<br>			<span class="hljs-keyword">return</span> j;<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-comment">// 根据前一个邻接结点的下标来获取下一个邻接结点</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getNextNeighbor</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v1, <span class="hljs-keyword">int</span> v2)</span> </span>&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = v2 + <span class="hljs-number">1</span>; j &lt; vertexList.<span class="hljs-built_in">size</span>(); j++) &#123;<br>		<span class="hljs-keyword">if</span> (edges[v2][j] &gt; <span class="hljs-number">0</span>) &#123;<br>			<span class="hljs-keyword">return</span> j;<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-comment">// DFS</span><br><span class="hljs-keyword">private</span> void dfs(boolean<span class="hljs-literal">[]</span> isVisited, <span class="hljs-built_in">int</span> i) &#123;<br>	<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(get<span class="hljs-constructor">ValueByIndex(<span class="hljs-params">i</span>)</span> + <span class="hljs-string">&quot;-&gt;&quot;</span>);<br>	isVisited<span class="hljs-literal">[<span class="hljs-identifier">i</span>]</span> = <span class="hljs-literal">true</span>;<br>	<span class="hljs-built_in">int</span> w = get<span class="hljs-constructor">FirstNeighbor(<span class="hljs-params">i</span>)</span>;<br>	<span class="hljs-keyword">while</span> (w != -<span class="hljs-number">1</span>) &#123;<br>		<span class="hljs-keyword">if</span> (!isVisited<span class="hljs-literal">[<span class="hljs-identifier">w</span>]</span>) &#123;<br>			dfs(isVisited, w);<br>		&#125;<br>		w = get<span class="hljs-constructor">NextNeighbor(<span class="hljs-params">i</span>, <span class="hljs-params">w</span>)</span>;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">// 对dfs进行重载，因为要考虑不联通图的情况</span><br><span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">dfs</span>(<span class="hljs-params"></span>)</span> &#123;<br>	<span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; getNumOfVertex(); i++) &#123;<br>		<span class="hljs-keyword">if</span> (!isVisited[i]) &#123;<br>			dfs(isVisited, i);<br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elixir">System.out.println(<span class="hljs-string">&quot;DFS:&quot;</span>);<br>graph.dfs();<span class="hljs-regexp">//</span> A-&gt;B-&gt;C-&gt;D-&gt;E<br></code></pre></td></tr></table></figure>
+<h4 id="运行结果-1"><a href="#运行结果-1" class="headerlink" title="运行结果"></a>运行结果</h4><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-string">[0, 1, 1, 0, 0]</span><br><span class="hljs-string">[1, 0, 1, 1, 1]</span><br><span class="hljs-string">[1, 1, 0, 0, 0]</span><br><span class="hljs-string">[0, 1, 0, 0, 0]</span><br><span class="hljs-string">[0, 1, 0, 0, 0]</span><br>DFS:<br>A-&gt;B-&gt;C-&gt;D-&gt;E-&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="广度优先遍历｜BFS"><a href="#广度优先遍历｜BFS" class="headerlink" title="广度优先遍历｜BFS"></a>广度优先遍历｜BFS</h2><h3 id="1-基本思想-1"><a href="#1-基本思想-1" class="headerlink" title="1. 基本思想"></a>1. 基本思想</h3><p><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/G8.gif" srcset="/img/loading.gif" lazyload alt=""><br>图的广度优先搜索</p>
+<p>类似于一个分层搜索的过程，广度优先遍历需要使用一个队列保持访问过的结点的顺序，以便按照这个顺序来访问这些结点的邻接结点。</p>
+<h3 id="2-算法步骤-1"><a href="#2-算法步骤-1" class="headerlink" title="2. 算法步骤"></a>2. 算法步骤</h3><ol>
+<li>访问初始结点v并标记结点v为已访问。</li>
+<li>结点v入队列</li>
+<li>当队列非空时，继续执行，否则算法结束。</li>
+<li>出队列，取得队头结点u。</li>
+<li>查找结点u的第一个邻接结点w。</li>
+<li>若结点u的邻接结点w不存在，则转到步骤3；否则循环执行以下三个步骤：<ol>
+<li>若结点w尚未被访问，则访问结点w并标记为已访问。 </li>
+<li>结点w入队列 </li>
+<li>查找结点u的继w邻接结点后的下一个邻接结点w，转到步骤6。<br><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/G9.gif" srcset="/img/loading.gif" lazyload alt=""></li>
+</ol>
+</li>
+</ol>
+<h3 id="3-代码实现-2"><a href="#3-代码实现-2" class="headerlink" title="3. 代码实现"></a>3. 代码实现</h3><h4 id="添加代码-1"><a href="#添加代码-1" class="headerlink" title="添加代码"></a>添加代码</h4><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-keyword">private</span> void bfs(boolean<span class="hljs-literal">[]</span> isVisited, <span class="hljs-built_in">int</span> i) &#123;<br>	<span class="hljs-built_in">int</span> u;<span class="hljs-comment">// head node&#x27;s index</span><br>	<span class="hljs-built_in">int</span> w;<br>	LinkedList queue = <span class="hljs-keyword">new</span> <span class="hljs-constructor">LinkedList()</span>;<br>	<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(get<span class="hljs-constructor">ValueByIndex(<span class="hljs-params">i</span>)</span> + <span class="hljs-string">&quot;-&gt;&quot;</span>);<br>	isVisited<span class="hljs-literal">[<span class="hljs-identifier">i</span>]</span> = <span class="hljs-literal">true</span>;<br>	queue.add<span class="hljs-constructor">Last(<span class="hljs-params">i</span>)</span>;<br>	<span class="hljs-keyword">while</span> (!queue.is<span class="hljs-constructor">Empty()</span>) &#123;<br>		u = (Integer) queue.remove<span class="hljs-constructor">First()</span>;<br>		w = get<span class="hljs-constructor">FirstNeighbor(<span class="hljs-params">u</span>)</span>;<br>		<span class="hljs-keyword">while</span> (w != -<span class="hljs-number">1</span>) &#123;<br>			<span class="hljs-keyword">if</span> (!isVisited<span class="hljs-literal">[<span class="hljs-identifier">w</span>]</span>) &#123;<br>				<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(get<span class="hljs-constructor">ValueByIndex(<span class="hljs-params">w</span>)</span> + <span class="hljs-string">&quot;-&gt;&quot;</span>);<br>				isVisited<span class="hljs-literal">[<span class="hljs-identifier">w</span>]</span> = <span class="hljs-literal">true</span>;<br>				queue.add<span class="hljs-constructor">Last(<span class="hljs-params">w</span>)</span>;<br>			&#125;<br>			w = get<span class="hljs-constructor">NextNeighbor(<span class="hljs-params">u</span>, <span class="hljs-params">w</span>)</span>;<br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">bfs</span>(<span class="hljs-params"></span>)</span> &#123;<br>	<span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; getNumOfVertex(); i++) &#123;<br>		<span class="hljs-keyword">if</span> (!isVisited[i]) &#123;<br>			bfs(isVisited, i);<br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="运行结果-2"><a href="#运行结果-2" class="headerlink" title="运行结果"></a>运行结果</h4><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-string">[0, 1, 1, 0, 0]</span><br><span class="hljs-string">[1, 0, 1, 1, 1]</span><br><span class="hljs-string">[1, 1, 0, 0, 0]</span><br><span class="hljs-string">[0, 1, 0, 0, 0]</span><br><span class="hljs-string">[0, 1, 0, 0, 0]</span><br>BFS:<br>A-&gt;B-&gt;C-&gt;D-&gt;E-&gt;<br></code></pre></td></tr></table></figure>
+<hr>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1E4411H73v?p=146">尚硅谷Java数据结构与java算法，韩顺平数据结构与算法</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/">数据结构与算法｜Data Structures and Algorithms</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/%E5%9B%BE%EF%BD%9CGraph/">图｜Graph</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/java/">java</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/post/17599/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">好用的油猴脚本推荐｜持续更新</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/35477/">
+                        <span class="hidden-mobile">多路查找树｜Multi-Way Search Tree</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('//blog.trotyl.xyz/js/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appid":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appkey":"WV76W9zkR1pcORcdd3UjPpKA","placeholder":"｜在上方留下你的邮箱，它不会被公开显示，收到回复的话会有邮件提醒&#10｜Leave your email above to get notifications for replies","path":"window.location.pathname","avatar":"robohash","meta":["nick","mail","link"],"pageSize":10,"lang":"en","highlight":true,"recordIP":true,"serverURLs":"https://cFjrGe19.api.lncldglobal.com","emojiMaps":{"tieba-1":"tieba/tieba-1.png","tieba-2":"tieba/tieba-2.png","tieba-3":"tieba/tieba-3.png","tieba-4":"tieba/tieba-4.png","tieba-5":"tieba/tieba-5.png","tieba-6":"tieba/tieba-6.png","tieba-7":"tieba/tieba-7.png","tieba-8":"tieba/tieba-8.png","tieba-9":"tieba/tieba-9.png","tieba-10":"tieba/tieba-10.png","tieba-11":"tieba/tieba-11.png","tieba-12":"tieba/tieba-12.png","tieba-13":"tieba/tieba-13.png","tieba-14":"tieba/tieba-14.png","tieba-15":"tieba/tieba-15.png","tieba-16":"tieba/tieba-16.png","tieba-17":"tieba/tieba-17.png","tieba-18":"tieba/tieba-18.png","tieba-19":"tieba/tieba-19.png","tieba-20":"tieba/tieba-20.png","tieba-21":"tieba/tieba-21.png","tieba-22":"tieba/tieba-22.png","tieba-23":"tieba/tieba-23.png","tieba-24":"tieba/tieba-24.png","tieba-25":"tieba/tieba-25.png","tieba-26":"tieba/tieba-26.png","tieba-27":"tieba/tieba-27.png","tieba-28":"tieba/tieba-28.png","tieba-29":"tieba/tieba-29.png","tieba-30":"tieba/tieba-30.png","tieba-31":"tieba/tieba-31.png","tieba-32":"tieba/tieba-32.png","tieba-33":"tieba/tieba-33.png","tieba-34":"tieba/tieba-34.png","tieba-35":"tieba/tieba-35.png","tieba-36":"tieba/tieba-36.png","tieba-37":"tieba/tieba-37.png","tieba-38":"tieba/tieba-38.png","tieba-39":"tieba/tieba-39.png","tieba-40":"tieba/tieba-40.png","tieba-41":"tieba/tieba-41.png","tieba-42":"tieba/tieba-42.png","tieba-43":"tieba/tieba-43.png","tieba-44":"tieba/tieba-44.png","tieba-45":"tieba/tieba-45.png","tieba-46":"tieba/tieba-46.png","tieba-47":"tieba/tieba-47.png","tieba-48":"tieba/tieba-48.png","tieba-49":"tieba/tieba-49.png","tieba-50":"tieba/tieba-50.png","tieba-51":"tieba/tieba-51.png","tieba-52":"tieba/tieba-52.png","tieba-56":"tieba/tieba-56.png","tieba-57":"tieba/tieba-57.png","tieba-59":"tieba/tieba-59.png","tieba-60":"tieba/tieba-60.png","tieba-61":"tieba/tieba-61.png","EveOneCat-1":"EveOneCat/EveOneCat_1.png","EveOneCat-2":"EveOneCat/EveOneCat_2.png","EveOneCat-3":"EveOneCat/EveOneCat_3.png","EveOneCat-4":"EveOneCat/EveOneCat_4.png","EveOneCat-5":"EveOneCat/EveOneCat_5.png","EveOneCat-6":"EveOneCat/EveOneCat_6.png","EveOneCat-7":"EveOneCat/EveOneCat_7.png","EveOneCat-8":"EveOneCat/EveOneCat_8.png","EveOneCat-9":"EveOneCat/EveOneCat_9.png","EveOneCat-10":"EveOneCat/EveOneCat_10.png","EveOneCat-11":"EveOneCat/EveOneCat_11.png","EveOneCat-12":"EveOneCat/EveOneCat_12.png","EveOneCat-13":"EveOneCat/EveOneCat_13.png","EveOneCat-14":"EveOneCat/EveOneCat_14.png","EveOneCat-15":"EveOneCat/EveOneCat_15.png","EveOneCat-16":"EveOneCat/EveOneCat_16.png","EveOneCat-17":"EveOneCat/EveOneCat_17.png","EveOneCat-18":"EveOneCat/EveOneCat_18.png","EveOneCat-19":"EveOneCat/EveOneCat_19.png","EveOneCat-20":"EveOneCat/EveOneCat_20.png","miharo-1":"miharo/miharo-1.png","miharo-2":"miharo/miharo-2.png","miharo-3":"miharo/miharo-3.png","miharo-4":"miharo/miharo-4.png","miharo-5":"miharo/miharo-5.png","miharo-6":"miharo/miharo-6.png","miharo-7":"miharo/miharo-7.png","miharo-8":"miharo/miharo-8.png","miharo-9":"miharo/miharo-9.png","miharo-10":"miharo/miharo-10.png","miharo-11":"miharo/miharo-11.png","miharo-12":"miharo/miharo-12.png","miharo-13":"miharo/miharo-13.png","miharo-14":"miharo/miharo-14.png","miharo-15":"miharo/miharo-15.png","miharo-16":"miharo/miharo-16.png","miharo-17":"miharo/miharo-17.png","miharo-18":"miharo/miharo-18.png","huaji-1":"huaji/huaji-1.png","huaji-2":"huaji/huaji-2.png","huaji-3":"huaji/huaji-3.png","huaji-4":"huaji/huaji-4.png","huaji-5":"huaji/huaji-5.png","huaji-6":"huaji/huaji-6.png","huaji-7":"huaji/huaji-7.png","huaji-8":"huaji/huaji-8.png","huaji-9":"huaji/huaji-9.png","huaji-10":"huaji/huaji-10.png","huaji-11":"huaji/huaji-11.png","huaji-12":"huaji/huaji-12.png","huaji-13":"huaji/huaji-13.png","huaji-14":"huaji/huaji-14.png","huaji-15":"huaji/huaji-15.gif"},"enableQQ":true,"requiredFields":[],"appId":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appKey":"WV76W9zkR1pcORcdd3UjPpKA","emojiCDN":"https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/emoji/"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+    <div class="footer-content">
+
+        <div>
+            <span id="timeDate">正在烧脑计算建站时间...</span>
+            <span id="times"></span>
+            <script>
+                var now = new Date();
+
+                function createtime() {
+                    var grt = new Date("08/04/2020 00:00:00"); //此处修改你的建站时间或者网站上线时间
+                    now.setTime(now.getTime() + 250);
+                    days = (now - grt) / 1000 / 60 / 60 / 24;
+                    dnum = Math.floor(days);
+                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                    hnum = Math.floor(hours);
+                    if (String(hnum).length == 1) {
+                        hnum = "0" + hnum;
+                    }
+                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes);
+                    if (String(mnum).length == 1) {
+                        mnum = "0" + mnum;
+                    }
+                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds);
+                    if (String(snum).length == 1) {
+                        snum = "0" + snum;
+                    }
+                    document.getElementById("timeDate").innerHTML = "本站已在互联网中成功苟了&nbsp" + dnum + "&nbsp天";
+                    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+                }
+                setInterval("createtime()", 250);
+            </script>
+        </div>
+           <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-gitlab-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+
+            <!-- <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div> -->
+            
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访问数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+                
+
+                    
+
+                            <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+                            <script>
+                                getCDNinfo = function() {
+                                    $.ajax({
+                                        url: "https://gadgets.shiksha/cdn-cgi/trace",
+                                        success: function(data, status) {
+                                            let areas = "Antananarivo, Madagascar - (TNR);Cape Town, South Africa - (CPT);Casablanca, Morocco - (CMN);Dar Es Salaam, Tanzania - (DAR);Djibouti City, Djibouti - (JIB);Durban, South Africa - (DUR);Johannesburg, South Africa - (JNB);Kigali, Rwanda - (KGL);Lagos, Nigeria - (LOS);Luanda, Angola - (LAD);Maputo, MZ - (MPM);Mombasa, Kenya - (MBA);Port Louis, Mauritius - (MRU);Réunion, France - (RUN);Bangalore, India - (BLR);Bangkok, Thailand - (BKK);Bandar Seri Begawan, Brunei - (BWN);Cebu, Philippines - (CEB);Chengdu, China - (CTU);Chennai, India - (MAA);Chittagong, Bangladesh - (CGP);Chongqing, China - (CKG);Colombo, Sri Lanka - (CMB);Dhaka, Bangladesh - (DAC);Dongguan, China - (SZX);Foshan, China - (FUO);Fuzhou, China - (FOC);Guangzhou, China - (CAN);Hangzhou, China - (HGH);Hanoi, Vietnam - (HAN);Hengyang, China - (HNY);Ho Chi Minh City, Vietnam - (SGN);Hong Kong - (HKG);Hyderabad, India - (HYD);Islamabad, Pakistan - (ISB);Jakarta, Indonesia - (CGK);Jinan, China - (TNA);Karachi, Pakistan - (KHI);Kathmandu, Nepal - (KTM);Kolkata, India - (CCU);Kuala Lumpur, Malaysia - (KUL);Lahore, Pakistan - (LHE);Langfang, China - (NAY);Luoyang, China - (LYA);Macau - (MFM);Malé, Maldives - (MLE);Manila, Philippines - (MNL);Mumbai, India - (BOM);Nagpur, India - (NAG);Nanning, China - (NNG);New Delhi, India - (DEL);Osaka, Japan - (KIX);Phnom Penh, Cambodia - (PNH);Qingdao, China - (TAO);Seoul, South Korea - (ICN);Shanghai, China - (SHA);Shenyang, China - (SHE);Shijiazhuang, China - (SJW);Singapore, Singapore - (SIN);Suzhou, China - (SZV);Taipei - (TPE);Thimphu, Bhutan - (PBH);Tianjin, China - (TSN);Tokyo, Japan - (NRT);Ulaanbaatar, Mongolia - (ULN);Vientiane, Laos - (VTE);Wuhan, China - (WUH);Wuxi, China - (WUX);Xi'an, China - (XIY);Yerevan, Armenia - (EVN);Zhengzhou, China - (CGO);Zuzhou, China - (CSX);Amsterdam, Netherlands - (AMS);Athens, Greece - (ATH);Barcelona, Spain - (BCN);Belgrade, Serbia - (BEG);Berlin, Germany - (TXL);Brussels, Belgium - (BRU);Bucharest, Romania - (OTP);Budapest, Hungary - (BUD);Chișinău, Moldova - (KIV);Copenhagen, Denmark - (CPH);Cork, Ireland -  (ORK);Dublin, Ireland - (DUB);Düsseldorf, Germany - (DUS);Edinburgh, United Kingdom - (EDI);Frankfurt, Germany - (FRA);Geneva, Switzerland - (GVA);Gothenburg, Sweden - (GOT);Hamburg, Germany - (HAM);Helsinki, Finland - (HEL);Istanbul, Turkey - (IST);Kyiv, Ukraine - (KBP);Lisbon, Portugal - (LIS);London, United Kingdom - (LHR);Luxembourg City, Luxembourg - (LUX);Madrid, Spain - (MAD);Manchester, United Kingdom - (MAN);Marseille, France - (MRS);Milan, Italy - (MXP);Moscow, Russia - (DME);Munich, Germany - (MUC);Nicosia, Cyprus - (LCA);Oslo, Norway - (OSL);Paris, France - (CDG);Prague, Czech Republic - (PRG);Reykjavík, Iceland - (KEF);Riga, Latvia - (RIX);Rome, Italy - (FCO);Saint Petersburg, Russia - (LED);Sofia, Bulgaria - (SOF);Stockholm, Sweden - (ARN);Tallinn, Estonia - (TLL);Thessaloniki, Greece - (SKG);Vienna, Austria - (VIE);Vilnius, Lithuania - (VNO);Warsaw, Poland - (WAW);Zagreb, Croatia - (ZAG);Zürich, Switzerland - (ZRH);Arica, Chile - (ARI);Asunción, Paraguay - (ASU);Bogotá, Colombia - (BOG);Buenos Aires, Argentina - (EZE);Curitiba, Brazil - (CWB);Fortaleza, Brazil - (FOR);Guatemala City, Guatemala - (GUA);Lima, Peru - (LIM);Medellín, Colombia - (MDE);Panama City, Panama - (PTY);Porto Alegre, Brazil - (POA);Quito, Ecuador - (UIO);Rio de Janeiro, Brazil - (GIG);São Paulo, Brazil - (GRU);Santiago, Chile - (SCL);Willemstad, Curaçao - (CUR);St. George's, Grenada - (GND);Amman, Jordan - (AMM);Baghdad, Iraq - (BGW);Baku, Azerbaijan - (GYD);Beirut, Lebanon - (BEY);Doha, Qatar - (DOH);Dubai, United Arab Emirates - (DXB);Kuwait City, Kuwait - (KWI);Manama, Bahrain - (BAH);Muscat, Oman - (MCT);Ramallah - (ZDM);Riyadh, Saudi Arabia - (RUH);Tel Aviv, Israel - (TLV);Ashburn, VA, United States - (IAD);Atlanta, GA, United States - (ATL);Boston, MA, United States - (BOS);Buffalo, NY, United States - (BUF);Calgary, AB, Canada - (YYC);Charlotte, NC, United States - (CLT);Chicago, IL, United States - (ORD);Columbus, OH, United States - (CMH);Dallas, TX, United States - (DFW);Denver, CO, United States - (DEN);Detroit, MI, United States - (DTW);Honolulu, HI, United States - (HNL);Houston, TX, United States - (IAH);Indianapolis, IN, United States - (IND);Jacksonville, FL, United States - (JAX);Kansas City, MO, United States - (MCI);Las Vegas, NV, United States - (LAS);Los Angeles, CA, United States - (LAX);McAllen, TX, United States - (MFE);Memphis, TN, United States - (MEM);Mexico City, Mexico - (MEX);Miami, FL, United States - (MIA);Minneapolis, MN, United States - (MSP);Montgomery, AL, United States - (MGM);Montréal, QC, Canada - (YUL);Nashville, TN, United States - (BNA);Newark, NJ, United States - (EWR);Norfolk, VA, United States - (ORF);Omaha, NE, United States - (OMA);Philadelphia, United States - (PHL);Phoenix, AZ, United States - (PHX);Pittsburgh, PA, United States - (PIT);Port-Au-Prince, Haiti - (PAP);Portland, OR, United States - (PDX);Queretaro, MX, Mexico - (QRO);Richmond, Virginia - (RIC);Sacramento, CA, United States - (SMF);Salt Lake City, UT, United States - (SLC);San Diego, CA, United States - (SAN);San Jose, CA, United States - (SJC);Saskatoon, SK, Canada - (YXE);Seattle, WA, United States - (SEA);St. Louis, MO, United States - (STL);Tampa, FL, United States - (TPA);Toronto, ON, Canada - (YYZ);Vancouver, BC, Canada - (YVR);Tallahassee, FL, United States - (TLH);Winnipeg, MB, Canada - (YWG);Adelaide, SA, Australia - (ADL);Auckland, New Zealand - (AKL);Brisbane, QLD, Australia - (BNE);Melbourne, VIC, Australia - (MEL);Noumea, New caledonia - (NOU);Perth, WA, Australia - (PER);Sydney, NSW, Australia - (SYD)".split(";");
+                                            let area = data.split("colo=")[1].split("\n")[0];
+                                            for (var i = 0; i < areas.length; i++) {
+                                                if (areas[i].indexOf(area) != -1) {
+                                                    document.getElementById("cdn").innerHTML = areas[i];
+                                                    document.getElementById("ip").innerHTML = data.split("ip=")[1].split("\n")[0];
+                                                    // document.getElementById("httpos").innerHTML = data.split("visit_scheme=")[1].split("\n")[0];
+                                                    // document.getElementById("uag").innerHTML = data.split("uag=")[1].split("\n")[0];
+                                                    // document.getElementById("http").innerHTML = data.split("http=")[1].split("\n")[0];
+                                                    document.getElementById("loc").innerHTML = data.split("loc=")[1].split("\n")[0];
+                                                    // document.getElementById("tls").innerHTML = data.split("tls=")[1].split("\n")[0];
+                                                    // document.getElementById("warp").innerHTML = data.split("warp=")[1].split("\n")[0];
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    })
+                                }
+                                $(document).ready(function() {
+                                    getCDNinfo();
+                                    //页面加载完毕就获取CDN信息
+                                });
+                            </script>
+
+                            <p>
+                                当前CDN节点: <span id="cdn">【希腊奶】</span> | 你的ip: <span id="ip">【希腊奶】</span> | 你的所在国家/地区: <span id="loc">【希腊奶】 </span>
+
+                                <br>
+
+                                <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20211001" target="_blank"> 20211001号</a>
+                            </p>
+                            <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=n&d=UcxdrvS_dG9ALI85fIcJskXg_hYsNi47T6wsr7OFVzo&co=7089a3&cmo=ffd099&cmn=ff7269&ct=ffffff'></script>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访问数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+        
+
+            
+</footer>
+
+<script src="https://cdn.jsdelivr.net/gh/suyin-long/activate-power-mode@1.0/dist/activate-power-mode.js"></script>
+<script>
+    POWERMODE.colorful = true; // make power mode colorful
+    POWERMODE.shake = false; // turn off shake
+    document.body.addEventListener('input', POWERMODE);
+</script>
+
+  
+
+    <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+        <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+            <script  src="/js/events.js" ></script>
+                <script  src="/js/plugins.js" ></script>
+
+                    <!-- Plugins -->
+
+                    
+                        
+                            
+                                <script  src="/js/img-lazyload.js" ></script>
+                                    
+                                        
+                                                    
+
+                                                        
+                                                            
+                                                                                                
+
+                                                                                                    
+                                                                                                        <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+                                                                                                                        
+
+                                                                                                                            
+                                                                                                                                <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+                                                                                                                                    
+
+                                                                                                                                        
+                                                                                                                                            <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+                                                                                                                                                
+
+                                                                                                                                                    
+                                                                                                                                                        <script  src="/js/local-search.js" ></script>
+                                                                                                                                                            
+
+                                                                                                                                                                
+                                                                                                                                                                            
+                                                                                                                                                                                <script defer src="/js/leancloud.js" ></script>
+                                                                                                                                                                                    
+
+                                                                                                                                                                                                
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+                                                                                                                                                                                                    
+
+
+
+                                                                                                                                                                                                        
+
+
+
+                                                                                                                                                                                                            
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?919ac0fb0118c0ba89724ba53e0f3547";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'UA-177561089-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+                                                                                                                                                                                                                
+
+                                                                                                                                                                                                                            <!-- 主题的启动项 保持在最底部 -->
+                                                                                                                                                                                                                            <script  src="/js/boot.js" ></script>
+  
+  <!--浏览器搞笑标题-->
+  <script type="text/javascript" src="/js/FunnyTitle.js"></script>
+  <script typr="text/javascript">
+    console.log("%c▄▄▄█████▓ ██▀███   ▒█████  ▄▄▄█████▓▓██   ██▓ ██▓    \n▓  ██▒ ▓▒▓██ ▒ ██▒▒██▒  ██▒▓  ██▒ ▓▒ ▒██  ██▒▓██▒    \n▒ ▓██░ ▒░▓██ ░▄█ ▒▒██░  ██▒▒ ▓██░ ▒░  ▒██ ██░▒██░    \n░ ▓██▓ ░ ▒██▀▀█▄  ▒██   ██░░ ▓██▓ ░   ░ ▐██▓░▒██░    \n  ▒██▒ ░ ░██▓ ▒██▒░ ████▓▒░  ▒██▒ ░   ░ ██▒▓░░██████▒\n  ▒ ░░   ░ ▒▓ ░▒▓░░ ▒░▒░▒░   ▒ ░░      ██▒▒▒ ░ ▒░▓  ░\n    ░      ░▒ ░ ▒░  ░ ▒ ▒░     ░     ▓██ ░▒░ ░ ░ ▒  ░\n  ░        ░░   ░ ░ ░ ░ ▒    ░       ▒ ▒ ░░    ░ ░   \n            ░         ░ ░            ░ ░         ░  ░\n                                     ░ ░             \n","color: #7089A3;")
+  </script>
+  <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+  <script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
+
+<!-- hexo injector body_end start -->
+<script type="text/javascript">
+  //定义获取词语下标
+  var a_idx = 0;
+  jQuery(document).ready(function ($) {
+    //点击body时触发事件
+    $("body").click(function (e) {
+      //需要显示的词语
+      var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+      //设置词语给span标签
+      var $i = $("<span/>").text(a[a_idx]);
+      //下标等于原来下标+1  余 词语总数
+      a_idx = (a_idx + 1) % a.length;
+      //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+      //获取x和y的指针坐标
+      var x = e.pageX, y = e.pageY;
+      //在鼠标的指针的位置给$i定义的span标签添加css样式
+      $i.css({
+        "z-index": 999,
+        "top": y - 20,
+        "left": x,
+        "position": "absolute",
+        "font-weight": "bold",
+        "color": rand_color()
+      });
+      // 随机颜色
+      function rand_color() {
+        return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+      }
+      //在body添加这个标签
+      $("body").append($i);
+      //animate() 方法执行 CSS 属性集的自定义动画。
+      //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+      //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+      $i.animate({
+        //将原来的位置向上移动180
+        "top": y - 180,
+        "opacity": 0
+        //1500动画的速度
+      }, 1500, function () {
+        //时间到了自动删除
+        $i.remove();
+      });
+    });
+  })
+  ;
+</script>
+
+  <div id="aplayer"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/aplayer.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/lambda.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
+</html>

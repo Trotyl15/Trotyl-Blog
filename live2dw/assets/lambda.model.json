@@ -1,0 +1,9 @@
+{
+	"type": "Live2D Model Setting",
+	"name": "lambda",
+	"model": "lambda.moc",
+	"textures": [
+		"lambda.2048/texture_00.png"
+	],
+	"physics": "physics.json"
+}

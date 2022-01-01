@@ -1,0 +1,757 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+        <link rel="icon" href="/img/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+        <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+        <style>
+            .pace .pace-progress {
+                background: #FFAA8D;
+                /*进度条颜色*/
+                height: 3px;
+            }
+            
+            .pace .pace-progress-inner {
+                box-shadow: 0 0 10px #FFAA8D, 0 0 5px #FFAA8D;
+                /*阴影颜色*/
+            }
+            
+            .pace .pace-activity {
+                border-top-color: #FFAA8D;
+                /*上边框颜色*/
+                border-left-color: #FFAA8D;
+                /*左边框颜色*/
+            }
+        </style>
+        
+                <meta name="theme-color" content="#2f4154">
+                <meta name="description" content="一个小博客">
+                <meta name="author" content="Trotyl">
+                <meta name="keywords" content="">
+                
+                            <title>
+                                记一次拖了一个学期的 dubug 经历 - Trotyl&#39;s Blog
+                            </title>
+
+                            <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+                                <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.trotyl.xyz","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":false,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"header":""},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true},"web_analytics":{"enable":true,"baidu":"919ac0fb0118c0ba89724ba53e0f3547","google":"UA-177561089-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"zcL2DBnP3JIFC9a8HE5uYMfm-MdYXbMMI","app_key":"fRsoWUTEoES4QglVrH0chpxV","server_url":null},"tajs":null},"search_path":"/local-search.xml"};
+  </script>
+                                    <script  src="/js/utils.js" ></script>
+                                        <script  src="/js/color-schema.js" ></script>
+
+                                        
+    <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Trotyl's Blog" type="application/atom+xml">
+</head>
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <strong>Trotyl</strong>
+        </a>
+
+        <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto text-center">
+                
+                    
+                        
+                            
+                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+                                        </li>
+                                        
+                                            
+                    
+                        
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-bookmark"></i>
+                Posts
+              </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/archives/">
+                    <i class="iconfont icon-archive-fill"></i>
+                    Archives
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/categories/">
+                    <i class="iconfont icon-category-fill"></i>
+                    Categories
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    Tags
+                  </a>
+                                                            
+                                        </div>
+                                    </li>
+                                    
+                                            
+                    
+                        
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Pages
+              </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/comment/">
+                    <i class="iconfont icon-addrcard"></i>
+                    留言板
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/shuoshuo/">
+                    <i class="iconfont icon-speakernotes"></i>
+                    碎碎念
+                  </a>
+                                                            
+                                        </div>
+                                    </li>
+                                    
+                                            
+                    
+                        
+                            
+                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+                                        </li>
+                                        
+                                            
+                                                
+                                                    <li class="nav-item" id="search-btn">
+                                                        <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+                                                    </li>
+                                                    
+                                                        
+                                                            <li class="nav-item" id="color-toggle-btn">
+                                                                <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+                                                            </li>
+                                                            
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="记一次拖了一个学期的 dubug 经历">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-20 15:51" pubdate>
+        December 20, 2021 3:51 PM
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      783 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      8
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">记一次拖了一个学期的 dubug 经历</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：December 20, 2021 8:14 PM
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>事情是这样的，这学期刚开学的时候我发现我的博客在手机端和宽度不够的情况下导航栏出 bug 了。</p>
+<p><img src="https://user-images.githubusercontent.com/55414757/133869599-3535344d-3509-4be6-a1b4-38ef1e92638e.gif" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>像这样，导航栏收不回去，且 Posts 和 Pages 不能展开。</p>
+<p>我给 fluid 写了一份 issue，不过 fluid 作者说是我可能有插件和它冲突了。当时我正好懒 + 这个 bug 对电脑端使用影响不大所以我就没去动它。</p>
+<p>今天正好有空所以我就把它修完了，这里记录一下吧，花了我两三个多小时草。结果发现是一个很小的问题导致的。</p>
+<h2 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h2><p>先找到 fluid <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/">官方的网站 demo</a> 和我的对比一下，发现当它的导航栏展开了以后，右上角会变成 「X」的图标。</p>
+<p>打开它的 html 源代码搜索 「nav」和我的对比一下，发现我的在展开的时候它的类不能成功变成 <code>class=&quot;navbar-col-show&quot;</code>，但是在没有展开的时候所有地方都是一样的。</p>
+<p>所以应该是导航栏的 js 出问题了。</p>
+<p>我先是以为我的 <code>nav.ejs</code> 文件出错了，然后浪费了很多时间排查这个文件和引入它的地方有没有出错。</p>
+<p>然后搞了半天，想想不行，打开 EventListener 的 click 和官方 demo 对比，发现我的多了奇奇怪怪的几个文件，不能确定其中哪几个是我网站的插件。排查了一下发现，只要 remove 掉 两个 <code>events.js</code> 之一和 <code>debugger:///VMxxx jquery.min.js</code> 导航栏就好了。其中 <code>events.js</code> 能让图标成功变成「X」， <code>debugger:///VMxxx jquery.min.js</code> 能让导航栏成功折叠和重新展开。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/others/image_82.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>下面一步花了我最久的时间：排查到底是哪里引入了这俩不用的 js。</p>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><h3 id="第一步，找到哪里引入了-jquery"><a href="#第一步，找到哪里引入了-jquery" class="headerlink" title="第一步，找到哪里引入了 jquery"></a>第一步，找到哪里引入了 jquery</h3><p>我在页脚那里的 CDN trace 确实有用到 jquery，但是那里我引入的是 3.2.1 的 jQuery，而非 3.6.0（EventListener 那里的 <code>VMxxx jquery.min.js</code> 版本）。我恍然大悟，莫非是 fluid 自带的 jquery 和这个冲突了？但是我如果不在页脚那里引入 jquery，CDN trace 就不能正确显示了，所以看来是得把主题自带的 jquery 给删了。用 VsCode 找到引入 jquery 的地方：<code>scripts.ejs</code>，然后把引入 jquery 那行给注释掉 <code>&lt;%- js_ex(theme.static_prefix.jquery, &#39;jquery.min.js&#39;) %&gt;</code> </p>
+<p>好，现在导航栏可以自由展开折叠了，但是右上角的图标还是不能正确显示。得找到哪里 引入了第二次 <code>events.js</code></p>
+<h3 id="第二步，找到哪里引入了第二次-events-js"><a href="#第二步，找到哪里引入了第二次-events-js" class="headerlink" title="第二步，找到哪里引入了第二次 events.js"></a>第二步，找到哪里引入了第二次 events.js</h3><p>用 VsCode 搜索「events.js」发现我只在 <code>scripts.ejs</code> 里引入了一次。但是为什么在网站的源代码里会显示两次 <code>&lt;script src=&quot;/js/events.js&quot;&gt;&lt;/script&gt;</code> 捏。最后发现我在 <code>footer.ejs</code> 最底下引入了一次 <code>scripts.ejs</code>。凎，应该是上次更新主题的时候没删干净。</p>
+<h2 id="撒花"><a href="#撒花" class="headerlink" title="撒花"></a>撒花</h2><p>嘿嘿，这样导航栏的 bug 就被完美解决啦。成功又水了一篇。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/others/xjgxh-pxafb.gif" srcset="/img/loading.gif" lazyload width="300"/></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/8867a8f4/">
+                        <span class="hidden-mobile">音乐乐理基础</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('//blog.trotyl.xyz/js/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appid":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appkey":"WV76W9zkR1pcORcdd3UjPpKA","placeholder":"｜在上方留下你的邮箱，它不会被公开显示，收到回复的话会有邮件提醒&#10｜Leave your email above to get notifications for replies","path":"window.location.pathname","avatar":"robohash","meta":["nick","mail","link"],"pageSize":10,"lang":"en","highlight":true,"recordIP":true,"serverURLs":"https://cFjrGe19.api.lncldglobal.com","emojiMaps":{"tieba-1":"tieba/tieba-1.png","tieba-2":"tieba/tieba-2.png","tieba-3":"tieba/tieba-3.png","tieba-4":"tieba/tieba-4.png","tieba-5":"tieba/tieba-5.png","tieba-6":"tieba/tieba-6.png","tieba-7":"tieba/tieba-7.png","tieba-8":"tieba/tieba-8.png","tieba-9":"tieba/tieba-9.png","tieba-10":"tieba/tieba-10.png","tieba-11":"tieba/tieba-11.png","tieba-12":"tieba/tieba-12.png","tieba-13":"tieba/tieba-13.png","tieba-14":"tieba/tieba-14.png","tieba-15":"tieba/tieba-15.png","tieba-16":"tieba/tieba-16.png","tieba-17":"tieba/tieba-17.png","tieba-18":"tieba/tieba-18.png","tieba-19":"tieba/tieba-19.png","tieba-20":"tieba/tieba-20.png","tieba-21":"tieba/tieba-21.png","tieba-22":"tieba/tieba-22.png","tieba-23":"tieba/tieba-23.png","tieba-24":"tieba/tieba-24.png","tieba-25":"tieba/tieba-25.png","tieba-26":"tieba/tieba-26.png","tieba-27":"tieba/tieba-27.png","tieba-28":"tieba/tieba-28.png","tieba-29":"tieba/tieba-29.png","tieba-30":"tieba/tieba-30.png","tieba-31":"tieba/tieba-31.png","tieba-32":"tieba/tieba-32.png","tieba-33":"tieba/tieba-33.png","tieba-34":"tieba/tieba-34.png","tieba-35":"tieba/tieba-35.png","tieba-36":"tieba/tieba-36.png","tieba-37":"tieba/tieba-37.png","tieba-38":"tieba/tieba-38.png","tieba-39":"tieba/tieba-39.png","tieba-40":"tieba/tieba-40.png","tieba-41":"tieba/tieba-41.png","tieba-42":"tieba/tieba-42.png","tieba-43":"tieba/tieba-43.png","tieba-44":"tieba/tieba-44.png","tieba-45":"tieba/tieba-45.png","tieba-46":"tieba/tieba-46.png","tieba-47":"tieba/tieba-47.png","tieba-48":"tieba/tieba-48.png","tieba-49":"tieba/tieba-49.png","tieba-50":"tieba/tieba-50.png","tieba-51":"tieba/tieba-51.png","tieba-52":"tieba/tieba-52.png","tieba-56":"tieba/tieba-56.png","tieba-57":"tieba/tieba-57.png","tieba-59":"tieba/tieba-59.png","tieba-60":"tieba/tieba-60.png","tieba-61":"tieba/tieba-61.png","EveOneCat-1":"EveOneCat/EveOneCat_1.png","EveOneCat-2":"EveOneCat/EveOneCat_2.png","EveOneCat-3":"EveOneCat/EveOneCat_3.png","EveOneCat-4":"EveOneCat/EveOneCat_4.png","EveOneCat-5":"EveOneCat/EveOneCat_5.png","EveOneCat-6":"EveOneCat/EveOneCat_6.png","EveOneCat-7":"EveOneCat/EveOneCat_7.png","EveOneCat-8":"EveOneCat/EveOneCat_8.png","EveOneCat-9":"EveOneCat/EveOneCat_9.png","EveOneCat-10":"EveOneCat/EveOneCat_10.png","EveOneCat-11":"EveOneCat/EveOneCat_11.png","EveOneCat-12":"EveOneCat/EveOneCat_12.png","EveOneCat-13":"EveOneCat/EveOneCat_13.png","EveOneCat-14":"EveOneCat/EveOneCat_14.png","EveOneCat-15":"EveOneCat/EveOneCat_15.png","EveOneCat-16":"EveOneCat/EveOneCat_16.png","EveOneCat-17":"EveOneCat/EveOneCat_17.png","EveOneCat-18":"EveOneCat/EveOneCat_18.png","EveOneCat-19":"EveOneCat/EveOneCat_19.png","EveOneCat-20":"EveOneCat/EveOneCat_20.png","miharo-1":"miharo/miharo-1.png","miharo-2":"miharo/miharo-2.png","miharo-3":"miharo/miharo-3.png","miharo-4":"miharo/miharo-4.png","miharo-5":"miharo/miharo-5.png","miharo-6":"miharo/miharo-6.png","miharo-7":"miharo/miharo-7.png","miharo-8":"miharo/miharo-8.png","miharo-9":"miharo/miharo-9.png","miharo-10":"miharo/miharo-10.png","miharo-11":"miharo/miharo-11.png","miharo-12":"miharo/miharo-12.png","miharo-13":"miharo/miharo-13.png","miharo-14":"miharo/miharo-14.png","miharo-15":"miharo/miharo-15.png","miharo-16":"miharo/miharo-16.png","miharo-17":"miharo/miharo-17.png","miharo-18":"miharo/miharo-18.png","huaji-1":"huaji/huaji-1.png","huaji-2":"huaji/huaji-2.png","huaji-3":"huaji/huaji-3.png","huaji-4":"huaji/huaji-4.png","huaji-5":"huaji/huaji-5.png","huaji-6":"huaji/huaji-6.png","huaji-7":"huaji/huaji-7.png","huaji-8":"huaji/huaji-8.png","huaji-9":"huaji/huaji-9.png","huaji-10":"huaji/huaji-10.png","huaji-11":"huaji/huaji-11.png","huaji-12":"huaji/huaji-12.png","huaji-13":"huaji/huaji-13.png","huaji-14":"huaji/huaji-14.png","huaji-15":"huaji/huaji-15.gif"},"enableQQ":true,"requiredFields":[],"appId":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appKey":"WV76W9zkR1pcORcdd3UjPpKA","emojiCDN":"https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/emoji/"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+    <div class="footer-content">
+
+        <div>
+            <span id="timeDate">正在烧脑计算建站时间...</span>
+            <span id="times"></span>
+            <script>
+                var now = new Date();
+
+                function createtime() {
+                    var grt = new Date("08/04/2020 00:00:00"); //此处修改你的建站时间或者网站上线时间
+                    now.setTime(now.getTime() + 250);
+                    days = (now - grt) / 1000 / 60 / 60 / 24;
+                    dnum = Math.floor(days);
+                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                    hnum = Math.floor(hours);
+                    if (String(hnum).length == 1) {
+                        hnum = "0" + hnum;
+                    }
+                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes);
+                    if (String(mnum).length == 1) {
+                        mnum = "0" + mnum;
+                    }
+                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds);
+                    if (String(snum).length == 1) {
+                        snum = "0" + snum;
+                    }
+                    document.getElementById("timeDate").innerHTML = "本站已在互联网中成功苟了&nbsp" + dnum + "&nbsp天";
+                    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+                }
+                setInterval("createtime()", 250);
+            </script>
+        </div>
+           <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-gitlab-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+
+            <!-- <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div> -->
+            
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访问数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+                
+
+                    
+
+                            <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+                            <script>
+                                getCDNinfo = function() {
+                                    $.ajax({
+                                        url: "https://gadgets.shiksha/cdn-cgi/trace",
+                                        success: function(data, status) {
+                                            let areas = "Antananarivo, Madagascar - (TNR);Cape Town, South Africa - (CPT);Casablanca, Morocco - (CMN);Dar Es Salaam, Tanzania - (DAR);Djibouti City, Djibouti - (JIB);Durban, South Africa - (DUR);Johannesburg, South Africa - (JNB);Kigali, Rwanda - (KGL);Lagos, Nigeria - (LOS);Luanda, Angola - (LAD);Maputo, MZ - (MPM);Mombasa, Kenya - (MBA);Port Louis, Mauritius - (MRU);Réunion, France - (RUN);Bangalore, India - (BLR);Bangkok, Thailand - (BKK);Bandar Seri Begawan, Brunei - (BWN);Cebu, Philippines - (CEB);Chengdu, China - (CTU);Chennai, India - (MAA);Chittagong, Bangladesh - (CGP);Chongqing, China - (CKG);Colombo, Sri Lanka - (CMB);Dhaka, Bangladesh - (DAC);Dongguan, China - (SZX);Foshan, China - (FUO);Fuzhou, China - (FOC);Guangzhou, China - (CAN);Hangzhou, China - (HGH);Hanoi, Vietnam - (HAN);Hengyang, China - (HNY);Ho Chi Minh City, Vietnam - (SGN);Hong Kong - (HKG);Hyderabad, India - (HYD);Islamabad, Pakistan - (ISB);Jakarta, Indonesia - (CGK);Jinan, China - (TNA);Karachi, Pakistan - (KHI);Kathmandu, Nepal - (KTM);Kolkata, India - (CCU);Kuala Lumpur, Malaysia - (KUL);Lahore, Pakistan - (LHE);Langfang, China - (NAY);Luoyang, China - (LYA);Macau - (MFM);Malé, Maldives - (MLE);Manila, Philippines - (MNL);Mumbai, India - (BOM);Nagpur, India - (NAG);Nanning, China - (NNG);New Delhi, India - (DEL);Osaka, Japan - (KIX);Phnom Penh, Cambodia - (PNH);Qingdao, China - (TAO);Seoul, South Korea - (ICN);Shanghai, China - (SHA);Shenyang, China - (SHE);Shijiazhuang, China - (SJW);Singapore, Singapore - (SIN);Suzhou, China - (SZV);Taipei - (TPE);Thimphu, Bhutan - (PBH);Tianjin, China - (TSN);Tokyo, Japan - (NRT);Ulaanbaatar, Mongolia - (ULN);Vientiane, Laos - (VTE);Wuhan, China - (WUH);Wuxi, China - (WUX);Xi'an, China - (XIY);Yerevan, Armenia - (EVN);Zhengzhou, China - (CGO);Zuzhou, China - (CSX);Amsterdam, Netherlands - (AMS);Athens, Greece - (ATH);Barcelona, Spain - (BCN);Belgrade, Serbia - (BEG);Berlin, Germany - (TXL);Brussels, Belgium - (BRU);Bucharest, Romania - (OTP);Budapest, Hungary - (BUD);Chișinău, Moldova - (KIV);Copenhagen, Denmark - (CPH);Cork, Ireland -  (ORK);Dublin, Ireland - (DUB);Düsseldorf, Germany - (DUS);Edinburgh, United Kingdom - (EDI);Frankfurt, Germany - (FRA);Geneva, Switzerland - (GVA);Gothenburg, Sweden - (GOT);Hamburg, Germany - (HAM);Helsinki, Finland - (HEL);Istanbul, Turkey - (IST);Kyiv, Ukraine - (KBP);Lisbon, Portugal - (LIS);London, United Kingdom - (LHR);Luxembourg City, Luxembourg - (LUX);Madrid, Spain - (MAD);Manchester, United Kingdom - (MAN);Marseille, France - (MRS);Milan, Italy - (MXP);Moscow, Russia - (DME);Munich, Germany - (MUC);Nicosia, Cyprus - (LCA);Oslo, Norway - (OSL);Paris, France - (CDG);Prague, Czech Republic - (PRG);Reykjavík, Iceland - (KEF);Riga, Latvia - (RIX);Rome, Italy - (FCO);Saint Petersburg, Russia - (LED);Sofia, Bulgaria - (SOF);Stockholm, Sweden - (ARN);Tallinn, Estonia - (TLL);Thessaloniki, Greece - (SKG);Vienna, Austria - (VIE);Vilnius, Lithuania - (VNO);Warsaw, Poland - (WAW);Zagreb, Croatia - (ZAG);Zürich, Switzerland - (ZRH);Arica, Chile - (ARI);Asunción, Paraguay - (ASU);Bogotá, Colombia - (BOG);Buenos Aires, Argentina - (EZE);Curitiba, Brazil - (CWB);Fortaleza, Brazil - (FOR);Guatemala City, Guatemala - (GUA);Lima, Peru - (LIM);Medellín, Colombia - (MDE);Panama City, Panama - (PTY);Porto Alegre, Brazil - (POA);Quito, Ecuador - (UIO);Rio de Janeiro, Brazil - (GIG);São Paulo, Brazil - (GRU);Santiago, Chile - (SCL);Willemstad, Curaçao - (CUR);St. George's, Grenada - (GND);Amman, Jordan - (AMM);Baghdad, Iraq - (BGW);Baku, Azerbaijan - (GYD);Beirut, Lebanon - (BEY);Doha, Qatar - (DOH);Dubai, United Arab Emirates - (DXB);Kuwait City, Kuwait - (KWI);Manama, Bahrain - (BAH);Muscat, Oman - (MCT);Ramallah - (ZDM);Riyadh, Saudi Arabia - (RUH);Tel Aviv, Israel - (TLV);Ashburn, VA, United States - (IAD);Atlanta, GA, United States - (ATL);Boston, MA, United States - (BOS);Buffalo, NY, United States - (BUF);Calgary, AB, Canada - (YYC);Charlotte, NC, United States - (CLT);Chicago, IL, United States - (ORD);Columbus, OH, United States - (CMH);Dallas, TX, United States - (DFW);Denver, CO, United States - (DEN);Detroit, MI, United States - (DTW);Honolulu, HI, United States - (HNL);Houston, TX, United States - (IAH);Indianapolis, IN, United States - (IND);Jacksonville, FL, United States - (JAX);Kansas City, MO, United States - (MCI);Las Vegas, NV, United States - (LAS);Los Angeles, CA, United States - (LAX);McAllen, TX, United States - (MFE);Memphis, TN, United States - (MEM);Mexico City, Mexico - (MEX);Miami, FL, United States - (MIA);Minneapolis, MN, United States - (MSP);Montgomery, AL, United States - (MGM);Montréal, QC, Canada - (YUL);Nashville, TN, United States - (BNA);Newark, NJ, United States - (EWR);Norfolk, VA, United States - (ORF);Omaha, NE, United States - (OMA);Philadelphia, United States - (PHL);Phoenix, AZ, United States - (PHX);Pittsburgh, PA, United States - (PIT);Port-Au-Prince, Haiti - (PAP);Portland, OR, United States - (PDX);Queretaro, MX, Mexico - (QRO);Richmond, Virginia - (RIC);Sacramento, CA, United States - (SMF);Salt Lake City, UT, United States - (SLC);San Diego, CA, United States - (SAN);San Jose, CA, United States - (SJC);Saskatoon, SK, Canada - (YXE);Seattle, WA, United States - (SEA);St. Louis, MO, United States - (STL);Tampa, FL, United States - (TPA);Toronto, ON, Canada - (YYZ);Vancouver, BC, Canada - (YVR);Tallahassee, FL, United States - (TLH);Winnipeg, MB, Canada - (YWG);Adelaide, SA, Australia - (ADL);Auckland, New Zealand - (AKL);Brisbane, QLD, Australia - (BNE);Melbourne, VIC, Australia - (MEL);Noumea, New caledonia - (NOU);Perth, WA, Australia - (PER);Sydney, NSW, Australia - (SYD)".split(";");
+                                            let area = data.split("colo=")[1].split("\n")[0];
+                                            for (var i = 0; i < areas.length; i++) {
+                                                if (areas[i].indexOf(area) != -1) {
+                                                    document.getElementById("cdn").innerHTML = areas[i];
+                                                    document.getElementById("ip").innerHTML = data.split("ip=")[1].split("\n")[0];
+                                                    // document.getElementById("httpos").innerHTML = data.split("visit_scheme=")[1].split("\n")[0];
+                                                    // document.getElementById("uag").innerHTML = data.split("uag=")[1].split("\n")[0];
+                                                    // document.getElementById("http").innerHTML = data.split("http=")[1].split("\n")[0];
+                                                    document.getElementById("loc").innerHTML = data.split("loc=")[1].split("\n")[0];
+                                                    // document.getElementById("tls").innerHTML = data.split("tls=")[1].split("\n")[0];
+                                                    // document.getElementById("warp").innerHTML = data.split("warp=")[1].split("\n")[0];
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    })
+                                }
+                                $(document).ready(function() {
+                                    getCDNinfo();
+                                    //页面加载完毕就获取CDN信息
+                                });
+                            </script>
+
+                            <p>
+                                当前CDN节点: <span id="cdn">【希腊奶】</span> | 你的ip: <span id="ip">【希腊奶】</span> | 你的所在国家/地区: <span id="loc">【希腊奶】 </span>
+
+                                <br>
+
+                                <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20211001" target="_blank"> 20211001号</a>
+                            </p>
+                            <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=n&d=UcxdrvS_dG9ALI85fIcJskXg_hYsNi47T6wsr7OFVzo&co=7089a3&cmo=ffd099&cmn=ff7269&ct=ffffff'></script>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访问数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+        
+
+            
+</footer>
+
+<script src="https://cdn.jsdelivr.net/gh/suyin-long/activate-power-mode@1.0/dist/activate-power-mode.js"></script>
+<script>
+    POWERMODE.colorful = true; // make power mode colorful
+    POWERMODE.shake = false; // turn off shake
+    document.body.addEventListener('input', POWERMODE);
+</script>
+
+  
+
+    <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+        <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+            <script  src="/js/events.js" ></script>
+                <script  src="/js/plugins.js" ></script>
+
+                    <!-- Plugins -->
+
+                    
+                        
+                            
+                                <script  src="/js/img-lazyload.js" ></script>
+                                    
+                                        
+                                                    
+
+                                                        
+                                                            
+                                                                                                
+
+                                                                                                    
+                                                                                                        <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+                                                                                                                        
+
+                                                                                                                            
+                                                                                                                                <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+                                                                                                                                    
+
+                                                                                                                                        
+                                                                                                                                            <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+                                                                                                                                                
+
+                                                                                                                                                    
+                                                                                                                                                        <script  src="/js/local-search.js" ></script>
+                                                                                                                                                            
+
+                                                                                                                                                                
+                                                                                                                                                                            
+                                                                                                                                                                                <script defer src="/js/leancloud.js" ></script>
+                                                                                                                                                                                    
+
+                                                                                                                                                                                                
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+                                                                                                                                                                                                    
+
+
+
+                                                                                                                                                                                                        
+
+
+
+                                                                                                                                                                                                            
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?919ac0fb0118c0ba89724ba53e0f3547";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'UA-177561089-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+                                                                                                                                                                                                                
+
+                                                                                                                                                                                                                            <!-- 主题的启动项 保持在最底部 -->
+                                                                                                                                                                                                                            <script  src="/js/boot.js" ></script>
+  
+  <!--浏览器搞笑标题-->
+  <script type="text/javascript" src="/js/FunnyTitle.js"></script>
+  <script typr="text/javascript">
+    console.log("%c▄▄▄█████▓ ██▀███   ▒█████  ▄▄▄█████▓▓██   ██▓ ██▓    \n▓  ██▒ ▓▒▓██ ▒ ██▒▒██▒  ██▒▓  ██▒ ▓▒ ▒██  ██▒▓██▒    \n▒ ▓██░ ▒░▓██ ░▄█ ▒▒██░  ██▒▒ ▓██░ ▒░  ▒██ ██░▒██░    \n░ ▓██▓ ░ ▒██▀▀█▄  ▒██   ██░░ ▓██▓ ░   ░ ▐██▓░▒██░    \n  ▒██▒ ░ ░██▓ ▒██▒░ ████▓▒░  ▒██▒ ░   ░ ██▒▓░░██████▒\n  ▒ ░░   ░ ▒▓ ░▒▓░░ ▒░▒░▒░   ▒ ░░      ██▒▒▒ ░ ▒░▓  ░\n    ░      ░▒ ░ ▒░  ░ ▒ ▒░     ░     ▓██ ░▒░ ░ ░ ▒  ░\n  ░        ░░   ░ ░ ░ ░ ▒    ░       ▒ ▒ ░░    ░ ░   \n            ░         ░ ░            ░ ░         ░  ░\n                                     ░ ░             \n","color: #7089A3;")
+  </script>
+  <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+  <script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
+
+<!-- hexo injector body_end start -->
+<script type="text/javascript">
+  //定义获取词语下标
+  var a_idx = 0;
+  jQuery(document).ready(function ($) {
+    //点击body时触发事件
+    $("body").click(function (e) {
+      //需要显示的词语
+      var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+      //设置词语给span标签
+      var $i = $("<span/>").text(a[a_idx]);
+      //下标等于原来下标+1  余 词语总数
+      a_idx = (a_idx + 1) % a.length;
+      //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+      //获取x和y的指针坐标
+      var x = e.pageX, y = e.pageY;
+      //在鼠标的指针的位置给$i定义的span标签添加css样式
+      $i.css({
+        "z-index": 999,
+        "top": y - 20,
+        "left": x,
+        "position": "absolute",
+        "font-weight": "bold",
+        "color": rand_color()
+      });
+      // 随机颜色
+      function rand_color() {
+        return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+      }
+      //在body添加这个标签
+      $("body").append($i);
+      //animate() 方法执行 CSS 属性集的自定义动画。
+      //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+      //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+      $i.animate({
+        //将原来的位置向上移动180
+        "top": y - 180,
+        "opacity": 0
+        //1500动画的速度
+      }, 1500, function () {
+        //时间到了自动删除
+        $i.remove();
+      });
+    });
+  })
+  ;
+</script>
+
+  <div id="aplayer"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/aplayer.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/lambda.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
+</html>

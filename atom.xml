@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Trotyl&#39;s Blog</title>
+  <icon>http://blog.trotyl.xyz/icon.png</icon>
+  
+  <link href="http://blog.trotyl.xyz/atom.xml" rel="self"/>
+  
+  <link href="http://blog.trotyl.xyz/"/>
+  <updated>2021-12-21T01:14:53.190Z</updated>
+  <id>http://blog.trotyl.xyz/</id>
+  
+  <author>
+    <name>Trotyl</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次拖了一个学期的 dubug 经历</title>
+    <link href="http://blog.trotyl.xyz/post/5a8a6c8d/"/>
+    <id>http://blog.trotyl.xyz/post/5a8a6c8d/</id>
+    <published>2021-12-20T20:51:00.000Z</published>
+    <updated>2021-12-21T01:14:53.190Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;事情是这样的，这学期刚开学的时候我发现我的博客在手机端和宽度不够的情况下导航栏出 bug 了。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Hexo" scheme="http://blog.trotyl.xyz/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>音乐乐理基础</title>
+    <link href="http://blog.trotyl.xyz/post/8867a8f4/"/>
+    <id>http://blog.trotyl.xyz/post/8867a8f4/</id>
+    <published>2021-09-07T18:40:22.000Z</published>
+    <updated>2021-10-28T14:33:14.213Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;因为要学吉他所以学了点基础乐理，看的是 &lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="乐理" scheme="http://blog.trotyl.xyz/tags/%E4%B9%90%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 软件推荐｜持续更新</title>
+    <link href="http://blog.trotyl.xyz/post/22dee00c/"/>
+    <id>http://blog.trotyl.xyz/post/22dee00c/</id>
+    <published>2021-08-13T03:47:33.000Z</published>
+    <updated>2021-12-21T02:19:21.511Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近我铁子也从 Mac 换成 Windows 了，因为我当时换的时候还是花了点时间适应的，寻思可以&lt;del&gt;水&lt;/del&gt;写一篇哈哈&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="杂七杂八" scheme="http://blog.trotyl.xyz/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java Server and Client 实现聊天室</title>
+    <link href="http://blog.trotyl.xyz/post/38733/"/>
+    <id>http://blog.trotyl.xyz/post/38733/</id>
+    <published>2020-12-15T01:49:00.000Z</published>
+    <updated>2021-08-14T20:56:48.326Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;cs的作业，这里放一下吧。肝了两天两夜，要写吐了。&lt;/p&gt;
+&lt;p&gt;用java socket实现简易聊天室， 因为server端不是我写的，我就发下client端的.&lt;/p&gt;
+&lt;p&gt;这是几个截图:&lt;br&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="RHHS" scheme="http://blog.trotyl.xyz/categories/RHHS/"/>
+    
+    
+    <category term="java" scheme="http://blog.trotyl.xyz/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 迁移｜mac 到 windows</title>
+    <link href="http://blog.trotyl.xyz/post/61834/"/>
+    <id>http://blog.trotyl.xyz/post/61834/</id>
+    <published>2020-11-27T22:19:00.000Z</published>
+    <updated>2021-12-20T21:47:19.968Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近换电脑了嘛，就想着得把博客搬到这个电脑上，网上找了找，都是windows迁到mac上的，完全没有从mac到win的。。&lt;span class=&quot;heimu&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Hexo" scheme="http://blog.trotyl.xyz/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Grade 12 Chemistry（窗了）</title>
+    <link href="http://blog.trotyl.xyz/post/3587/"/>
+    <id>http://blog.trotyl.xyz/post/3587/</id>
+    <published>2020-09-10T19:54:00.000Z</published>
+    <updated>2021-08-14T20:57:04.006Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;懒得写了，遛了遛了&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="RHHS" scheme="http://blog.trotyl.xyz/categories/RHHS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>好用的油猴脚本推荐｜持续更新</title>
+    <link href="http://blog.trotyl.xyz/post/17599/"/>
+    <id>http://blog.trotyl.xyz/post/17599/</id>
+    <published>2020-09-02T05:58:43.000Z</published>
+    <updated>2021-10-18T22:07:58.359Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;惊闻Edge出了新版，火速去试了试，没想到比safari和chrome好用了不止一点。立马转战Edge。重新下插件的时候正好又看了看油猴脚本，就想着最近反正也不咋更新了，要不就出一期油猴脚本的推荐（会持续更新）。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;因为到现在百度还没收录我的网址，所以</summary>
+        
+      
+    
+    
+    
+    
+    <category term="杂七杂八" scheme="http://blog.trotyl.xyz/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图｜Graph</title>
+    <link href="http://blog.trotyl.xyz/post/10412/"/>
+    <id>http://blog.trotyl.xyz/post/10412/</id>
+    <published>2020-08-17T01:40:05.000Z</published>
+    <updated>2020-11-28T17:57:34.599Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这是在看b站上的韩顺平老师的数据结构与算法&lt;sup id=&quot;fnref:1&quot; class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn:1&quot; rel=&quot;footnote&quot;&gt;&lt;span class=&quot;hint--top hint--rounded&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法｜Data Structures and Algorithms" scheme="http://blog.trotyl.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/"/>
+    
+    <category term="图｜Graph" scheme="http://blog.trotyl.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/%E5%9B%BE%EF%BD%9CGraph/"/>
+    
+    
+    <category term="java" scheme="http://blog.trotyl.xyz/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多路查找树｜Multi-Way Search Tree</title>
+    <link href="http://blog.trotyl.xyz/post/35477/"/>
+    <id>http://blog.trotyl.xyz/post/35477/</id>
+    <published>2020-08-15T03:53:57.000Z</published>
+    <updated>2020-11-28T17:57:34.606Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这是在看b站上的韩顺平老师的数据结构与算法&lt;sup id=&quot;fnref:1&quot; class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn:1&quot; rel=&quot;footnote&quot;&gt;&lt;span class=&quot;hint--top hint--rounded&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法｜Data Structures and Algorithms" scheme="http://blog.trotyl.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/"/>
+    
+    <category term="多路查找树｜Multi-Way Search Tree" scheme="http://blog.trotyl.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/%E5%A4%9A%E8%B7%AF%E6%9F%A5%E6%89%BE%E6%A0%91%EF%BD%9CMulti-Way-Search-Tree/"/>
+    
+    
+    <category term="java" scheme="http://blog.trotyl.xyz/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>平衡二叉树｜AVL Tree</title>
+    <link href="http://blog.trotyl.xyz/post/8178/"/>
+    <id>http://blog.trotyl.xyz/post/8178/</id>
+    <published>2020-08-08T20:13:40.000Z</published>
+    <updated>2020-11-28T17:57:34.611Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这是在看b站上的韩顺平老师的数据结构与算法&lt;sup id=&quot;fnref:1&quot; class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn:1&quot; rel=&quot;footnote&quot;&gt;&lt;span class=&quot;hint--top hint--rounded&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法｜Data Structures and Algorithms" scheme="http://blog.trotyl.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/"/>
+    
+    <category term="树结构的应用｜Application of Tree Structures" scheme="http://blog.trotyl.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/%E6%A0%91%E7%BB%93%E6%9E%84%E7%9A%84%E5%BA%94%E7%94%A8%EF%BD%9CApplication-of-Tree-Structures/"/>
+    
+    
+    <category term="java" scheme="http://blog.trotyl.xyz/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉排序树｜Binary Sort Tree</title>
+    <link href="http://blog.trotyl.xyz/post/29228/"/>
+    <id>http://blog.trotyl.xyz/post/29228/</id>
+    <published>2020-08-07T15:32:49.000Z</published>
+    <updated>2021-12-22T03:28:33.965Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这是在看b站上的韩顺平老师的数据结构与算法&lt;sup id=&quot;fnref:1&quot; class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn:1&quot; rel=&quot;footnote&quot;&gt;&lt;span class=&quot;hint--top hint--rounded&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法｜Data Structures and Algorithms" scheme="http://blog.trotyl.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/"/>
+    
+    <category term="树结构的应用｜Application of Tree Structures" scheme="http://blog.trotyl.xyz/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/%E6%A0%91%E7%BB%93%E6%9E%84%E7%9A%84%E5%BA%94%E7%94%A8%EF%BD%9CApplication-of-Tree-Structures/"/>
+    
+    
+    <category term="java" scheme="http://blog.trotyl.xyz/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的第一篇博客</title>
+    <link href="http://blog.trotyl.xyz/post/63785/"/>
+    <id>http://blog.trotyl.xyz/post/63785/</id>
+    <published>2020-08-04T00:46:00.000Z</published>
+    <updated>2021-10-26T23:12:29.996Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这是用来练习markdown语法的一篇博客&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;第一章&quot;&gt;&lt;a href=&quot;#第一章&quot; class=&quot;headerlink&quot; title=&quot;第一章&quot;&gt;&lt;/a&gt;第一章&lt;/h1&gt;&lt;h2 id=&quot;1-先来张图&quot;&gt;&lt;a href=&quot;#1-先来张图&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="杂七杂八" scheme="http://blog.trotyl.xyz/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,1187 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+        <link rel="icon" href="/img/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+        <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+        <style>
+            .pace .pace-progress {
+                background: #FFAA8D;
+                /*进度条颜色*/
+                height: 3px;
+            }
+            
+            .pace .pace-progress-inner {
+                box-shadow: 0 0 10px #FFAA8D, 0 0 5px #FFAA8D;
+                /*阴影颜色*/
+            }
+            
+            .pace .pace-activity {
+                border-top-color: #FFAA8D;
+                /*上边框颜色*/
+                border-left-color: #FFAA8D;
+                /*左边框颜色*/
+            }
+        </style>
+        
+                <meta name="theme-color" content="#2f4154">
+                <meta name="description" content="一个小博客">
+                <meta name="author" content="Trotyl">
+                <meta name="keywords" content="">
+                
+                            <title>
+                                Trotyl&#39;s Blog
+                            </title>
+
+                            <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+                                <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.trotyl.xyz","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":false,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"header":""},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true},"web_analytics":{"enable":true,"baidu":"919ac0fb0118c0ba89724ba53e0f3547","google":"UA-177561089-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"zcL2DBnP3JIFC9a8HE5uYMfm-MdYXbMMI","app_key":"fRsoWUTEoES4QglVrH0chpxV","server_url":null},"tajs":null},"search_path":"/local-search.xml"};
+  </script>
+                                    <script  src="/js/utils.js" ></script>
+                                        <script  src="/js/color-schema.js" ></script>
+
+                                        
+    <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Trotyl's Blog" type="application/atom+xml">
+</head>
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <strong>Trotyl</strong>
+        </a>
+
+        <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto text-center">
+                
+                    
+                        
+                            
+                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+                                        </li>
+                                        
+                                            
+                    
+                        
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-bookmark"></i>
+                Posts
+              </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/archives/">
+                    <i class="iconfont icon-archive-fill"></i>
+                    Archives
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/categories/">
+                    <i class="iconfont icon-category-fill"></i>
+                    Categories
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    Tags
+                  </a>
+                                                            
+                                        </div>
+                                    </li>
+                                    
+                                            
+                    
+                        
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Pages
+              </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/comment/">
+                    <i class="iconfont icon-addrcard"></i>
+                    留言板
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/shuoshuo/">
+                    <i class="iconfont icon-speakernotes"></i>
+                    碎碎念
+                  </a>
+                                                            
+                                        </div>
+                                    </li>
+                                    
+                                            
+                    
+                        
+                            
+                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+                                        </li>
+                                        
+                                            
+                                                
+                                                    <li class="nav-item" id="search-btn">
+                                                        <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+                                                    </li>
+                                                    
+                                                        
+                                                            <li class="nav-item" id="color-toggle-btn">
+                                                                <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+                                                            </li>
+                                                            
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="呦，你来啦？">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/post/5a8a6c8d/" target="_self">
+          <img src="https://imgsa.baidu.com/forum/w%3D580/sign=884e3f3c2ea446237ecaa56aa8237246/019fd2fc1e178a825c6d3ae6f803738da877e859.jpg" alt="记一次拖了一个学期的 dubug 经历">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/post/5a8a6c8d/" target="_self">
+          记一次拖了一个学期的 dubug 经历
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/post/5a8a6c8d/" target="_self">
+          
+          
+            
+          
+          事情是这样的，这学期刚开学的时候我发现我的博客在手机端和宽度不够的情况下导航栏出 bug 了。
+
+像这样，导航栏收不回去，且 Posts 和 Pages 不能展开。
+我给 fluid 写了一份 issue，不过 fluid 作者说是我可能有插件和它冲突了。当时我正好懒 + 这个 bug 对电脑端使用影响不大所以我就没去动它。
+今天正好有空所以我就把它修完了，这里记录一下吧，花了我两三个多小时草。结
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-20 15:51" pubdate>
+              2021-12-20
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">Hexo</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/post/8867a8f4/" target="_self">
+          <img src="https://imgsa.baidu.com/forum/w%3D580/sign=a0bfa08fd92a60595210e1121835342d/22329ad6277f9e2ff6b8514e1130e924b999f325.jpg" alt="音乐乐理基础">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/post/8867a8f4/" target="_self">
+          音乐乐理基础
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/post/8867a8f4/" target="_self">
+          
+          
+            
+          
+          因为要学吉他所以学了点基础乐理，看的是 音乐理论基础—李重光，就着 红色激情的视频。
+这里放放我记的笔记。想全屏看pdf的话 链接在这。
+
+ 
+
+	
+    
+	
+
+
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-07 14:40" pubdate>
+              2021-09-07
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E4%B9%90%E7%90%86/">乐理</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/post/22dee00c/" target="_self">
+          <img src="https://imgsa.baidu.com/forum/w%3D580/sign=713ac8334da98226b8c12b2fba83b97a/52b9a7a1cd11728bddeec664c6fcc3cec1fd2cea.jpg" alt="Windows 软件推荐｜持续更新">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/post/22dee00c/" target="_self">
+          Windows 软件推荐｜持续更新
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/post/22dee00c/" target="_self">
+          
+          
+            
+          
+          最近我铁子也从 Mac 换成 Windows 了，因为我当时换的时候还是花了点时间适应的，寻思可以水写一篇哈哈
+推荐的软件主要包含了「帮助适应从 Mac 转到 Windows 的软件」和「普通但是在 Windows 上贼好用的软件」
+每个软件我都会附上官网链接，买或者找破解版什么的自己选择。
+以后新遇到好用的软件我会更新。
+
+1、Drawboard PDFDrawboard: Easier PDF
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-08-12 23:47" pubdate>
+              2021-08-12
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/">杂七杂八</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/post/38733/" target="_self">
+          <img src="https://imgsa.baidu.com/forum/w%3D580/sign=53fe0d516cd0f703e6b295d438fb5148/27b656fbfbedab64daa21686f936afc37b311ed9.jpg" alt="Java Server and Client 实现聊天室">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/post/38733/" target="_self">
+          Java Server and Client 实现聊天室
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/post/38733/" target="_self">
+          
+          
+            
+          
+          cs的作业，这里放一下吧。肝了两天两夜，要写吐了。
+用java socket实现简易聊天室， 因为server端不是我写的，我就发下client端的.
+这是几个截图:
+
+下面是源码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-14 20:49" pubdate>
+              2020-12-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/RHHS/">RHHS</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/java/">java</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/post/61834/" target="_self">
+          <img src="https://imgsa.baidu.com/forum/w%3D580/sign=73832ca983b1cb133e693c1bed5556da/784baf119313b07e8dab174e02d7912396dd8c9f.jpg" alt="Hexo 迁移｜mac 到 windows">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/post/61834/" target="_self">
+          Hexo 迁移｜mac 到 windows
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/post/61834/" target="_self">
+          
+          
+            
+          
+          最近换电脑了嘛，就想着得把博客搬到这个电脑上，网上找了找，都是windows迁到mac上的，完全没有从mac到win的。。windows现在已经这么过气了吗？泪目
+既然这样我就写一下步骤吧，虽然其实和别的系统差不多，但是毕竟我还是遇到了蛮多坑的。
+
+在旧电脑（mac）上应该做的事搞个u盘或者之类的东西，把以下这些文件复制一下
+
+source(文件夹)
+themes/主题文件
+_config.yml
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-27 17:19" pubdate>
+              2020-11-27
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">Hexo</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/post/3587/" target="_self">
+          <img src="https://imgsa.baidu.com/forum/w%3D580/sign=40a40a868c025aafd3327ec3cbecab8d/c28d8a0a304e251f047da8bea986c9177e3e5323.jpg" alt="Grade 12 Chemistry（窗了）">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/post/3587/" target="_self">
+          Grade 12 Chemistry（窗了）
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/post/3587/" target="_self">
+          
+          
+            
+          
+          懒得写了，遛了遛了
+
+A note for my grade 12 chem class.
+因为这学科太tm恶心了，我怕我不认真搞会凉所以专门弄一篇呜呜呜
+Grade 9-11 ReviewSignificant digitAdding and Subtracting小数点最少的那个
+Multiplying and Dividingsignificant digit最少的那个
+Nomenclatu
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-10 15:54" pubdate>
+              2020-09-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/RHHS/">RHHS</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/post/17599/" target="_self">
+          <img src="https://imgsa.baidu.com/forum/w%3D580/sign=a25200b935c79f3d8fe1e4388aa0cdbc/cc7bc8628535e5dd8c7ee09978c6a7efcf1b625b.jpg" alt="好用的油猴脚本推荐｜持续更新">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/post/17599/" target="_self">
+          好用的油猴脚本推荐｜持续更新
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/post/17599/" target="_self">
+          
+          
+            
+          
+          惊闻Edge出了新版，火速去试了试，没想到比safari和chrome好用了不止一点。立马转战Edge。重新下插件的时候正好又看了看油猴脚本，就想着最近反正也不咋更新了，要不就出一期油猴脚本的推荐（会持续更新）。
+因为到现在百度还没收录我的网址，所以这次就不迫害百度了。
+一、Search By ImageSearch By Image
+以图搜图
+按住ctrl键，同时点击右键，即可选择要用的搜图引擎
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-02 01:58" pubdate>
+              2020-09-02
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/">杂七杂八</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/post/10412/" target="_self">
+          <img src="https://imgsa.baidu.com/forum/w%3D580/sign=dca37b23bd19ebc4c0787691b227cf79/b87e823df8dcd1001f33bc677c8b4710b8122f06.jpg" alt="图｜Graph">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/post/10412/" target="_self">
+          图｜Graph
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/post/10412/" target="_self">
+          
+          
+            
+          
+          这是在看b站上的韩顺平老师的数据结构与算法[1]时做的笔记。等我把后面的都更新完了以后会陆续把前面的补上。
+
+一、基本介绍为什么要有图
+前面我们学了线性表和树
+线性表局限于一个前驱和一个后继的关系
+树也只能有一个直接前驱也就是父结点
+当我们需要表示多对多的关系时，这里我们就用到了图图是一种数据结构，其中结点可以具有零个或者多个相邻元素。两个结点直接的链接称为边。结点也可以称为顶点。如图：
+
+二、常
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-16 21:40" pubdate>
+              2020-08-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/">数据结构与算法｜Data Structures and Algorithms</a>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/%E5%9B%BE%EF%BD%9CGraph/">图｜Graph</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/java/">java</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/post/35477/" target="_self">
+          <img src="https://imgsa.baidu.com/forum/w%3D580/sign=8568e233d888d43ff0a991fa4d1fd2aa/0fed89eef01f3a29549e90889725bc315d607c5f.jpg" alt="多路查找树｜Multi-Way Search Tree">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/post/35477/" target="_self">
+          多路查找树｜Multi-Way Search Tree
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/post/35477/" target="_self">
+          
+          
+            
+          
+          这是在看b站上的韩顺平老师的数据结构与算法[1]时做的笔记。等我把后面的都更新完了以后会陆续把前面的补上。
+
+一、二叉树的问题分析二叉树的操作效率较高，但是也存在在一些问题，请看下面的二叉树
+
+这是一颗 满二叉树，即它的高度有: $2^n-1 → 2^{5}-1→31$
+二叉树需要加载到内存，如果二叉树的结点少，没有问题，但是如果二叉树的结点很多（比如1亿），就存在如下问题：
+
+
+在构建二叉树时，
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-14 23:53" pubdate>
+              2020-08-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/">数据结构与算法｜Data Structures and Algorithms</a>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/%E5%A4%9A%E8%B7%AF%E6%9F%A5%E6%89%BE%E6%A0%91%EF%BD%9CMulti-Way-Search-Tree/">多路查找树｜Multi-Way Search Tree</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/java/">java</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/post/8178/" target="_self">
+          <img src="https://imgsa.baidu.com/forum/w%3D580/sign=a1c9cad7c311728b302d8c2af8fdc3b3/13566bc6a7efce1beddf8d8ca151f3deb58f653d.jpg" alt="平衡二叉树｜AVL Tree">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/post/8178/" target="_self">
+          平衡二叉树｜AVL Tree
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/post/8178/" target="_self">
+          
+          
+            
+          
+          这是在看b站上的韩顺平老师的数据结构与算法[1]时做的笔记。等我把后面的都更新完了以后会陆续把前面的补上。
+
+一、实际案例给你一个数列 {1, 2, 3, 4, 5, 6}，要求创建一颗二叉排序树（BST），并分析问题所在。
+问题分析：
+
+左子树全部为空，从形式上看，更像一个单链表
+插入速度没有影响
+查询速度明显降低（因为需要依次比较），不能发挥BST的优势，因为每次还需要比较左子树，其查询速度比
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-08 16:13" pubdate>
+              2020-08-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/">数据结构与算法｜Data Structures and Algorithms</a>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/%E6%A0%91%E7%BB%93%E6%9E%84%E7%9A%84%E5%BA%94%E7%94%A8%EF%BD%9CApplication-of-Tree-Structures/">树结构的应用｜Application of Tree Structures</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/java/">java</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+    <div class="footer-content">
+
+        <div>
+            <span id="timeDate">正在烧脑计算建站时间...</span>
+            <span id="times"></span>
+            <script>
+                var now = new Date();
+
+                function createtime() {
+                    var grt = new Date("08/04/2020 00:00:00"); //此处修改你的建站时间或者网站上线时间
+                    now.setTime(now.getTime() + 250);
+                    days = (now - grt) / 1000 / 60 / 60 / 24;
+                    dnum = Math.floor(days);
+                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                    hnum = Math.floor(hours);
+                    if (String(hnum).length == 1) {
+                        hnum = "0" + hnum;
+                    }
+                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes);
+                    if (String(mnum).length == 1) {
+                        mnum = "0" + mnum;
+                    }
+                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds);
+                    if (String(snum).length == 1) {
+                        snum = "0" + snum;
+                    }
+                    document.getElementById("timeDate").innerHTML = "本站已在互联网中成功苟了&nbsp" + dnum + "&nbsp天";
+                    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+                }
+                setInterval("createtime()", 250);
+            </script>
+        </div>
+           <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-gitlab-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+
+            <!-- <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div> -->
+            
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访问数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+                
+
+                    
+
+                            <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+                            <script>
+                                getCDNinfo = function() {
+                                    $.ajax({
+                                        url: "https://gadgets.shiksha/cdn-cgi/trace",
+                                        success: function(data, status) {
+                                            let areas = "Antananarivo, Madagascar - (TNR);Cape Town, South Africa - (CPT);Casablanca, Morocco - (CMN);Dar Es Salaam, Tanzania - (DAR);Djibouti City, Djibouti - (JIB);Durban, South Africa - (DUR);Johannesburg, South Africa - (JNB);Kigali, Rwanda - (KGL);Lagos, Nigeria - (LOS);Luanda, Angola - (LAD);Maputo, MZ - (MPM);Mombasa, Kenya - (MBA);Port Louis, Mauritius - (MRU);Réunion, France - (RUN);Bangalore, India - (BLR);Bangkok, Thailand - (BKK);Bandar Seri Begawan, Brunei - (BWN);Cebu, Philippines - (CEB);Chengdu, China - (CTU);Chennai, India - (MAA);Chittagong, Bangladesh - (CGP);Chongqing, China - (CKG);Colombo, Sri Lanka - (CMB);Dhaka, Bangladesh - (DAC);Dongguan, China - (SZX);Foshan, China - (FUO);Fuzhou, China - (FOC);Guangzhou, China - (CAN);Hangzhou, China - (HGH);Hanoi, Vietnam - (HAN);Hengyang, China - (HNY);Ho Chi Minh City, Vietnam - (SGN);Hong Kong - (HKG);Hyderabad, India - (HYD);Islamabad, Pakistan - (ISB);Jakarta, Indonesia - (CGK);Jinan, China - (TNA);Karachi, Pakistan - (KHI);Kathmandu, Nepal - (KTM);Kolkata, India - (CCU);Kuala Lumpur, Malaysia - (KUL);Lahore, Pakistan - (LHE);Langfang, China - (NAY);Luoyang, China - (LYA);Macau - (MFM);Malé, Maldives - (MLE);Manila, Philippines - (MNL);Mumbai, India - (BOM);Nagpur, India - (NAG);Nanning, China - (NNG);New Delhi, India - (DEL);Osaka, Japan - (KIX);Phnom Penh, Cambodia - (PNH);Qingdao, China - (TAO);Seoul, South Korea - (ICN);Shanghai, China - (SHA);Shenyang, China - (SHE);Shijiazhuang, China - (SJW);Singapore, Singapore - (SIN);Suzhou, China - (SZV);Taipei - (TPE);Thimphu, Bhutan - (PBH);Tianjin, China - (TSN);Tokyo, Japan - (NRT);Ulaanbaatar, Mongolia - (ULN);Vientiane, Laos - (VTE);Wuhan, China - (WUH);Wuxi, China - (WUX);Xi'an, China - (XIY);Yerevan, Armenia - (EVN);Zhengzhou, China - (CGO);Zuzhou, China - (CSX);Amsterdam, Netherlands - (AMS);Athens, Greece - (ATH);Barcelona, Spain - (BCN);Belgrade, Serbia - (BEG);Berlin, Germany - (TXL);Brussels, Belgium - (BRU);Bucharest, Romania - (OTP);Budapest, Hungary - (BUD);Chișinău, Moldova - (KIV);Copenhagen, Denmark - (CPH);Cork, Ireland -  (ORK);Dublin, Ireland - (DUB);Düsseldorf, Germany - (DUS);Edinburgh, United Kingdom - (EDI);Frankfurt, Germany - (FRA);Geneva, Switzerland - (GVA);Gothenburg, Sweden - (GOT);Hamburg, Germany - (HAM);Helsinki, Finland - (HEL);Istanbul, Turkey - (IST);Kyiv, Ukraine - (KBP);Lisbon, Portugal - (LIS);London, United Kingdom - (LHR);Luxembourg City, Luxembourg - (LUX);Madrid, Spain - (MAD);Manchester, United Kingdom - (MAN);Marseille, France - (MRS);Milan, Italy - (MXP);Moscow, Russia - (DME);Munich, Germany - (MUC);Nicosia, Cyprus - (LCA);Oslo, Norway - (OSL);Paris, France - (CDG);Prague, Czech Republic - (PRG);Reykjavík, Iceland - (KEF);Riga, Latvia - (RIX);Rome, Italy - (FCO);Saint Petersburg, Russia - (LED);Sofia, Bulgaria - (SOF);Stockholm, Sweden - (ARN);Tallinn, Estonia - (TLL);Thessaloniki, Greece - (SKG);Vienna, Austria - (VIE);Vilnius, Lithuania - (VNO);Warsaw, Poland - (WAW);Zagreb, Croatia - (ZAG);Zürich, Switzerland - (ZRH);Arica, Chile - (ARI);Asunción, Paraguay - (ASU);Bogotá, Colombia - (BOG);Buenos Aires, Argentina - (EZE);Curitiba, Brazil - (CWB);Fortaleza, Brazil - (FOR);Guatemala City, Guatemala - (GUA);Lima, Peru - (LIM);Medellín, Colombia - (MDE);Panama City, Panama - (PTY);Porto Alegre, Brazil - (POA);Quito, Ecuador - (UIO);Rio de Janeiro, Brazil - (GIG);São Paulo, Brazil - (GRU);Santiago, Chile - (SCL);Willemstad, Curaçao - (CUR);St. George's, Grenada - (GND);Amman, Jordan - (AMM);Baghdad, Iraq - (BGW);Baku, Azerbaijan - (GYD);Beirut, Lebanon - (BEY);Doha, Qatar - (DOH);Dubai, United Arab Emirates - (DXB);Kuwait City, Kuwait - (KWI);Manama, Bahrain - (BAH);Muscat, Oman - (MCT);Ramallah - (ZDM);Riyadh, Saudi Arabia - (RUH);Tel Aviv, Israel - (TLV);Ashburn, VA, United States - (IAD);Atlanta, GA, United States - (ATL);Boston, MA, United States - (BOS);Buffalo, NY, United States - (BUF);Calgary, AB, Canada - (YYC);Charlotte, NC, United States - (CLT);Chicago, IL, United States - (ORD);Columbus, OH, United States - (CMH);Dallas, TX, United States - (DFW);Denver, CO, United States - (DEN);Detroit, MI, United States - (DTW);Honolulu, HI, United States - (HNL);Houston, TX, United States - (IAH);Indianapolis, IN, United States - (IND);Jacksonville, FL, United States - (JAX);Kansas City, MO, United States - (MCI);Las Vegas, NV, United States - (LAS);Los Angeles, CA, United States - (LAX);McAllen, TX, United States - (MFE);Memphis, TN, United States - (MEM);Mexico City, Mexico - (MEX);Miami, FL, United States - (MIA);Minneapolis, MN, United States - (MSP);Montgomery, AL, United States - (MGM);Montréal, QC, Canada - (YUL);Nashville, TN, United States - (BNA);Newark, NJ, United States - (EWR);Norfolk, VA, United States - (ORF);Omaha, NE, United States - (OMA);Philadelphia, United States - (PHL);Phoenix, AZ, United States - (PHX);Pittsburgh, PA, United States - (PIT);Port-Au-Prince, Haiti - (PAP);Portland, OR, United States - (PDX);Queretaro, MX, Mexico - (QRO);Richmond, Virginia - (RIC);Sacramento, CA, United States - (SMF);Salt Lake City, UT, United States - (SLC);San Diego, CA, United States - (SAN);San Jose, CA, United States - (SJC);Saskatoon, SK, Canada - (YXE);Seattle, WA, United States - (SEA);St. Louis, MO, United States - (STL);Tampa, FL, United States - (TPA);Toronto, ON, Canada - (YYZ);Vancouver, BC, Canada - (YVR);Tallahassee, FL, United States - (TLH);Winnipeg, MB, Canada - (YWG);Adelaide, SA, Australia - (ADL);Auckland, New Zealand - (AKL);Brisbane, QLD, Australia - (BNE);Melbourne, VIC, Australia - (MEL);Noumea, New caledonia - (NOU);Perth, WA, Australia - (PER);Sydney, NSW, Australia - (SYD)".split(";");
+                                            let area = data.split("colo=")[1].split("\n")[0];
+                                            for (var i = 0; i < areas.length; i++) {
+                                                if (areas[i].indexOf(area) != -1) {
+                                                    document.getElementById("cdn").innerHTML = areas[i];
+                                                    document.getElementById("ip").innerHTML = data.split("ip=")[1].split("\n")[0];
+                                                    // document.getElementById("httpos").innerHTML = data.split("visit_scheme=")[1].split("\n")[0];
+                                                    // document.getElementById("uag").innerHTML = data.split("uag=")[1].split("\n")[0];
+                                                    // document.getElementById("http").innerHTML = data.split("http=")[1].split("\n")[0];
+                                                    document.getElementById("loc").innerHTML = data.split("loc=")[1].split("\n")[0];
+                                                    // document.getElementById("tls").innerHTML = data.split("tls=")[1].split("\n")[0];
+                                                    // document.getElementById("warp").innerHTML = data.split("warp=")[1].split("\n")[0];
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    })
+                                }
+                                $(document).ready(function() {
+                                    getCDNinfo();
+                                    //页面加载完毕就获取CDN信息
+                                });
+                            </script>
+
+                            <p>
+                                当前CDN节点: <span id="cdn">【希腊奶】</span> | 你的ip: <span id="ip">【希腊奶】</span> | 你的所在国家/地区: <span id="loc">【希腊奶】 </span>
+
+                                <br>
+
+                                <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20211001" target="_blank"> 20211001号</a>
+                            </p>
+                            <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=n&d=UcxdrvS_dG9ALI85fIcJskXg_hYsNi47T6wsr7OFVzo&co=7089a3&cmo=ffd099&cmn=ff7269&ct=ffffff'></script>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访问数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+        
+
+            
+</footer>
+
+<script src="https://cdn.jsdelivr.net/gh/suyin-long/activate-power-mode@1.0/dist/activate-power-mode.js"></script>
+<script>
+    POWERMODE.colorful = true; // make power mode colorful
+    POWERMODE.shake = false; // turn off shake
+    document.body.addEventListener('input', POWERMODE);
+</script>
+
+  
+
+    <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+        <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+            <script  src="/js/events.js" ></script>
+                <script  src="/js/plugins.js" ></script>
+
+                    <!-- Plugins -->
+
+                    
+                        
+                            
+                                        
+                                                    
+
+                                                        
+                                                            
+                                                                                                
+
+                                                                                                    
+
+                                                                                                                
+
+                                                                                                                            
+
+                                                                                                                                        
+                                                                                                                                            <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+                                                                                                                                                
+
+                                                                                                                                                    
+                                                                                                                                                        <script  src="/js/local-search.js" ></script>
+                                                                                                                                                            
+
+                                                                                                                                                                
+                                                                                                                                                                            
+                                                                                                                                                                                <script defer src="/js/leancloud.js" ></script>
+                                                                                                                                                                                    
+
+                                                                                                                                                                                                
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+                                                                                                                                                                                                    
+
+
+
+                                                                                                                                                                                                        
+
+
+
+                                                                                                                                                                                                            
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?919ac0fb0118c0ba89724ba53e0f3547";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'UA-177561089-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+                                                                                                                                                                                                                
+
+                                                                                                                                                                                                                            <!-- 主题的启动项 保持在最底部 -->
+                                                                                                                                                                                                                            <script  src="/js/boot.js" ></script>
+  
+  <!--浏览器搞笑标题-->
+  <script type="text/javascript" src="/js/FunnyTitle.js"></script>
+  <script typr="text/javascript">
+    console.log("%c▄▄▄█████▓ ██▀███   ▒█████  ▄▄▄█████▓▓██   ██▓ ██▓    \n▓  ██▒ ▓▒▓██ ▒ ██▒▒██▒  ██▒▓  ██▒ ▓▒ ▒██  ██▒▓██▒    \n▒ ▓██░ ▒░▓██ ░▄█ ▒▒██░  ██▒▒ ▓██░ ▒░  ▒██ ██░▒██░    \n░ ▓██▓ ░ ▒██▀▀█▄  ▒██   ██░░ ▓██▓ ░   ░ ▐██▓░▒██░    \n  ▒██▒ ░ ░██▓ ▒██▒░ ████▓▒░  ▒██▒ ░   ░ ██▒▓░░██████▒\n  ▒ ░░   ░ ▒▓ ░▒▓░░ ▒░▒░▒░   ▒ ░░      ██▒▒▒ ░ ▒░▓  ░\n    ░      ░▒ ░ ▒░  ░ ▒ ▒░     ░     ▓██ ░▒░ ░ ░ ▒  ░\n  ░        ░░   ░ ░ ░ ░ ▒    ░       ▒ ▒ ░░    ░ ░   \n            ░         ░ ░            ░ ░         ░  ░\n                                     ░ ░             \n","color: #7089A3;")
+  </script>
+  <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+  <script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
+
+<!-- hexo injector body_end start -->
+<script type="text/javascript">
+  //定义获取词语下标
+  var a_idx = 0;
+  jQuery(document).ready(function ($) {
+    //点击body时触发事件
+    $("body").click(function (e) {
+      //需要显示的词语
+      var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+      //设置词语给span标签
+      var $i = $("<span/>").text(a[a_idx]);
+      //下标等于原来下标+1  余 词语总数
+      a_idx = (a_idx + 1) % a.length;
+      //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+      //获取x和y的指针坐标
+      var x = e.pageX, y = e.pageY;
+      //在鼠标的指针的位置给$i定义的span标签添加css样式
+      $i.css({
+        "z-index": 999,
+        "top": y - 20,
+        "left": x,
+        "position": "absolute",
+        "font-weight": "bold",
+        "color": rand_color()
+      });
+      // 随机颜色
+      function rand_color() {
+        return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+      }
+      //在body添加这个标签
+      $("body").append($i);
+      //animate() 方法执行 CSS 属性集的自定义动画。
+      //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+      //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+      $i.animate({
+        //将原来的位置向上移动180
+        "top": y - 180,
+        "opacity": 0
+        //1500动画的速度
+      }, 1500, function () {
+        //时间到了自动删除
+        $i.remove();
+      });
+    });
+  })
+  ;
+</script>
+
+  <div id="aplayer"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/aplayer.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/lambda.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
+</html>

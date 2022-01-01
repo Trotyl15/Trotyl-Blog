@@ -1,0 +1,829 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+        <link rel="icon" href="/img/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+        <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+        <style>
+            .pace .pace-progress {
+                background: #FFAA8D;
+                /*进度条颜色*/
+                height: 3px;
+            }
+            
+            .pace .pace-progress-inner {
+                box-shadow: 0 0 10px #FFAA8D, 0 0 5px #FFAA8D;
+                /*阴影颜色*/
+            }
+            
+            .pace .pace-activity {
+                border-top-color: #FFAA8D;
+                /*上边框颜色*/
+                border-left-color: #FFAA8D;
+                /*左边框颜色*/
+            }
+        </style>
+        
+                <meta name="theme-color" content="#2f4154">
+                <meta name="description" content="一个小博客">
+                <meta name="author" content="Trotyl">
+                <meta name="keywords" content="">
+                
+                            <title>
+                                二叉排序树｜Binary Sort Tree - Trotyl&#39;s Blog
+                            </title>
+
+                            <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+                                <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.trotyl.xyz","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":false,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"header":""},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true},"web_analytics":{"enable":true,"baidu":"919ac0fb0118c0ba89724ba53e0f3547","google":"UA-177561089-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"zcL2DBnP3JIFC9a8HE5uYMfm-MdYXbMMI","app_key":"fRsoWUTEoES4QglVrH0chpxV","server_url":null},"tajs":null},"search_path":"/local-search.xml"};
+  </script>
+                                    <script  src="/js/utils.js" ></script>
+                                        <script  src="/js/color-schema.js" ></script>
+
+                                        
+    <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Trotyl's Blog" type="application/atom+xml">
+</head>
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <strong>Trotyl</strong>
+        </a>
+
+        <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto text-center">
+                
+                    
+                        
+                            
+                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+                                        </li>
+                                        
+                                            
+                    
+                        
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-bookmark"></i>
+                Posts
+              </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/archives/">
+                    <i class="iconfont icon-archive-fill"></i>
+                    Archives
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/categories/">
+                    <i class="iconfont icon-category-fill"></i>
+                    Categories
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    Tags
+                  </a>
+                                                            
+                                        </div>
+                                    </li>
+                                    
+                                            
+                    
+                        
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Pages
+              </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/comment/">
+                    <i class="iconfont icon-addrcard"></i>
+                    留言板
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/shuoshuo/">
+                    <i class="iconfont icon-speakernotes"></i>
+                    碎碎念
+                  </a>
+                                                            
+                                        </div>
+                                    </li>
+                                    
+                                            
+                    
+                        
+                            
+                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+                                        </li>
+                                        
+                                            
+                                                
+                                                    <li class="nav-item" id="search-btn">
+                                                        <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+                                                    </li>
+                                                    
+                                                        
+                                                            <li class="nav-item" id="color-toggle-btn">
+                                                                <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+                                                            </li>
+                                                            
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="二叉排序树｜Binary Sort Tree">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-08-07 11:32" pubdate>
+        August 7, 2020 11:32 AM
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">二叉排序树｜Binary Sort Tree</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：December 21, 2021 10:28 PM
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>这是在看b站上的韩顺平老师的数据结构与算法<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="尚硅谷Java数据结构与java算法，韩顺平数据结构与算法
+">[1]</span></a></sup>时做的笔记。等我把后面的都更新完了以后会陆续把前面的补上。</p>
+<hr>
+<h1 id="一、实际案例"><a href="#一、实际案例" class="headerlink" title="一、实际案例"></a>一、实际案例</h1><p>给你一个数列（7，3，10，12，5，1，9）要求能够高效地完成对数组的查找与添加</p>
+<h1 id="二、解决方案"><a href="#二、解决方案" class="headerlink" title="二、解决方案"></a>二、解决方案</h1><ul>
+<li>使用数组｜ArrayList<ol>
+<li>数组未排序时：<ul>
+<li>优点：直接在尾部添加，速度快</li>
+<li>缺点：查找速度慢</li>
+</ul>
+</li>
+<li>数组排序时：<ul>
+<li>优点：用二分查找时，查找速度快</li>
+<li>缺点 ：为了保证数组有序，添加新数据时速度慢</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>链式存储-链表｜LinkedList<ul>
+<li>优点：添加数据速度比数组快，因为不需要整体移动</li>
+<li>缺点：查找速度慢</li>
+</ul>
+</li>
+<li>二叉排序树｜BST<ul>
+<li>增删改查效率都比较高</li>
+</ul>
+</li>
+</ul>
+<h1 id="三、基本介绍"><a href="#三、基本介绍" class="headerlink" title="三、基本介绍"></a>三、基本介绍</h1><p><a target="_blank" rel="noopener" href="http://btv.melezinek.cz/binary-search-tree.html">一个很好用的BST的可视化网站</a></p>
+<p>二叉排序树：BST(Binary Sort(Search) Tree)， 对于它的任何一个非叶子结点｜leaf node，要求左子结点的值比当前结点的值小，有子结点的值比当前结点的值大。</p>
+<p>特别说明：如有相同的值，可以将该结点放在左子结点或右子结点（最好避免相同的值）</p>
+<h1 id="四、构建BST"><a href="#四、构建BST" class="headerlink" title="四、构建BST"></a>四、构建BST</h1><p>针对前面的数据（7，3，10，12，5，1，9），对应的二叉排序树为：</p>
+<center>
+
+![](https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&a/BST.png)
+</center>
+
+<p>当插入结点“2”时，“2”应该放在“1”的右子结点</p>
+<h1 id="五、删除结点的思路"><a href="#五、删除结点的思路" class="headerlink" title="五、删除结点的思路"></a>五、删除结点的思路</h1><h2 id="第一种情况"><a href="#第一种情况" class="headerlink" title="第一种情况"></a>第一种情况</h2><h3 id="——删除叶子结点（如：2，5，9，12）"><a href="#——删除叶子结点（如：2，5，9，12）" class="headerlink" title="——删除叶子结点（如：2，5，9，12）"></a>——删除叶子结点（如：2，5，9，12）</h3><p>1） 定位结点 targetNode</p>
+<p>2）找到targetNode的父结点 parent</p>
+<p>3）确定targetNode是parent的左子结点还是右子结点</p>
+<p>4）根据前面的情况对应删除</p>
+<p>左子结点：<code>parent.left = null</code>;</p>
+<p>右子结点：<code>parent.right = =null</code>;</p>
+<h2 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h2><h3 id="——删除只有一颗子树的结点（如：1）"><a href="#——删除只有一颗子树的结点（如：1）" class="headerlink" title="——删除只有一颗子树的结点（如：1）"></a>——删除只有一颗子树的结点（如：1）</h3><p>1） 定位结点 targetNode</p>
+<p>2）找到targetNode的父结点 parent</p>
+<p>3）确定targetNode的子结点是左结点还是右子结点</p>
+<ul>
+<li>如果targetNode有左子结点    <ol>
+<li>targetNode是parent的左子结点<br><code>parent.left = targetNode.left ;</code></li>
+<li>targetNode是parent的右子结点<br><code>parent.right = targetNode.left ;</code></li>
+</ol>
+</li>
+<li>如果targetNode有右子结点<ol>
+<li>targetNode是parent的左子结点<br><code>parent.left = targetNode.right ;</code></li>
+<li>targetNode是parent的右子结点<br><code>parent.right = targetNode.right ;</code></li>
+</ol>
+</li>
+</ul>
+<h2 id="第三种情况"><a href="#第三种情况" class="headerlink" title="第三种情况"></a>第三种情况</h2><h3 id="——删除有两颗子树的结点（如：7，3，10）"><a href="#——删除有两颗子树的结点（如：7，3，10）" class="headerlink" title="——删除有两颗子树的结点（如：7，3，10）"></a>——删除有两颗子树的结点（如：7，3，10）</h3><ul>
+<li>这里用“10”举例，并且假设“12”下面还有两个子结点</li>
+</ul>
+<p>1） 定位结点 targetNode</p>
+<p>2）找到targetNode的父结点 parent</p>
+<p>3）从targetNode的右子树找到最小的结点</p>
+<p>4）用一个临时变量，将右子树最小的结点值保存 temp = 12</p>
+<p>5）删除该最小结点</p>
+<p>6）<code>targetNode.value = temp;</code>    </p>
+<p><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/BST2.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><del>容我说一句：妙啊！</del></p>
+<h1 id="六、代码实现"><a href="#六、代码实现" class="headerlink" title="六、代码实现"></a>六、代码实现</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BinarySortTreeDemo</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">main</span>(<span class="hljs-params"><span class="hljs-built_in">String</span>[] args</span>)</span> &#123;<br>        int[] arr = &#123; <span class="hljs-number">7</span>, <span class="hljs-number">3</span>, <span class="hljs-number">10</span>, <span class="hljs-number">12</span>, <span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">9</span>, <span class="hljs-number">2</span> &#125;;<br>        BinarySortTree binarySortTree = <span class="hljs-keyword">new</span> BinarySortTree();<br>        <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) &#123;<br>            binarySortTree.add(<span class="hljs-keyword">new</span> Node(arr[i]));<br>        &#125;<br>        binarySortTree.infixOrder();<span class="hljs-comment">// 1, 2, 3, 5, 7, 9, 10, 12</span><br>		binarySortTree.delNode(<span class="hljs-number">2</span>);<br>		binarySortTree.delNode(<span class="hljs-number">5</span>);<br>		binarySortTree.delNode(<span class="hljs-number">9</span>);<br>		binarySortTree.delNode(<span class="hljs-number">12</span>);<br>		binarySortTree.delNode(<span class="hljs-number">7</span>);<br>		binarySortTree.delNode(<span class="hljs-number">3</span>);<br>		binarySortTree.delNode(<span class="hljs-number">10</span>);<br>		System.out.println(<span class="hljs-string">&quot;After:&quot;</span>);<br>		binarySortTree.infixOrder();<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 创建树</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BinarySortTree</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> Node root;<br><br>    <span class="hljs-keyword">public</span> Node <span class="hljs-function"><span class="hljs-title">search</span>(<span class="hljs-params">int value</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span> root.search(value);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> Node <span class="hljs-function"><span class="hljs-title">searchParent</span>(<span class="hljs-params">int value</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span> root.searchParent(value);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> int <span class="hljs-function"><span class="hljs-title">delRightTreeMin</span>(<span class="hljs-params">Node node</span>)</span> &#123;<br>        Node target = node;<br>        <span class="hljs-keyword">while</span> (target.left != <span class="hljs-literal">null</span>) &#123;<br>            target = target.left;<br>        &#125;<br><br>        delNode(target.value);<br>        <span class="hljs-keyword">return</span> target.value;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">delNode</span>(<span class="hljs-params">int value</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            Node targetNode = search(value);<br>            <span class="hljs-keyword">if</span> (targetNode == <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-keyword">return</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (root.left == <span class="hljs-literal">null</span> &amp;&amp; root.right == <span class="hljs-literal">null</span>) &#123;<br>                root = <span class="hljs-literal">null</span>;<br>                <span class="hljs-keyword">return</span>;<br>            &#125;<br>            Node parent = searchParent(value);<br>            <span class="hljs-keyword">if</span> (targetNode.left == <span class="hljs-literal">null</span> &amp;&amp; targetNode.right == <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-keyword">if</span> (parent.left != <span class="hljs-literal">null</span> &amp;&amp; parent.left.value == value) &#123;<br>                    parent.left = <span class="hljs-literal">null</span>;<br>                &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (parent.right != <span class="hljs-literal">null</span> &amp;&amp; parent.right.value == value) &#123;<br>                    parent.right = <span class="hljs-literal">null</span>;<br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (targetNode.left != <span class="hljs-literal">null</span> &amp;&amp; targetNode.right != <span class="hljs-literal">null</span>) &#123;<br>                int minVal = delRightTreeMin(targetNode.right);<br>                targetNode.value = minVal;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span> (targetNode.left != <span class="hljs-literal">null</span>) &#123;<br>                    <span class="hljs-keyword">if</span> (parent != <span class="hljs-literal">null</span>) &#123;<br>                        <span class="hljs-keyword">if</span> (parent.left.value == value) &#123;<br>                            parent.left = targetNode.left;<br>                        &#125; <span class="hljs-keyword">else</span> &#123;<br>                            parent.right = targetNode.left;<br>                        &#125;<br>                    &#125; <span class="hljs-keyword">else</span> &#123;<br>                        root = targetNode.left;<br>                    &#125;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-keyword">if</span> (parent != <span class="hljs-literal">null</span>) &#123;<br>                        <span class="hljs-keyword">if</span> (parent.left.value == value) &#123;<br>                            parent.left = targetNode.right;<br>                        &#125; <span class="hljs-keyword">else</span> &#123;<br>                            parent.right = targetNode.right;<br>                        &#125;<br>                    &#125; <span class="hljs-keyword">else</span> &#123;<br>                        root = targetNode.right;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">add</span>(<span class="hljs-params">Node node</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) &#123;<span class="hljs-comment">// 如果是空树，直接让root指向node</span><br>            root = node;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            root.add(node);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 中序遍历</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">infixOrder</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root != <span class="hljs-literal">null</span>) &#123;<br>            root.infixOrder();<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;Tree is Empty.&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 创建Node节点</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>&#123;<br>    int value;<br>    Node left;<br>    Node right;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-title">Node</span>(<span class="hljs-params">int value</span>)</span> &#123;<br>        <span class="hljs-built_in">this</span>.value = value;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * </span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param </span>value 希望删除的值</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return </span>如果找到返回该结点，否则返回null</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> Node <span class="hljs-function"><span class="hljs-title">search</span>(<span class="hljs-params">int value</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> (value == <span class="hljs-built_in">this</span>.value) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (value &lt; <span class="hljs-built_in">this</span>.value) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left == <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>            &#125;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.left.search(value);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right == <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>            &#125;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.right.search(value);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> Node <span class="hljs-function"><span class="hljs-title">searchParent</span>(<span class="hljs-params">int value</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> ((<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span> &amp;&amp; <span class="hljs-built_in">this</span>.left.value == value) || (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span> &amp;&amp; <span class="hljs-built_in">this</span>.right.value == value)) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">if</span> (value &lt; <span class="hljs-built_in">this</span>.value &amp;&amp; <span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.left.searchParent(value);<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (value &gt;= <span class="hljs-built_in">this</span>.value &amp;&amp; <span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.right.searchParent(value);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>            &#125;<br>        &#125;<br><br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">String</span> <span class="hljs-function"><span class="hljs-title">toString</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Node [value=&quot;</span> + value + <span class="hljs-string">&quot;]&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-comment">// 添加节点</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">add</span>(<span class="hljs-params">Node node</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> (node == <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (node.value &lt; <span class="hljs-built_in">this</span>.value) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left == <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-built_in">this</span>.left = node;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-built_in">this</span>.left.add(node);<span class="hljs-comment">// 递归</span><br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right == <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-built_in">this</span>.right = node;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-built_in">this</span>.right.add(node);<span class="hljs-comment">// 递归</span><br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 中序遍历</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">infixOrder</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-built_in">this</span>.left.infixOrder();<br>        &#125;<br>        System.out.println(<span class="hljs-built_in">this</span>);<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-built_in">this</span>.right.infixOrder();<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs crmsh"><span class="hljs-keyword">Node</span> <span class="hljs-title">[value</span>=<span class="hljs-number">1</span>]<br><span class="hljs-keyword">Node</span> <span class="hljs-title">[value</span>=<span class="hljs-number">2</span>]<br><span class="hljs-keyword">Node</span> <span class="hljs-title">[value</span>=<span class="hljs-number">3</span>]<br><span class="hljs-keyword">Node</span> <span class="hljs-title">[value</span>=<span class="hljs-number">5</span>]<br><span class="hljs-keyword">Node</span> <span class="hljs-title">[value</span>=<span class="hljs-number">7</span>]<br><span class="hljs-keyword">Node</span> <span class="hljs-title">[value</span>=<span class="hljs-number">9</span>]<br><span class="hljs-keyword">Node</span> <span class="hljs-title">[value</span>=<span class="hljs-number">10</span>]<br><span class="hljs-keyword">Node</span> <span class="hljs-title">[value</span>=<span class="hljs-number">12</span>]<br>After:<br><span class="hljs-keyword">Node</span> <span class="hljs-title">[value</span>=<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure>
+<hr>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1E4411H73v?p=127">尚硅谷Java数据结构与java算法，韩顺平数据结构与算法</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/">数据结构与算法｜Data Structures and Algorithms</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BD%9CData-Structures-and-Algorithms/%E6%A0%91%E7%BB%93%E6%9E%84%E7%9A%84%E5%BA%94%E7%94%A8%EF%BD%9CApplication-of-Tree-Structures/">树结构的应用｜Application of Tree Structures</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/java/">java</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/post/8178/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">平衡二叉树｜AVL Tree</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/63785/">
+                        <span class="hidden-mobile">我的第一篇博客</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('//blog.trotyl.xyz/js/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appid":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appkey":"WV76W9zkR1pcORcdd3UjPpKA","placeholder":"｜在上方留下你的邮箱，它不会被公开显示，收到回复的话会有邮件提醒&#10｜Leave your email above to get notifications for replies","path":"window.location.pathname","avatar":"robohash","meta":["nick","mail","link"],"pageSize":10,"lang":"en","highlight":true,"recordIP":true,"serverURLs":"https://cFjrGe19.api.lncldglobal.com","emojiMaps":{"tieba-1":"tieba/tieba-1.png","tieba-2":"tieba/tieba-2.png","tieba-3":"tieba/tieba-3.png","tieba-4":"tieba/tieba-4.png","tieba-5":"tieba/tieba-5.png","tieba-6":"tieba/tieba-6.png","tieba-7":"tieba/tieba-7.png","tieba-8":"tieba/tieba-8.png","tieba-9":"tieba/tieba-9.png","tieba-10":"tieba/tieba-10.png","tieba-11":"tieba/tieba-11.png","tieba-12":"tieba/tieba-12.png","tieba-13":"tieba/tieba-13.png","tieba-14":"tieba/tieba-14.png","tieba-15":"tieba/tieba-15.png","tieba-16":"tieba/tieba-16.png","tieba-17":"tieba/tieba-17.png","tieba-18":"tieba/tieba-18.png","tieba-19":"tieba/tieba-19.png","tieba-20":"tieba/tieba-20.png","tieba-21":"tieba/tieba-21.png","tieba-22":"tieba/tieba-22.png","tieba-23":"tieba/tieba-23.png","tieba-24":"tieba/tieba-24.png","tieba-25":"tieba/tieba-25.png","tieba-26":"tieba/tieba-26.png","tieba-27":"tieba/tieba-27.png","tieba-28":"tieba/tieba-28.png","tieba-29":"tieba/tieba-29.png","tieba-30":"tieba/tieba-30.png","tieba-31":"tieba/tieba-31.png","tieba-32":"tieba/tieba-32.png","tieba-33":"tieba/tieba-33.png","tieba-34":"tieba/tieba-34.png","tieba-35":"tieba/tieba-35.png","tieba-36":"tieba/tieba-36.png","tieba-37":"tieba/tieba-37.png","tieba-38":"tieba/tieba-38.png","tieba-39":"tieba/tieba-39.png","tieba-40":"tieba/tieba-40.png","tieba-41":"tieba/tieba-41.png","tieba-42":"tieba/tieba-42.png","tieba-43":"tieba/tieba-43.png","tieba-44":"tieba/tieba-44.png","tieba-45":"tieba/tieba-45.png","tieba-46":"tieba/tieba-46.png","tieba-47":"tieba/tieba-47.png","tieba-48":"tieba/tieba-48.png","tieba-49":"tieba/tieba-49.png","tieba-50":"tieba/tieba-50.png","tieba-51":"tieba/tieba-51.png","tieba-52":"tieba/tieba-52.png","tieba-56":"tieba/tieba-56.png","tieba-57":"tieba/tieba-57.png","tieba-59":"tieba/tieba-59.png","tieba-60":"tieba/tieba-60.png","tieba-61":"tieba/tieba-61.png","EveOneCat-1":"EveOneCat/EveOneCat_1.png","EveOneCat-2":"EveOneCat/EveOneCat_2.png","EveOneCat-3":"EveOneCat/EveOneCat_3.png","EveOneCat-4":"EveOneCat/EveOneCat_4.png","EveOneCat-5":"EveOneCat/EveOneCat_5.png","EveOneCat-6":"EveOneCat/EveOneCat_6.png","EveOneCat-7":"EveOneCat/EveOneCat_7.png","EveOneCat-8":"EveOneCat/EveOneCat_8.png","EveOneCat-9":"EveOneCat/EveOneCat_9.png","EveOneCat-10":"EveOneCat/EveOneCat_10.png","EveOneCat-11":"EveOneCat/EveOneCat_11.png","EveOneCat-12":"EveOneCat/EveOneCat_12.png","EveOneCat-13":"EveOneCat/EveOneCat_13.png","EveOneCat-14":"EveOneCat/EveOneCat_14.png","EveOneCat-15":"EveOneCat/EveOneCat_15.png","EveOneCat-16":"EveOneCat/EveOneCat_16.png","EveOneCat-17":"EveOneCat/EveOneCat_17.png","EveOneCat-18":"EveOneCat/EveOneCat_18.png","EveOneCat-19":"EveOneCat/EveOneCat_19.png","EveOneCat-20":"EveOneCat/EveOneCat_20.png","miharo-1":"miharo/miharo-1.png","miharo-2":"miharo/miharo-2.png","miharo-3":"miharo/miharo-3.png","miharo-4":"miharo/miharo-4.png","miharo-5":"miharo/miharo-5.png","miharo-6":"miharo/miharo-6.png","miharo-7":"miharo/miharo-7.png","miharo-8":"miharo/miharo-8.png","miharo-9":"miharo/miharo-9.png","miharo-10":"miharo/miharo-10.png","miharo-11":"miharo/miharo-11.png","miharo-12":"miharo/miharo-12.png","miharo-13":"miharo/miharo-13.png","miharo-14":"miharo/miharo-14.png","miharo-15":"miharo/miharo-15.png","miharo-16":"miharo/miharo-16.png","miharo-17":"miharo/miharo-17.png","miharo-18":"miharo/miharo-18.png","huaji-1":"huaji/huaji-1.png","huaji-2":"huaji/huaji-2.png","huaji-3":"huaji/huaji-3.png","huaji-4":"huaji/huaji-4.png","huaji-5":"huaji/huaji-5.png","huaji-6":"huaji/huaji-6.png","huaji-7":"huaji/huaji-7.png","huaji-8":"huaji/huaji-8.png","huaji-9":"huaji/huaji-9.png","huaji-10":"huaji/huaji-10.png","huaji-11":"huaji/huaji-11.png","huaji-12":"huaji/huaji-12.png","huaji-13":"huaji/huaji-13.png","huaji-14":"huaji/huaji-14.png","huaji-15":"huaji/huaji-15.gif"},"enableQQ":true,"requiredFields":[],"appId":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appKey":"WV76W9zkR1pcORcdd3UjPpKA","emojiCDN":"https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/emoji/"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+    <div class="footer-content">
+
+        <div>
+            <span id="timeDate">正在烧脑计算建站时间...</span>
+            <span id="times"></span>
+            <script>
+                var now = new Date();
+
+                function createtime() {
+                    var grt = new Date("08/04/2020 00:00:00"); //此处修改你的建站时间或者网站上线时间
+                    now.setTime(now.getTime() + 250);
+                    days = (now - grt) / 1000 / 60 / 60 / 24;
+                    dnum = Math.floor(days);
+                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                    hnum = Math.floor(hours);
+                    if (String(hnum).length == 1) {
+                        hnum = "0" + hnum;
+                    }
+                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes);
+                    if (String(mnum).length == 1) {
+                        mnum = "0" + mnum;
+                    }
+                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds);
+                    if (String(snum).length == 1) {
+                        snum = "0" + snum;
+                    }
+                    document.getElementById("timeDate").innerHTML = "本站已在互联网中成功苟了&nbsp" + dnum + "&nbsp天";
+                    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+                }
+                setInterval("createtime()", 250);
+            </script>
+        </div>
+           <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-gitlab-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+
+            <!-- <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div> -->
+            
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访问数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+                
+
+                    
+
+                            <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+                            <script>
+                                getCDNinfo = function() {
+                                    $.ajax({
+                                        url: "https://gadgets.shiksha/cdn-cgi/trace",
+                                        success: function(data, status) {
+                                            let areas = "Antananarivo, Madagascar - (TNR);Cape Town, South Africa - (CPT);Casablanca, Morocco - (CMN);Dar Es Salaam, Tanzania - (DAR);Djibouti City, Djibouti - (JIB);Durban, South Africa - (DUR);Johannesburg, South Africa - (JNB);Kigali, Rwanda - (KGL);Lagos, Nigeria - (LOS);Luanda, Angola - (LAD);Maputo, MZ - (MPM);Mombasa, Kenya - (MBA);Port Louis, Mauritius - (MRU);Réunion, France - (RUN);Bangalore, India - (BLR);Bangkok, Thailand - (BKK);Bandar Seri Begawan, Brunei - (BWN);Cebu, Philippines - (CEB);Chengdu, China - (CTU);Chennai, India - (MAA);Chittagong, Bangladesh - (CGP);Chongqing, China - (CKG);Colombo, Sri Lanka - (CMB);Dhaka, Bangladesh - (DAC);Dongguan, China - (SZX);Foshan, China - (FUO);Fuzhou, China - (FOC);Guangzhou, China - (CAN);Hangzhou, China - (HGH);Hanoi, Vietnam - (HAN);Hengyang, China - (HNY);Ho Chi Minh City, Vietnam - (SGN);Hong Kong - (HKG);Hyderabad, India - (HYD);Islamabad, Pakistan - (ISB);Jakarta, Indonesia - (CGK);Jinan, China - (TNA);Karachi, Pakistan - (KHI);Kathmandu, Nepal - (KTM);Kolkata, India - (CCU);Kuala Lumpur, Malaysia - (KUL);Lahore, Pakistan - (LHE);Langfang, China - (NAY);Luoyang, China - (LYA);Macau - (MFM);Malé, Maldives - (MLE);Manila, Philippines - (MNL);Mumbai, India - (BOM);Nagpur, India - (NAG);Nanning, China - (NNG);New Delhi, India - (DEL);Osaka, Japan - (KIX);Phnom Penh, Cambodia - (PNH);Qingdao, China - (TAO);Seoul, South Korea - (ICN);Shanghai, China - (SHA);Shenyang, China - (SHE);Shijiazhuang, China - (SJW);Singapore, Singapore - (SIN);Suzhou, China - (SZV);Taipei - (TPE);Thimphu, Bhutan - (PBH);Tianjin, China - (TSN);Tokyo, Japan - (NRT);Ulaanbaatar, Mongolia - (ULN);Vientiane, Laos - (VTE);Wuhan, China - (WUH);Wuxi, China - (WUX);Xi'an, China - (XIY);Yerevan, Armenia - (EVN);Zhengzhou, China - (CGO);Zuzhou, China - (CSX);Amsterdam, Netherlands - (AMS);Athens, Greece - (ATH);Barcelona, Spain - (BCN);Belgrade, Serbia - (BEG);Berlin, Germany - (TXL);Brussels, Belgium - (BRU);Bucharest, Romania - (OTP);Budapest, Hungary - (BUD);Chișinău, Moldova - (KIV);Copenhagen, Denmark - (CPH);Cork, Ireland -  (ORK);Dublin, Ireland - (DUB);Düsseldorf, Germany - (DUS);Edinburgh, United Kingdom - (EDI);Frankfurt, Germany - (FRA);Geneva, Switzerland - (GVA);Gothenburg, Sweden - (GOT);Hamburg, Germany - (HAM);Helsinki, Finland - (HEL);Istanbul, Turkey - (IST);Kyiv, Ukraine - (KBP);Lisbon, Portugal - (LIS);London, United Kingdom - (LHR);Luxembourg City, Luxembourg - (LUX);Madrid, Spain - (MAD);Manchester, United Kingdom - (MAN);Marseille, France - (MRS);Milan, Italy - (MXP);Moscow, Russia - (DME);Munich, Germany - (MUC);Nicosia, Cyprus - (LCA);Oslo, Norway - (OSL);Paris, France - (CDG);Prague, Czech Republic - (PRG);Reykjavík, Iceland - (KEF);Riga, Latvia - (RIX);Rome, Italy - (FCO);Saint Petersburg, Russia - (LED);Sofia, Bulgaria - (SOF);Stockholm, Sweden - (ARN);Tallinn, Estonia - (TLL);Thessaloniki, Greece - (SKG);Vienna, Austria - (VIE);Vilnius, Lithuania - (VNO);Warsaw, Poland - (WAW);Zagreb, Croatia - (ZAG);Zürich, Switzerland - (ZRH);Arica, Chile - (ARI);Asunción, Paraguay - (ASU);Bogotá, Colombia - (BOG);Buenos Aires, Argentina - (EZE);Curitiba, Brazil - (CWB);Fortaleza, Brazil - (FOR);Guatemala City, Guatemala - (GUA);Lima, Peru - (LIM);Medellín, Colombia - (MDE);Panama City, Panama - (PTY);Porto Alegre, Brazil - (POA);Quito, Ecuador - (UIO);Rio de Janeiro, Brazil - (GIG);São Paulo, Brazil - (GRU);Santiago, Chile - (SCL);Willemstad, Curaçao - (CUR);St. George's, Grenada - (GND);Amman, Jordan - (AMM);Baghdad, Iraq - (BGW);Baku, Azerbaijan - (GYD);Beirut, Lebanon - (BEY);Doha, Qatar - (DOH);Dubai, United Arab Emirates - (DXB);Kuwait City, Kuwait - (KWI);Manama, Bahrain - (BAH);Muscat, Oman - (MCT);Ramallah - (ZDM);Riyadh, Saudi Arabia - (RUH);Tel Aviv, Israel - (TLV);Ashburn, VA, United States - (IAD);Atlanta, GA, United States - (ATL);Boston, MA, United States - (BOS);Buffalo, NY, United States - (BUF);Calgary, AB, Canada - (YYC);Charlotte, NC, United States - (CLT);Chicago, IL, United States - (ORD);Columbus, OH, United States - (CMH);Dallas, TX, United States - (DFW);Denver, CO, United States - (DEN);Detroit, MI, United States - (DTW);Honolulu, HI, United States - (HNL);Houston, TX, United States - (IAH);Indianapolis, IN, United States - (IND);Jacksonville, FL, United States - (JAX);Kansas City, MO, United States - (MCI);Las Vegas, NV, United States - (LAS);Los Angeles, CA, United States - (LAX);McAllen, TX, United States - (MFE);Memphis, TN, United States - (MEM);Mexico City, Mexico - (MEX);Miami, FL, United States - (MIA);Minneapolis, MN, United States - (MSP);Montgomery, AL, United States - (MGM);Montréal, QC, Canada - (YUL);Nashville, TN, United States - (BNA);Newark, NJ, United States - (EWR);Norfolk, VA, United States - (ORF);Omaha, NE, United States - (OMA);Philadelphia, United States - (PHL);Phoenix, AZ, United States - (PHX);Pittsburgh, PA, United States - (PIT);Port-Au-Prince, Haiti - (PAP);Portland, OR, United States - (PDX);Queretaro, MX, Mexico - (QRO);Richmond, Virginia - (RIC);Sacramento, CA, United States - (SMF);Salt Lake City, UT, United States - (SLC);San Diego, CA, United States - (SAN);San Jose, CA, United States - (SJC);Saskatoon, SK, Canada - (YXE);Seattle, WA, United States - (SEA);St. Louis, MO, United States - (STL);Tampa, FL, United States - (TPA);Toronto, ON, Canada - (YYZ);Vancouver, BC, Canada - (YVR);Tallahassee, FL, United States - (TLH);Winnipeg, MB, Canada - (YWG);Adelaide, SA, Australia - (ADL);Auckland, New Zealand - (AKL);Brisbane, QLD, Australia - (BNE);Melbourne, VIC, Australia - (MEL);Noumea, New caledonia - (NOU);Perth, WA, Australia - (PER);Sydney, NSW, Australia - (SYD)".split(";");
+                                            let area = data.split("colo=")[1].split("\n")[0];
+                                            for (var i = 0; i < areas.length; i++) {
+                                                if (areas[i].indexOf(area) != -1) {
+                                                    document.getElementById("cdn").innerHTML = areas[i];
+                                                    document.getElementById("ip").innerHTML = data.split("ip=")[1].split("\n")[0];
+                                                    // document.getElementById("httpos").innerHTML = data.split("visit_scheme=")[1].split("\n")[0];
+                                                    // document.getElementById("uag").innerHTML = data.split("uag=")[1].split("\n")[0];
+                                                    // document.getElementById("http").innerHTML = data.split("http=")[1].split("\n")[0];
+                                                    document.getElementById("loc").innerHTML = data.split("loc=")[1].split("\n")[0];
+                                                    // document.getElementById("tls").innerHTML = data.split("tls=")[1].split("\n")[0];
+                                                    // document.getElementById("warp").innerHTML = data.split("warp=")[1].split("\n")[0];
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    })
+                                }
+                                $(document).ready(function() {
+                                    getCDNinfo();
+                                    //页面加载完毕就获取CDN信息
+                                });
+                            </script>
+
+                            <p>
+                                当前CDN节点: <span id="cdn">【希腊奶】</span> | 你的ip: <span id="ip">【希腊奶】</span> | 你的所在国家/地区: <span id="loc">【希腊奶】 </span>
+
+                                <br>
+
+                                <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20211001" target="_blank"> 20211001号</a>
+                            </p>
+                            <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=n&d=UcxdrvS_dG9ALI85fIcJskXg_hYsNi47T6wsr7OFVzo&co=7089a3&cmo=ffd099&cmn=ff7269&ct=ffffff'></script>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访问数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+        
+
+            
+</footer>
+
+<script src="https://cdn.jsdelivr.net/gh/suyin-long/activate-power-mode@1.0/dist/activate-power-mode.js"></script>
+<script>
+    POWERMODE.colorful = true; // make power mode colorful
+    POWERMODE.shake = false; // turn off shake
+    document.body.addEventListener('input', POWERMODE);
+</script>
+
+  
+
+    <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+        <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+            <script  src="/js/events.js" ></script>
+                <script  src="/js/plugins.js" ></script>
+
+                    <!-- Plugins -->
+
+                    
+                        
+                            
+                                <script  src="/js/img-lazyload.js" ></script>
+                                    
+                                        
+                                                    
+
+                                                        
+                                                            
+                                                                                                
+
+                                                                                                    
+                                                                                                        <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+                                                                                                                        
+
+                                                                                                                            
+                                                                                                                                <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+                                                                                                                                    
+
+                                                                                                                                        
+                                                                                                                                            <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+                                                                                                                                                
+
+                                                                                                                                                    
+                                                                                                                                                        <script  src="/js/local-search.js" ></script>
+                                                                                                                                                            
+
+                                                                                                                                                                
+                                                                                                                                                                            
+                                                                                                                                                                                <script defer src="/js/leancloud.js" ></script>
+                                                                                                                                                                                    
+
+                                                                                                                                                                                                
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+                                                                                                                                                                                                    
+
+
+
+                                                                                                                                                                                                        
+
+
+
+                                                                                                                                                                                                            
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?919ac0fb0118c0ba89724ba53e0f3547";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'UA-177561089-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+                                                                                                                                                                                                                
+
+                                                                                                                                                                                                                            <!-- 主题的启动项 保持在最底部 -->
+                                                                                                                                                                                                                            <script  src="/js/boot.js" ></script>
+  
+  <!--浏览器搞笑标题-->
+  <script type="text/javascript" src="/js/FunnyTitle.js"></script>
+  <script typr="text/javascript">
+    console.log("%c▄▄▄█████▓ ██▀███   ▒█████  ▄▄▄█████▓▓██   ██▓ ██▓    \n▓  ██▒ ▓▒▓██ ▒ ██▒▒██▒  ██▒▓  ██▒ ▓▒ ▒██  ██▒▓██▒    \n▒ ▓██░ ▒░▓██ ░▄█ ▒▒██░  ██▒▒ ▓██░ ▒░  ▒██ ██░▒██░    \n░ ▓██▓ ░ ▒██▀▀█▄  ▒██   ██░░ ▓██▓ ░   ░ ▐██▓░▒██░    \n  ▒██▒ ░ ░██▓ ▒██▒░ ████▓▒░  ▒██▒ ░   ░ ██▒▓░░██████▒\n  ▒ ░░   ░ ▒▓ ░▒▓░░ ▒░▒░▒░   ▒ ░░      ██▒▒▒ ░ ▒░▓  ░\n    ░      ░▒ ░ ▒░  ░ ▒ ▒░     ░     ▓██ ░▒░ ░ ░ ▒  ░\n  ░        ░░   ░ ░ ░ ░ ▒    ░       ▒ ▒ ░░    ░ ░   \n            ░         ░ ░            ░ ░         ░  ░\n                                     ░ ░             \n","color: #7089A3;")
+  </script>
+  <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+  <script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
+
+<!-- hexo injector body_end start -->
+<script type="text/javascript">
+  //定义获取词语下标
+  var a_idx = 0;
+  jQuery(document).ready(function ($) {
+    //点击body时触发事件
+    $("body").click(function (e) {
+      //需要显示的词语
+      var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+      //设置词语给span标签
+      var $i = $("<span/>").text(a[a_idx]);
+      //下标等于原来下标+1  余 词语总数
+      a_idx = (a_idx + 1) % a.length;
+      //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+      //获取x和y的指针坐标
+      var x = e.pageX, y = e.pageY;
+      //在鼠标的指针的位置给$i定义的span标签添加css样式
+      $i.css({
+        "z-index": 999,
+        "top": y - 20,
+        "left": x,
+        "position": "absolute",
+        "font-weight": "bold",
+        "color": rand_color()
+      });
+      // 随机颜色
+      function rand_color() {
+        return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+      }
+      //在body添加这个标签
+      $("body").append($i);
+      //animate() 方法执行 CSS 属性集的自定义动画。
+      //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+      //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+      $i.animate({
+        //将原来的位置向上移动180
+        "top": y - 180,
+        "opacity": 0
+        //1500动画的速度
+      }, 1500, function () {
+        //时间到了自动删除
+        $i.remove();
+      });
+    });
+  })
+  ;
+</script>
+
+  <div id="aplayer"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/aplayer.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/lambda.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
+</html>

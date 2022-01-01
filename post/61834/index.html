@@ -1,0 +1,776 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+        <link rel="icon" href="/img/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+        <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+        <style>
+            .pace .pace-progress {
+                background: #FFAA8D;
+                /*进度条颜色*/
+                height: 3px;
+            }
+            
+            .pace .pace-progress-inner {
+                box-shadow: 0 0 10px #FFAA8D, 0 0 5px #FFAA8D;
+                /*阴影颜色*/
+            }
+            
+            .pace .pace-activity {
+                border-top-color: #FFAA8D;
+                /*上边框颜色*/
+                border-left-color: #FFAA8D;
+                /*左边框颜色*/
+            }
+        </style>
+        
+                <meta name="theme-color" content="#2f4154">
+                <meta name="description" content="一个小博客">
+                <meta name="author" content="Trotyl">
+                <meta name="keywords" content="">
+                
+                            <title>
+                                Hexo 迁移｜mac 到 windows - Trotyl&#39;s Blog
+                            </title>
+
+                            <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+                                <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.trotyl.xyz","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":false,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"header":""},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true},"web_analytics":{"enable":true,"baidu":"919ac0fb0118c0ba89724ba53e0f3547","google":"UA-177561089-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"zcL2DBnP3JIFC9a8HE5uYMfm-MdYXbMMI","app_key":"fRsoWUTEoES4QglVrH0chpxV","server_url":null},"tajs":null},"search_path":"/local-search.xml"};
+  </script>
+                                    <script  src="/js/utils.js" ></script>
+                                        <script  src="/js/color-schema.js" ></script>
+
+                                        
+    <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Trotyl's Blog" type="application/atom+xml">
+</head>
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <strong>Trotyl</strong>
+        </a>
+
+        <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto text-center">
+                
+                    
+                        
+                            
+                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+                                        </li>
+                                        
+                                            
+                    
+                        
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-bookmark"></i>
+                Posts
+              </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/archives/">
+                    <i class="iconfont icon-archive-fill"></i>
+                    Archives
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/categories/">
+                    <i class="iconfont icon-category-fill"></i>
+                    Categories
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    Tags
+                  </a>
+                                                            
+                                        </div>
+                                    </li>
+                                    
+                                            
+                    
+                        
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Pages
+              </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/comment/">
+                    <i class="iconfont icon-addrcard"></i>
+                    留言板
+                  </a>
+                                                            
+                                                
+                                                    
+                                                        
+                                                            <a class="dropdown-item" href="/shuoshuo/">
+                    <i class="iconfont icon-speakernotes"></i>
+                    碎碎念
+                  </a>
+                                                            
+                                        </div>
+                                    </li>
+                                    
+                                            
+                    
+                        
+                            
+                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+                                        </li>
+                                        
+                                            
+                                                
+                                                    <li class="nav-item" id="search-btn">
+                                                        <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+                                                    </li>
+                                                    
+                                                        
+                                                            <li class="nav-item" id="color-toggle-btn">
+                                                                <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+                                                            </li>
+                                                            
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Hexo 迁移｜mac 到 windows">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-11-27 17:19" pubdate>
+        November 27, 2020 5:19 PM
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      931 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Hexo 迁移｜mac 到 windows</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：December 20, 2021 4:47 PM
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>最近换电脑了嘛，就想着得把博客搬到这个电脑上，网上找了找，都是windows迁到mac上的，完全没有从mac到win的。。<span class="heimu" title="你知道的太多了">windows现在已经这么过气了吗？泪目</span></p>
+<p>既然这样我就写一下步骤吧，虽然其实和别的系统差不多，但是毕竟我还是遇到了蛮多坑的。<img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/blog/movingHexo/1.jpg" srcset="/img/loading.gif" lazyload width = "150"   align=justify /></p>
+<hr>
+<h1 id="在旧电脑（mac）上应该做的事"><a href="#在旧电脑（mac）上应该做的事" class="headerlink" title="在旧电脑（mac）上应该做的事"></a>在旧电脑（mac）上应该做的事</h1><p>搞个u盘或者之类的东西，把以下这些文件复制一下</p>
+<ul>
+<li>source(文件夹)</li>
+<li>themes/主题文件</li>
+<li>_config.yml</li>
+<li>package.json</li>
+<li>如果你有下一些需要你配置文件的插件，把那些需要的东西也复制下<ul>
+<li>比如说你有live2d的插件并且用的是自定义的模型，复制放模型的文件夹：live2d_models</li>
+</ul>
+</li>
+<li>如果你有CNAME文件，复制它</li>
+</ul>
+<h1 id="在新电脑（win）上"><a href="#在新电脑（win）上" class="headerlink" title="在新电脑（win）上"></a>在新电脑（win）上</h1><h2 id="一、安装node-js"><a href="#一、安装node-js" class="headerlink" title="一、安装node.js"></a>一、安装node.js</h2><h3 id="1-下载nodejs"><a href="#1-下载nodejs" class="headerlink" title="1.下载nodejs"></a>1.下载nodejs</h3><p>建议手动下载，<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">这是官网链接</a><br>LTS的这个<br><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/blog/movingHexo/20201127232937.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><p>安装就不用我教了吧，点就完事了<img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/emoji/tieba-17.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="二、下载git并向Github添加SSH-Key"><a href="#二、下载git并向Github添加SSH-Key" class="headerlink" title="二、下载git并向Github添加SSH Key"></a>二、下载git并向Github添加SSH Key</h2><h3 id="1-创建SSH-Key"><a href="#1-创建SSH-Key" class="headerlink" title="1. 创建SSH Key"></a>1. 创建SSH Key</h3><p>1) 打开Gitbash<br>2) 输入<br><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code><br>这里得把你自己的邮箱地址替换上去<br>3) 一路回车<br>4) 在用户目录（user/xxx)下找到.ssh的文件夹<br>5) 找到<code>id_rsa.pub</code>的文件打开<strong>(一定要后缀是.pub的那个)</strong>，复制里面的东西</p>
+<h3 id="2-添加SSH-Key"><a href="#2-添加SSH-Key" class="headerlink" title="2. 添加SSH Key"></a>2. 添加SSH Key</h3><p>1) 登录GitHub<br>2) 点头像<br>3) 点开Settings<br><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/blog/movingHexo/20201128001321.png" srcset="/img/loading.gif" lazyload alt=""><br><span class="heimu" title="你知道的太多了">话说再次让我感叹一下QQ截图真他娘的好用</span><br>4)左侧栏找到SSH and GPG keys，点进去<br><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/blog/movingHexo/20201128001610.png" srcset="/img/loading.gif" lazyload alt=""><br>5)点New SSH key然后把刚才从<code>id_rsa.pub</code>文件里复制的东西复制到Key的那一栏里，Title那栏随便写<br><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/blog/movingHexo/20201128001721.png" srcset="/img/loading.gif" lazyload alt=""><br>6)点击Add key，完成</p>
+<h2 id="三、以管理员模式打开cmd"><a href="#三、以管理员模式打开cmd" class="headerlink" title="三、以管理员模式打开cmd"></a>三、以管理员模式打开cmd</h2><p><strong>要管理员模式哈！！</strong></p>
+<h3 id="1-先check一下node和npm有没有安装成功"><a href="#1-先check一下node和npm有没有安装成功" class="headerlink" title="1.先check一下node和npm有没有安装成功"></a>1.先check一下node和npm有没有安装成功</h3><p>分别输入<code>node -v</code>回车和<code>npm -v</code>回车，如果显示版本号，那就说明成功了</p>
+<h3 id="2-国内npm可能很慢，可以先用npm来安装一下cnpm（不嫌慢的这步也可以跳过）"><a href="#2-国内npm可能很慢，可以先用npm来安装一下cnpm（不嫌慢的这步也可以跳过）" class="headerlink" title="2.国内npm可能很慢，可以先用npm来安装一下cnpm（不嫌慢的这步也可以跳过）"></a>2.国内npm可能很慢，可以先用npm来安装一下cnpm（不嫌慢的这步也可以跳过）</h3><p>输入<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>回车</p>
+<p>如果安装了cnpm，后面我用npm的时候请自行替换成cnpm</p>
+<h2 id="四-安装和搭建Hexo"><a href="#四-安装和搭建Hexo" class="headerlink" title="四. 安装和搭建Hexo"></a>四. 安装和搭建Hexo</h2><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><p>输入<code>npm install -g hexo-cli</code><br>可以用<code>hexo -v</code>验证一下是否成功。如果显示版本号，说明成功</p>
+<h3 id="2-建立一个放博客的文件夹"><a href="#2-建立一个放博客的文件夹" class="headerlink" title="2. 建立一个放博客的文件夹"></a>2. 建立一个放博客的文件夹</h3><p>我是在C盘下面建的（因为我不喜欢分盘），你可以在D盘或者别的什么地方建都可以<br>1) cd到那个地方<code>mkdir blog</code><br>不叫blog也行，有的人喜欢叫hexo什么的<br>2) 建立好了以后<code>cd blog</code>进去执行<code>hexo init</code>建立一个新的Hexo目录<br>3) 将之前从旧电脑上复制的package.json复制到新的目录下，把原来的文件覆盖掉</p>
+<p><strong>因为mac系统的原因，它会生成很多奇奇怪怪的隐藏文件，得先把那些.打头的文件删掉，所有文件夹里都看一遍，所有文件夹里的都得删除，否则会出现<code>hexo err: YAMLException: null byte is not allowed in input at line 1, column 1</code>等错误提示</strong></p>
+<p>4) 执行<code>hexo install</code><br>把剩下的那些从旧电脑上复制的文件和文件夹放到对应的位置<br>6) <code>hexo g</code>然后<code>hexo s</code>，打开<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a><br>看看有没有生成好</p>
+<h2 id="四、hexo-d一下看看能不能成功部署"><a href="#四、hexo-d一下看看能不能成功部署" class="headerlink" title="四、hexo d一下看看能不能成功部署"></a>四、hexo d一下看看能不能成功部署</h2><p>如果出现了<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">Please tell me who you are.<br><br><span class="hljs-keyword">Run</span><br><br><span class="bash">	git config --global user.email <span class="hljs-string">&quot;you@example.com&quot;</span></span><br>    git config --global <span class="hljs-keyword">user</span>.name <span class="hljs-string">&quot;Your Name&quot;</span><br></code></pre></td></tr></table></figure><br>1)输入<code>git config --global user.email &quot;你的邮箱“</code>这个邮箱得是你在GitHub里用的那个<br>2)输入`git config —global user.name “你的名字”<br>这个名字随便起就行了</p>
+<p>完事！！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/blog/movingHexo/%EF%BC%92.gif" srcset="/img/loading.gif" lazyload width = "200" alt="好耶"  /></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/post/38733/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java Server and Client 实现聊天室</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/3587/">
+                        <span class="hidden-mobile">Grade 12 Chemistry（窗了）</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('//blog.trotyl.xyz/js/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appid":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appkey":"WV76W9zkR1pcORcdd3UjPpKA","placeholder":"｜在上方留下你的邮箱，它不会被公开显示，收到回复的话会有邮件提醒&#10｜Leave your email above to get notifications for replies","path":"window.location.pathname","avatar":"robohash","meta":["nick","mail","link"],"pageSize":10,"lang":"en","highlight":true,"recordIP":true,"serverURLs":"https://cFjrGe19.api.lncldglobal.com","emojiMaps":{"tieba-1":"tieba/tieba-1.png","tieba-2":"tieba/tieba-2.png","tieba-3":"tieba/tieba-3.png","tieba-4":"tieba/tieba-4.png","tieba-5":"tieba/tieba-5.png","tieba-6":"tieba/tieba-6.png","tieba-7":"tieba/tieba-7.png","tieba-8":"tieba/tieba-8.png","tieba-9":"tieba/tieba-9.png","tieba-10":"tieba/tieba-10.png","tieba-11":"tieba/tieba-11.png","tieba-12":"tieba/tieba-12.png","tieba-13":"tieba/tieba-13.png","tieba-14":"tieba/tieba-14.png","tieba-15":"tieba/tieba-15.png","tieba-16":"tieba/tieba-16.png","tieba-17":"tieba/tieba-17.png","tieba-18":"tieba/tieba-18.png","tieba-19":"tieba/tieba-19.png","tieba-20":"tieba/tieba-20.png","tieba-21":"tieba/tieba-21.png","tieba-22":"tieba/tieba-22.png","tieba-23":"tieba/tieba-23.png","tieba-24":"tieba/tieba-24.png","tieba-25":"tieba/tieba-25.png","tieba-26":"tieba/tieba-26.png","tieba-27":"tieba/tieba-27.png","tieba-28":"tieba/tieba-28.png","tieba-29":"tieba/tieba-29.png","tieba-30":"tieba/tieba-30.png","tieba-31":"tieba/tieba-31.png","tieba-32":"tieba/tieba-32.png","tieba-33":"tieba/tieba-33.png","tieba-34":"tieba/tieba-34.png","tieba-35":"tieba/tieba-35.png","tieba-36":"tieba/tieba-36.png","tieba-37":"tieba/tieba-37.png","tieba-38":"tieba/tieba-38.png","tieba-39":"tieba/tieba-39.png","tieba-40":"tieba/tieba-40.png","tieba-41":"tieba/tieba-41.png","tieba-42":"tieba/tieba-42.png","tieba-43":"tieba/tieba-43.png","tieba-44":"tieba/tieba-44.png","tieba-45":"tieba/tieba-45.png","tieba-46":"tieba/tieba-46.png","tieba-47":"tieba/tieba-47.png","tieba-48":"tieba/tieba-48.png","tieba-49":"tieba/tieba-49.png","tieba-50":"tieba/tieba-50.png","tieba-51":"tieba/tieba-51.png","tieba-52":"tieba/tieba-52.png","tieba-56":"tieba/tieba-56.png","tieba-57":"tieba/tieba-57.png","tieba-59":"tieba/tieba-59.png","tieba-60":"tieba/tieba-60.png","tieba-61":"tieba/tieba-61.png","EveOneCat-1":"EveOneCat/EveOneCat_1.png","EveOneCat-2":"EveOneCat/EveOneCat_2.png","EveOneCat-3":"EveOneCat/EveOneCat_3.png","EveOneCat-4":"EveOneCat/EveOneCat_4.png","EveOneCat-5":"EveOneCat/EveOneCat_5.png","EveOneCat-6":"EveOneCat/EveOneCat_6.png","EveOneCat-7":"EveOneCat/EveOneCat_7.png","EveOneCat-8":"EveOneCat/EveOneCat_8.png","EveOneCat-9":"EveOneCat/EveOneCat_9.png","EveOneCat-10":"EveOneCat/EveOneCat_10.png","EveOneCat-11":"EveOneCat/EveOneCat_11.png","EveOneCat-12":"EveOneCat/EveOneCat_12.png","EveOneCat-13":"EveOneCat/EveOneCat_13.png","EveOneCat-14":"EveOneCat/EveOneCat_14.png","EveOneCat-15":"EveOneCat/EveOneCat_15.png","EveOneCat-16":"EveOneCat/EveOneCat_16.png","EveOneCat-17":"EveOneCat/EveOneCat_17.png","EveOneCat-18":"EveOneCat/EveOneCat_18.png","EveOneCat-19":"EveOneCat/EveOneCat_19.png","EveOneCat-20":"EveOneCat/EveOneCat_20.png","miharo-1":"miharo/miharo-1.png","miharo-2":"miharo/miharo-2.png","miharo-3":"miharo/miharo-3.png","miharo-4":"miharo/miharo-4.png","miharo-5":"miharo/miharo-5.png","miharo-6":"miharo/miharo-6.png","miharo-7":"miharo/miharo-7.png","miharo-8":"miharo/miharo-8.png","miharo-9":"miharo/miharo-9.png","miharo-10":"miharo/miharo-10.png","miharo-11":"miharo/miharo-11.png","miharo-12":"miharo/miharo-12.png","miharo-13":"miharo/miharo-13.png","miharo-14":"miharo/miharo-14.png","miharo-15":"miharo/miharo-15.png","miharo-16":"miharo/miharo-16.png","miharo-17":"miharo/miharo-17.png","miharo-18":"miharo/miharo-18.png","huaji-1":"huaji/huaji-1.png","huaji-2":"huaji/huaji-2.png","huaji-3":"huaji/huaji-3.png","huaji-4":"huaji/huaji-4.png","huaji-5":"huaji/huaji-5.png","huaji-6":"huaji/huaji-6.png","huaji-7":"huaji/huaji-7.png","huaji-8":"huaji/huaji-8.png","huaji-9":"huaji/huaji-9.png","huaji-10":"huaji/huaji-10.png","huaji-11":"huaji/huaji-11.png","huaji-12":"huaji/huaji-12.png","huaji-13":"huaji/huaji-13.png","huaji-14":"huaji/huaji-14.png","huaji-15":"huaji/huaji-15.gif"},"enableQQ":true,"requiredFields":[],"appId":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appKey":"WV76W9zkR1pcORcdd3UjPpKA","emojiCDN":"https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/emoji/"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+    <div class="footer-content">
+
+        <div>
+            <span id="timeDate">正在烧脑计算建站时间...</span>
+            <span id="times"></span>
+            <script>
+                var now = new Date();
+
+                function createtime() {
+                    var grt = new Date("08/04/2020 00:00:00"); //此处修改你的建站时间或者网站上线时间
+                    now.setTime(now.getTime() + 250);
+                    days = (now - grt) / 1000 / 60 / 60 / 24;
+                    dnum = Math.floor(days);
+                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                    hnum = Math.floor(hours);
+                    if (String(hnum).length == 1) {
+                        hnum = "0" + hnum;
+                    }
+                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes);
+                    if (String(mnum).length == 1) {
+                        mnum = "0" + mnum;
+                    }
+                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds);
+                    if (String(snum).length == 1) {
+                        snum = "0" + snum;
+                    }
+                    document.getElementById("timeDate").innerHTML = "本站已在互联网中成功苟了&nbsp" + dnum + "&nbsp天";
+                    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+                }
+                setInterval("createtime()", 250);
+            </script>
+        </div>
+           <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-gitlab-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+
+            <!-- <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div> -->
+            
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访问数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+                
+
+                    
+
+                            <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+                            <script>
+                                getCDNinfo = function() {
+                                    $.ajax({
+                                        url: "https://gadgets.shiksha/cdn-cgi/trace",
+                                        success: function(data, status) {
+                                            let areas = "Antananarivo, Madagascar - (TNR);Cape Town, South Africa - (CPT);Casablanca, Morocco - (CMN);Dar Es Salaam, Tanzania - (DAR);Djibouti City, Djibouti - (JIB);Durban, South Africa - (DUR);Johannesburg, South Africa - (JNB);Kigali, Rwanda - (KGL);Lagos, Nigeria - (LOS);Luanda, Angola - (LAD);Maputo, MZ - (MPM);Mombasa, Kenya - (MBA);Port Louis, Mauritius - (MRU);Réunion, France - (RUN);Bangalore, India - (BLR);Bangkok, Thailand - (BKK);Bandar Seri Begawan, Brunei - (BWN);Cebu, Philippines - (CEB);Chengdu, China - (CTU);Chennai, India - (MAA);Chittagong, Bangladesh - (CGP);Chongqing, China - (CKG);Colombo, Sri Lanka - (CMB);Dhaka, Bangladesh - (DAC);Dongguan, China - (SZX);Foshan, China - (FUO);Fuzhou, China - (FOC);Guangzhou, China - (CAN);Hangzhou, China - (HGH);Hanoi, Vietnam - (HAN);Hengyang, China - (HNY);Ho Chi Minh City, Vietnam - (SGN);Hong Kong - (HKG);Hyderabad, India - (HYD);Islamabad, Pakistan - (ISB);Jakarta, Indonesia - (CGK);Jinan, China - (TNA);Karachi, Pakistan - (KHI);Kathmandu, Nepal - (KTM);Kolkata, India - (CCU);Kuala Lumpur, Malaysia - (KUL);Lahore, Pakistan - (LHE);Langfang, China - (NAY);Luoyang, China - (LYA);Macau - (MFM);Malé, Maldives - (MLE);Manila, Philippines - (MNL);Mumbai, India - (BOM);Nagpur, India - (NAG);Nanning, China - (NNG);New Delhi, India - (DEL);Osaka, Japan - (KIX);Phnom Penh, Cambodia - (PNH);Qingdao, China - (TAO);Seoul, South Korea - (ICN);Shanghai, China - (SHA);Shenyang, China - (SHE);Shijiazhuang, China - (SJW);Singapore, Singapore - (SIN);Suzhou, China - (SZV);Taipei - (TPE);Thimphu, Bhutan - (PBH);Tianjin, China - (TSN);Tokyo, Japan - (NRT);Ulaanbaatar, Mongolia - (ULN);Vientiane, Laos - (VTE);Wuhan, China - (WUH);Wuxi, China - (WUX);Xi'an, China - (XIY);Yerevan, Armenia - (EVN);Zhengzhou, China - (CGO);Zuzhou, China - (CSX);Amsterdam, Netherlands - (AMS);Athens, Greece - (ATH);Barcelona, Spain - (BCN);Belgrade, Serbia - (BEG);Berlin, Germany - (TXL);Brussels, Belgium - (BRU);Bucharest, Romania - (OTP);Budapest, Hungary - (BUD);Chișinău, Moldova - (KIV);Copenhagen, Denmark - (CPH);Cork, Ireland -  (ORK);Dublin, Ireland - (DUB);Düsseldorf, Germany - (DUS);Edinburgh, United Kingdom - (EDI);Frankfurt, Germany - (FRA);Geneva, Switzerland - (GVA);Gothenburg, Sweden - (GOT);Hamburg, Germany - (HAM);Helsinki, Finland - (HEL);Istanbul, Turkey - (IST);Kyiv, Ukraine - (KBP);Lisbon, Portugal - (LIS);London, United Kingdom - (LHR);Luxembourg City, Luxembourg - (LUX);Madrid, Spain - (MAD);Manchester, United Kingdom - (MAN);Marseille, France - (MRS);Milan, Italy - (MXP);Moscow, Russia - (DME);Munich, Germany - (MUC);Nicosia, Cyprus - (LCA);Oslo, Norway - (OSL);Paris, France - (CDG);Prague, Czech Republic - (PRG);Reykjavík, Iceland - (KEF);Riga, Latvia - (RIX);Rome, Italy - (FCO);Saint Petersburg, Russia - (LED);Sofia, Bulgaria - (SOF);Stockholm, Sweden - (ARN);Tallinn, Estonia - (TLL);Thessaloniki, Greece - (SKG);Vienna, Austria - (VIE);Vilnius, Lithuania - (VNO);Warsaw, Poland - (WAW);Zagreb, Croatia - (ZAG);Zürich, Switzerland - (ZRH);Arica, Chile - (ARI);Asunción, Paraguay - (ASU);Bogotá, Colombia - (BOG);Buenos Aires, Argentina - (EZE);Curitiba, Brazil - (CWB);Fortaleza, Brazil - (FOR);Guatemala City, Guatemala - (GUA);Lima, Peru - (LIM);Medellín, Colombia - (MDE);Panama City, Panama - (PTY);Porto Alegre, Brazil - (POA);Quito, Ecuador - (UIO);Rio de Janeiro, Brazil - (GIG);São Paulo, Brazil - (GRU);Santiago, Chile - (SCL);Willemstad, Curaçao - (CUR);St. George's, Grenada - (GND);Amman, Jordan - (AMM);Baghdad, Iraq - (BGW);Baku, Azerbaijan - (GYD);Beirut, Lebanon - (BEY);Doha, Qatar - (DOH);Dubai, United Arab Emirates - (DXB);Kuwait City, Kuwait - (KWI);Manama, Bahrain - (BAH);Muscat, Oman - (MCT);Ramallah - (ZDM);Riyadh, Saudi Arabia - (RUH);Tel Aviv, Israel - (TLV);Ashburn, VA, United States - (IAD);Atlanta, GA, United States - (ATL);Boston, MA, United States - (BOS);Buffalo, NY, United States - (BUF);Calgary, AB, Canada - (YYC);Charlotte, NC, United States - (CLT);Chicago, IL, United States - (ORD);Columbus, OH, United States - (CMH);Dallas, TX, United States - (DFW);Denver, CO, United States - (DEN);Detroit, MI, United States - (DTW);Honolulu, HI, United States - (HNL);Houston, TX, United States - (IAH);Indianapolis, IN, United States - (IND);Jacksonville, FL, United States - (JAX);Kansas City, MO, United States - (MCI);Las Vegas, NV, United States - (LAS);Los Angeles, CA, United States - (LAX);McAllen, TX, United States - (MFE);Memphis, TN, United States - (MEM);Mexico City, Mexico - (MEX);Miami, FL, United States - (MIA);Minneapolis, MN, United States - (MSP);Montgomery, AL, United States - (MGM);Montréal, QC, Canada - (YUL);Nashville, TN, United States - (BNA);Newark, NJ, United States - (EWR);Norfolk, VA, United States - (ORF);Omaha, NE, United States - (OMA);Philadelphia, United States - (PHL);Phoenix, AZ, United States - (PHX);Pittsburgh, PA, United States - (PIT);Port-Au-Prince, Haiti - (PAP);Portland, OR, United States - (PDX);Queretaro, MX, Mexico - (QRO);Richmond, Virginia - (RIC);Sacramento, CA, United States - (SMF);Salt Lake City, UT, United States - (SLC);San Diego, CA, United States - (SAN);San Jose, CA, United States - (SJC);Saskatoon, SK, Canada - (YXE);Seattle, WA, United States - (SEA);St. Louis, MO, United States - (STL);Tampa, FL, United States - (TPA);Toronto, ON, Canada - (YYZ);Vancouver, BC, Canada - (YVR);Tallahassee, FL, United States - (TLH);Winnipeg, MB, Canada - (YWG);Adelaide, SA, Australia - (ADL);Auckland, New Zealand - (AKL);Brisbane, QLD, Australia - (BNE);Melbourne, VIC, Australia - (MEL);Noumea, New caledonia - (NOU);Perth, WA, Australia - (PER);Sydney, NSW, Australia - (SYD)".split(";");
+                                            let area = data.split("colo=")[1].split("\n")[0];
+                                            for (var i = 0; i < areas.length; i++) {
+                                                if (areas[i].indexOf(area) != -1) {
+                                                    document.getElementById("cdn").innerHTML = areas[i];
+                                                    document.getElementById("ip").innerHTML = data.split("ip=")[1].split("\n")[0];
+                                                    // document.getElementById("httpos").innerHTML = data.split("visit_scheme=")[1].split("\n")[0];
+                                                    // document.getElementById("uag").innerHTML = data.split("uag=")[1].split("\n")[0];
+                                                    // document.getElementById("http").innerHTML = data.split("http=")[1].split("\n")[0];
+                                                    document.getElementById("loc").innerHTML = data.split("loc=")[1].split("\n")[0];
+                                                    // document.getElementById("tls").innerHTML = data.split("tls=")[1].split("\n")[0];
+                                                    // document.getElementById("warp").innerHTML = data.split("warp=")[1].split("\n")[0];
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    })
+                                }
+                                $(document).ready(function() {
+                                    getCDNinfo();
+                                    //页面加载完毕就获取CDN信息
+                                });
+                            </script>
+
+                            <p>
+                                当前CDN节点: <span id="cdn">【希腊奶】</span> | 你的ip: <span id="ip">【希腊奶】</span> | 你的所在国家/地区: <span id="loc">【希腊奶】 </span>
+
+                                <br>
+
+                                <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20211001" target="_blank"> 20211001号</a>
+                            </p>
+                            <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=n&d=UcxdrvS_dG9ALI85fIcJskXg_hYsNi47T6wsr7OFVzo&co=7089a3&cmo=ffd099&cmn=ff7269&ct=ffffff'></script>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访问数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+        
+
+            
+</footer>
+
+<script src="https://cdn.jsdelivr.net/gh/suyin-long/activate-power-mode@1.0/dist/activate-power-mode.js"></script>
+<script>
+    POWERMODE.colorful = true; // make power mode colorful
+    POWERMODE.shake = false; // turn off shake
+    document.body.addEventListener('input', POWERMODE);
+</script>
+
+  
+
+    <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+        <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+            <script  src="/js/events.js" ></script>
+                <script  src="/js/plugins.js" ></script>
+
+                    <!-- Plugins -->
+
+                    
+                        
+                            
+                                <script  src="/js/img-lazyload.js" ></script>
+                                    
+                                        
+                                                    
+
+                                                        
+                                                            
+                                                                                                
+
+                                                                                                    
+                                                                                                        <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+                                                                                                                        
+
+                                                                                                                            
+                                                                                                                                <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+                                                                                                                                    
+
+                                                                                                                                        
+                                                                                                                                            <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+                                                                                                                                                
+
+                                                                                                                                                    
+                                                                                                                                                        <script  src="/js/local-search.js" ></script>
+                                                                                                                                                            
+
+                                                                                                                                                                
+                                                                                                                                                                            
+                                                                                                                                                                                <script defer src="/js/leancloud.js" ></script>
+                                                                                                                                                                                    
+
+                                                                                                                                                                                                
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+                                                                                                                                                                                                    
+
+
+
+                                                                                                                                                                                                        
+
+
+
+                                                                                                                                                                                                            
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?919ac0fb0118c0ba89724ba53e0f3547";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'UA-177561089-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+                                                                                                                                                                                                                
+
+                                                                                                                                                                                                                            <!-- 主题的启动项 保持在最底部 -->
+                                                                                                                                                                                                                            <script  src="/js/boot.js" ></script>
+  
+  <!--浏览器搞笑标题-->
+  <script type="text/javascript" src="/js/FunnyTitle.js"></script>
+  <script typr="text/javascript">
+    console.log("%c▄▄▄█████▓ ██▀███   ▒█████  ▄▄▄█████▓▓██   ██▓ ██▓    \n▓  ██▒ ▓▒▓██ ▒ ██▒▒██▒  ██▒▓  ██▒ ▓▒ ▒██  ██▒▓██▒    \n▒ ▓██░ ▒░▓██ ░▄█ ▒▒██░  ██▒▒ ▓██░ ▒░  ▒██ ██░▒██░    \n░ ▓██▓ ░ ▒██▀▀█▄  ▒██   ██░░ ▓██▓ ░   ░ ▐██▓░▒██░    \n  ▒██▒ ░ ░██▓ ▒██▒░ ████▓▒░  ▒██▒ ░   ░ ██▒▓░░██████▒\n  ▒ ░░   ░ ▒▓ ░▒▓░░ ▒░▒░▒░   ▒ ░░      ██▒▒▒ ░ ▒░▓  ░\n    ░      ░▒ ░ ▒░  ░ ▒ ▒░     ░     ▓██ ░▒░ ░ ░ ▒  ░\n  ░        ░░   ░ ░ ░ ░ ▒    ░       ▒ ▒ ░░    ░ ░   \n            ░         ░ ░            ░ ░         ░  ░\n                                     ░ ░             \n","color: #7089A3;")
+  </script>
+  <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+  <script src="https://lab.magiconch.com/nbnhhsh/nbnhhsh.user.js"></script>
+
+<!-- hexo injector body_end start -->
+<script type="text/javascript">
+  //定义获取词语下标
+  var a_idx = 0;
+  jQuery(document).ready(function ($) {
+    //点击body时触发事件
+    $("body").click(function (e) {
+      //需要显示的词语
+      var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+      //设置词语给span标签
+      var $i = $("<span/>").text(a[a_idx]);
+      //下标等于原来下标+1  余 词语总数
+      a_idx = (a_idx + 1) % a.length;
+      //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+      //获取x和y的指针坐标
+      var x = e.pageX, y = e.pageY;
+      //在鼠标的指针的位置给$i定义的span标签添加css样式
+      $i.css({
+        "z-index": 999,
+        "top": y - 20,
+        "left": x,
+        "position": "absolute",
+        "font-weight": "bold",
+        "color": rand_color()
+      });
+      // 随机颜色
+      function rand_color() {
+        return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+      }
+      //在body添加这个标签
+      $("body").append($i);
+      //animate() 方法执行 CSS 属性集的自定义动画。
+      //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+      //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+      $i.animate({
+        //将原来的位置向上移动180
+        "top": y - 180,
+        "opacity": 0
+        //1500动画的速度
+      }, 1500, function () {
+        //时间到了自动删除
+        $i.remove();
+      });
+    });
+  })
+  ;
+</script>
+
+  <div id="aplayer"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/aplayer.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/lambda.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
+</html>
