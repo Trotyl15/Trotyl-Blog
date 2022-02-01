@@ -6,7 +6,7 @@
   <link href="http://blog.trotyl.xyz/atom.xml" rel="self"/>
   
   <link href="http://blog.trotyl.xyz/"/>
-  <updated>2022-02-01T04:43:10.135Z</updated>
+  <updated>2022-02-01T04:46:05.451Z</updated>
   <id>http://blog.trotyl.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://blog.trotyl.xyz/post/4c463cc2/"/>
     <id>http://blog.trotyl.xyz/post/4c463cc2/</id>
     <published>2022-02-01T04:10:00.000Z</published>
-    <updated>2022-02-01T04:43:10.135Z</updated>
+    <updated>2022-02-01T04:46:05.451Z</updated>
     
     
       
@@ -34,6 +34,8 @@
     
     
     
+    
+    <category term="杂七杂八" scheme="http://blog.trotyl.xyz/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
     
   </entry>
   
