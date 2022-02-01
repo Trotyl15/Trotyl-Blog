@@ -14,10 +14,6 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
-      <tag>JavaScript</tag>
-      
       <tag>jQuery</tag>
       
       <tag>Tampermonkey</tag>
@@ -189,9 +185,9 @@
     
     <categories>
       
-      <category>数据结构与算法｜Data Structures and Algorithms</category>
+      <category>数据结构与算法</category>
       
-      <category>图｜Graph</category>
+      <category>图</category>
       
     </categories>
     
@@ -216,9 +212,9 @@
     
     <categories>
       
-      <category>数据结构与算法｜Data Structures and Algorithms</category>
+      <category>数据结构与算法</category>
       
-      <category>多路查找树｜Multi-Way Search Tree</category>
+      <category>多路查找树</category>
       
     </categories>
     
@@ -243,9 +239,9 @@
     
     <categories>
       
-      <category>数据结构与算法｜Data Structures and Algorithms</category>
+      <category>数据结构与算法</category>
       
-      <category>树结构的应用｜Application of Tree Structures</category>
+      <category>树结构的应用</category>
       
     </categories>
     
@@ -270,9 +266,9 @@
     
     <categories>
       
-      <category>数据结构与算法｜Data Structures and Algorithms</category>
+      <category>数据结构与算法</category>
       
-      <category>树结构的应用｜Application of Tree Structures</category>
+      <category>树结构的应用</category>
       
     </categories>
     
