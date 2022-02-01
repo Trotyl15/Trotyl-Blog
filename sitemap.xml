@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.trotyl.xyz/post/22dee00c/</loc>
+    
+    <lastmod>2022-02-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.trotyl.xyz/post/17599/</loc>
+    
+    <lastmod>2022-02-01</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.trotyl.xyz/post/4c463cc2/</loc>
     
     <lastmod>2022-02-01</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://blog.trotyl.xyz/post/29228/</loc>
     
     <lastmod>2021-12-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.trotyl.xyz/post/22dee00c/</loc>
-    
-    <lastmod>2021-12-21</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>http://blog.trotyl.xyz/comment/index.html</loc>
     
     <lastmod>2021-10-20</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.trotyl.xyz/post/17599/</loc>
-    
-    <lastmod>2021-10-18</lastmod>
     
   </url>
   
@@ -150,6 +150,34 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://blog.trotyl.xyz/tags/HTML/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.trotyl.xyz/tags/JavaScript/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.trotyl.xyz/tags/jQuery/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.trotyl.xyz/tags/Tampermonkey/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -182,6 +210,13 @@
   
   <url>
     <loc>http://blog.trotyl.xyz/categories/RHHS/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.trotyl.xyz/categories/%E5%A5%BD%E7%94%A8%E7%9A%84xx%E6%8E%A8%E8%8D%90/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

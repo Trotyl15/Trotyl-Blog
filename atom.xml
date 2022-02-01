@@ -6,7 +6,7 @@
   <link href="http://blog.trotyl.xyz/atom.xml" rel="self"/>
   
   <link href="http://blog.trotyl.xyz/"/>
-  <updated>2022-02-01T04:46:05.451Z</updated>
+  <updated>2022-02-01T05:04:43.904Z</updated>
   <id>http://blog.trotyl.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://blog.trotyl.xyz/post/4c463cc2/"/>
     <id>http://blog.trotyl.xyz/post/4c463cc2/</id>
     <published>2022-02-01T04:10:00.000Z</published>
-    <updated>2022-02-01T04:46:05.451Z</updated>
+    <updated>2022-02-01T05:04:43.904Z</updated>
     
     
       
@@ -35,7 +35,13 @@
     
     
     
-    <category term="杂七杂八" scheme="http://blog.trotyl.xyz/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
+    <category term="HTML" scheme="http://blog.trotyl.xyz/tags/HTML/"/>
+    
+    <category term="JavaScript" scheme="http://blog.trotyl.xyz/tags/JavaScript/"/>
+    
+    <category term="jQuery" scheme="http://blog.trotyl.xyz/tags/jQuery/"/>
+    
+    <category term="Tampermonkey" scheme="http://blog.trotyl.xyz/tags/Tampermonkey/"/>
     
   </entry>
   
@@ -90,8 +96,8 @@
     <title>Windows 软件推荐｜持续更新</title>
     <link href="http://blog.trotyl.xyz/post/22dee00c/"/>
     <id>http://blog.trotyl.xyz/post/22dee00c/</id>
-    <published>2021-08-13T03:47:33.000Z</published>
-    <updated>2021-12-21T02:19:21.511Z</updated>
+    <published>2021-08-13T03:47:00.000Z</published>
+    <updated>2022-02-01T05:05:57.725Z</updated>
     
     
       
@@ -103,6 +109,8 @@
       
     
     
+    
+    <category term="好用的xx推荐" scheme="http://blog.trotyl.xyz/categories/%E5%A5%BD%E7%94%A8%E7%9A%84xx%E6%8E%A8%E8%8D%90/"/>
     
     
     <category term="杂七杂八" scheme="http://blog.trotyl.xyz/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
@@ -186,8 +194,8 @@
     <title>好用的油猴脚本推荐｜持续更新</title>
     <link href="http://blog.trotyl.xyz/post/17599/"/>
     <id>http://blog.trotyl.xyz/post/17599/</id>
-    <published>2020-09-02T05:58:43.000Z</published>
-    <updated>2021-10-18T22:07:58.359Z</updated>
+    <published>2020-09-02T05:58:00.000Z</published>
+    <updated>2022-02-01T05:05:22.115Z</updated>
     
     
       
@@ -201,8 +209,10 @@
     
     
     
+    <category term="好用的xx推荐" scheme="http://blog.trotyl.xyz/categories/%E5%A5%BD%E7%94%A8%E7%9A%84xx%E6%8E%A8%E8%8D%90/"/>
     
-    <category term="杂七杂八" scheme="http://blog.trotyl.xyz/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
+    
+    <category term="Tampermonkey" scheme="http://blog.trotyl.xyz/tags/Tampermonkey/"/>
     
   </entry>
   
