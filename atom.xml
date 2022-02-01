@@ -6,7 +6,7 @@
   <link href="http://blog.trotyl.xyz/atom.xml" rel="self"/>
   
   <link href="http://blog.trotyl.xyz/"/>
-  <updated>2022-02-01T04:06:46.154Z</updated>
+  <updated>2022-02-01T04:17:47.988Z</updated>
   <id>http://blog.trotyl.xyz/</id>
   
   <author>
@@ -17,18 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://blog.trotyl.xyz/post/0/"/>
-    <id>http://blog.trotyl.xyz/post/0/</id>
-    <published>2022-02-01T04:06:45.490Z</published>
-    <updated>2022-02-01T04:06:46.154Z</updated>
+    <title>从0开始学习油猴脚本的编写到发布</title>
+    <link href="http://blog.trotyl.xyz/post/4c463cc2/"/>
+    <id>http://blog.trotyl.xyz/post/4c463cc2/</id>
+    <published>2022-02-01T04:10:00.000Z</published>
+    <updated>2022-02-01T04:17:47.988Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;从0开始学习油猴脚本的编写到发布&quot;&gt;&lt;a href=&quot;#从0开始学习油猴脚本的编写到发布&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;p&gt;因为我实在受不了我们学校网站的视频进度条和PDF浏览器，我就写了个跳转网页到文件源地址的小脚本&lt;br&gt;👉&lt;a</summary>
         
       
     
