@@ -40,10 +40,26 @@
                 <meta name="keywords" content="">
                 
                             <title>
-                                Archives - Trotyl&#39;s Blog
+                                Trotyl&#39;s Blog
                             </title>
 
                             <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -73,7 +89,7 @@
 </head>
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
     <div class="container">
         <a class="navbar-brand" href="/">
@@ -213,9 +229,54 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Archive">
+            <span class="h2" id="subtitle" title="">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-31 23:06" pubdate>
+        January 31, 2022 11:06 PM
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      298 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -228,106 +289,119 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+              <p class="note note-info">
                 
+                  本文最后更新于：January 31, 2022 11:06 PM
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="从0开始学习油猴脚本的编写到发布"><a href="#从0开始学习油猴脚本的编写到发布" class="headerlink" title="从0开始学习油猴脚本的编写到发布"></a>从0开始学习油猴脚本的编写到发布</h1><p>因为我实在受不了我们学校网站的视频进度条和PDF浏览器，我就写了个跳转网页到文件源地址的小脚本👉<a target="_blank" rel="noopener" href="https://greasyfork.org/en/scripts/439394-waterloo-learn-video-pdf-redirect">Waterloo Learn Video &amp; PDF Redirect (greasyfork.org)</a>。</p>
+<p>中途找教程的时候还挺折磨，我就写一篇从编写到发布的流程介绍吧。</p>
+<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul>
+<li>HTML</li>
+<li>JavaScript</li>
+<li>JQuery（最好，不会你用原生 JS 写应该也一样）</li>
+</ul>
+<h2 id="获取-Tampermonkey-浏览器插件"><a href="#获取-Tampermonkey-浏览器插件" class="headerlink" title="获取 Tampermonkey 浏览器插件"></a>获取 Tampermonkey 浏览器插件</h2><p>有手就行，没下的去这里下：<a target="_blank" rel="noopener" href="https://www.tampermonkey.net/">Tampermonkey</a></p>
+<h2 id="脚本编写"><a href="#脚本编写" class="headerlink" title="脚本编写"></a>脚本编写</h2><h3 id="点这个「加号」新建脚本。"><a href="#点这个「加号」新建脚本。" class="headerlink" title="点这个「加号」新建脚本。"></a>点这个「加号」新建脚本。</h3><p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/tampermonkey/image_95.png" srcset="/img/loading.gif" lazyload style="zoom:60%;" /></p>
+<h3 id="修改-header"><a href="#修改-header" class="headerlink" title="修改 header"></a>修改 header</h3><p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/tampermonkey/image_96.png" srcset="/img/loading.gif" lazyload style="zoom: 67%;" /></p>
+<p>其中 <code>@name</code> 是脚本的名称，<code>@match</code> 是这个脚本需要被运用在哪些网站上，以 Bilibili 番剧举例则是：<code>https://www.bilibili.com/bangumi/play/*</code>。其他你们自己看着填。</p>
+<p>如果用 JQuery 的话，最好再加一行 <code>/* globals jQuery, $, waitForKeyElements */</code>，不然它老显示<code>eslint: no-under - &#39;$&#39; is not defined.</code>，我嫌烦。</p>
+<h3 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h3><p>就和 JS 一样，比如我在这加一句 alert，他对应的页面就会弹出那个 alert。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/tampermonkey/image_98.png" srcset="/img/loading.gif" lazyload style="zoom: 67%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/tampermonkey/image_97.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="脚本发布"><a href="#脚本发布" class="headerlink" title="脚本发布"></a>脚本发布</h2><p>在这里登录了以后填写一个表单👉 <a target="_blank" rel="noopener" href="https://greasyfork.org/en/script_versions/new">Post a new script (greasyfork.org)</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/tampermonkey/image_99.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>点击发布就完事儿了！！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/emoji/ciruno.gif" srcset="/img/loading.gif" lazyload alt=""></p>
 
-<div class="list-group">
-  <p class="h4">13 posts in total.</p>
-  <hr>
-  
-  
-    
-      
-      <p class="h5">2022</p>
-    
-    <a href="/post/0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title"></span>
-      <time style="float: right;">01-31</time>
-    </a>
-  
-    
-      
-      <p class="h5">2021</p>
-    
-    <a href="/post/5a8a6c8d/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">记一次拖了一个学期的 dubug 经历</span>
-      <time style="float: right;">12-20</time>
-    </a>
-  
-    
-    <a href="/post/8867a8f4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">音乐乐理基础</span>
-      <time style="float: right;">09-07</time>
-    </a>
-  
-    
-    <a href="/post/22dee00c/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Windows 软件推荐｜持续更新</span>
-      <time style="float: right;">08-12</time>
-    </a>
-  
-    
-      
-      <p class="h5">2020</p>
-    
-    <a href="/post/38733/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Java Server and Client 实现聊天室</span>
-      <time style="float: right;">12-14</time>
-    </a>
-  
-    
-    <a href="/post/61834/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hexo 迁移｜mac 到 windows</span>
-      <time style="float: right;">11-27</time>
-    </a>
-  
-    
-    <a href="/post/3587/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Grade 12 Chemistry（窗了）</span>
-      <time style="float: right;">09-10</time>
-    </a>
-  
-    
-    <a href="/post/17599/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">好用的油猴脚本推荐｜持续更新</span>
-      <time style="float: right;">09-02</time>
-    </a>
-  
-    
-    <a href="/post/10412/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">图｜Graph</span>
-      <time style="float: right;">08-16</time>
-    </a>
-  
-    
-    <a href="/post/35477/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">多路查找树｜Multi-Way Search Tree</span>
-      <time style="float: right;">08-14</time>
-    </a>
-  
-</div>
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/#board">2</a><a class="extend next" rel="next" href="/archives/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/5a8a6c8d/">
+                        <span class="hidden-mobile">记一次拖了一个学期的 dubug 经历</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('//blog.trotyl.xyz/js/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appid":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appkey":"WV76W9zkR1pcORcdd3UjPpKA","placeholder":"｜在上方留下你的邮箱，它不会被公开显示，收到回复的话会有邮件提醒&#10｜Leave your email above to get notifications for replies","path":"window.location.pathname","avatar":"robohash","meta":["nick","mail","link"],"pageSize":10,"lang":"en","highlight":true,"recordIP":true,"serverURLs":"https://cFjrGe19.api.lncldglobal.com","emojiMaps":{"tieba-1":"tieba/tieba-1.png","tieba-2":"tieba/tieba-2.png","tieba-3":"tieba/tieba-3.png","tieba-4":"tieba/tieba-4.png","tieba-5":"tieba/tieba-5.png","tieba-6":"tieba/tieba-6.png","tieba-7":"tieba/tieba-7.png","tieba-8":"tieba/tieba-8.png","tieba-9":"tieba/tieba-9.png","tieba-10":"tieba/tieba-10.png","tieba-11":"tieba/tieba-11.png","tieba-12":"tieba/tieba-12.png","tieba-13":"tieba/tieba-13.png","tieba-14":"tieba/tieba-14.png","tieba-15":"tieba/tieba-15.png","tieba-16":"tieba/tieba-16.png","tieba-17":"tieba/tieba-17.png","tieba-18":"tieba/tieba-18.png","tieba-19":"tieba/tieba-19.png","tieba-20":"tieba/tieba-20.png","tieba-21":"tieba/tieba-21.png","tieba-22":"tieba/tieba-22.png","tieba-23":"tieba/tieba-23.png","tieba-24":"tieba/tieba-24.png","tieba-25":"tieba/tieba-25.png","tieba-26":"tieba/tieba-26.png","tieba-27":"tieba/tieba-27.png","tieba-28":"tieba/tieba-28.png","tieba-29":"tieba/tieba-29.png","tieba-30":"tieba/tieba-30.png","tieba-31":"tieba/tieba-31.png","tieba-32":"tieba/tieba-32.png","tieba-33":"tieba/tieba-33.png","tieba-34":"tieba/tieba-34.png","tieba-35":"tieba/tieba-35.png","tieba-36":"tieba/tieba-36.png","tieba-37":"tieba/tieba-37.png","tieba-38":"tieba/tieba-38.png","tieba-39":"tieba/tieba-39.png","tieba-40":"tieba/tieba-40.png","tieba-41":"tieba/tieba-41.png","tieba-42":"tieba/tieba-42.png","tieba-43":"tieba/tieba-43.png","tieba-44":"tieba/tieba-44.png","tieba-45":"tieba/tieba-45.png","tieba-46":"tieba/tieba-46.png","tieba-47":"tieba/tieba-47.png","tieba-48":"tieba/tieba-48.png","tieba-49":"tieba/tieba-49.png","tieba-50":"tieba/tieba-50.png","tieba-51":"tieba/tieba-51.png","tieba-52":"tieba/tieba-52.png","tieba-56":"tieba/tieba-56.png","tieba-57":"tieba/tieba-57.png","tieba-59":"tieba/tieba-59.png","tieba-60":"tieba/tieba-60.png","tieba-61":"tieba/tieba-61.png","EveOneCat-1":"EveOneCat/EveOneCat_1.png","EveOneCat-2":"EveOneCat/EveOneCat_2.png","EveOneCat-3":"EveOneCat/EveOneCat_3.png","EveOneCat-4":"EveOneCat/EveOneCat_4.png","EveOneCat-5":"EveOneCat/EveOneCat_5.png","EveOneCat-6":"EveOneCat/EveOneCat_6.png","EveOneCat-7":"EveOneCat/EveOneCat_7.png","EveOneCat-8":"EveOneCat/EveOneCat_8.png","EveOneCat-9":"EveOneCat/EveOneCat_9.png","EveOneCat-10":"EveOneCat/EveOneCat_10.png","EveOneCat-11":"EveOneCat/EveOneCat_11.png","EveOneCat-12":"EveOneCat/EveOneCat_12.png","EveOneCat-13":"EveOneCat/EveOneCat_13.png","EveOneCat-14":"EveOneCat/EveOneCat_14.png","EveOneCat-15":"EveOneCat/EveOneCat_15.png","EveOneCat-16":"EveOneCat/EveOneCat_16.png","EveOneCat-17":"EveOneCat/EveOneCat_17.png","EveOneCat-18":"EveOneCat/EveOneCat_18.png","EveOneCat-19":"EveOneCat/EveOneCat_19.png","EveOneCat-20":"EveOneCat/EveOneCat_20.png","miharo-1":"miharo/miharo-1.png","miharo-2":"miharo/miharo-2.png","miharo-3":"miharo/miharo-3.png","miharo-4":"miharo/miharo-4.png","miharo-5":"miharo/miharo-5.png","miharo-6":"miharo/miharo-6.png","miharo-7":"miharo/miharo-7.png","miharo-8":"miharo/miharo-8.png","miharo-9":"miharo/miharo-9.png","miharo-10":"miharo/miharo-10.png","miharo-11":"miharo/miharo-11.png","miharo-12":"miharo/miharo-12.png","miharo-13":"miharo/miharo-13.png","miharo-14":"miharo/miharo-14.png","miharo-15":"miharo/miharo-15.png","miharo-16":"miharo/miharo-16.png","miharo-17":"miharo/miharo-17.png","miharo-18":"miharo/miharo-18.png","huaji-1":"huaji/huaji-1.png","huaji-2":"huaji/huaji-2.png","huaji-3":"huaji/huaji-3.png","huaji-4":"huaji/huaji-4.png","huaji-5":"huaji/huaji-5.png","huaji-6":"huaji/huaji-6.png","huaji-7":"huaji/huaji-7.png","huaji-8":"huaji/huaji-8.png","huaji-9":"huaji/huaji-9.png","huaji-10":"huaji/huaji-10.png","huaji-11":"huaji/huaji-11.png","huaji-12":"huaji/huaji-12.png","huaji-13":"huaji/huaji-13.png","huaji-14":"huaji/huaji-14.png","huaji-15":"huaji/huaji-15.gif"},"enableQQ":true,"requiredFields":[],"appId":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appKey":"WV76W9zkR1pcORcdd3UjPpKA","emojiCDN":"https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/emoji/"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -527,6 +601,8 @@
                     
                         
                             
+                                <script  src="/js/img-lazyload.js" ></script>
+                                    
                                         
                                                     
 
@@ -535,10 +611,16 @@
                                                                                                 
 
                                                                                                     
+                                                                                                        <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+                                                                                                            
 
                                                                                                                 
+                                                                                                                    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+                                                                                                                        
 
                                                                                                                             
+                                                                                                                                <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+                                                                                                                                    
 
                                                                                                                                         
                                                                                                                                             <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>

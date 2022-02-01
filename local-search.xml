@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title></title>
+    <link href="/post/0/"/>
+    <url>/post/0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="从0开始学习油猴脚本的编写到发布"><a href="#从0开始学习油猴脚本的编写到发布" class="headerlink" title="从0开始学习油猴脚本的编写到发布"></a>从0开始学习油猴脚本的编写到发布</h1><p>因为我实在受不了我们学校网站的视频进度条和PDF浏览器，我就写了个跳转网页到文件源地址的小脚本👉<a href="https://greasyfork.org/en/scripts/439394-waterloo-learn-video-pdf-redirect">Waterloo Learn Video &amp; PDF Redirect (greasyfork.org)</a>。</p><p>中途找教程的时候还挺折磨，我就写一篇从编写到发布的流程介绍吧。</p><h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul><li>HTML</li><li>JavaScript</li><li>JQuery（最好，不会你用原生 JS 写应该也一样）</li></ul><h2 id="获取-Tampermonkey-浏览器插件"><a href="#获取-Tampermonkey-浏览器插件" class="headerlink" title="获取 Tampermonkey 浏览器插件"></a>获取 Tampermonkey 浏览器插件</h2><p>有手就行，没下的去这里下：<a href="https://www.tampermonkey.net/">Tampermonkey</a></p><h2 id="脚本编写"><a href="#脚本编写" class="headerlink" title="脚本编写"></a>脚本编写</h2><h3 id="点这个「加号」新建脚本。"><a href="#点这个「加号」新建脚本。" class="headerlink" title="点这个「加号」新建脚本。"></a>点这个「加号」新建脚本。</h3><p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/tampermonkey/image_95.png" srcset="/img/loading.gif" lazyload style="zoom:60%;" /></p><h3 id="修改-header"><a href="#修改-header" class="headerlink" title="修改 header"></a>修改 header</h3><p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/tampermonkey/image_96.png" srcset="/img/loading.gif" lazyload style="zoom: 67%;" /></p><p>其中 <code>@name</code> 是脚本的名称，<code>@match</code> 是这个脚本需要被运用在哪些网站上，以 Bilibili 番剧举例则是：<code>https://www.bilibili.com/bangumi/play/*</code>。其他你们自己看着填。</p><p>如果用 JQuery 的话，最好再加一行 <code>/* globals jQuery, $, waitForKeyElements */</code>，不然它老显示<code>eslint: no-under - &#39;$&#39; is not defined.</code>，我嫌烦。</p><h3 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h3><p>就和 JS 一样，比如我在这加一句 alert，他对应的页面就会弹出那个 alert。</p><p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/tampermonkey/image_98.png" srcset="/img/loading.gif" lazyload style="zoom: 67%;" /></p><p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/tampermonkey/image_97.png" srcset="/img/loading.gif" lazyload alt=""></p><h2 id="脚本发布"><a href="#脚本发布" class="headerlink" title="脚本发布"></a>脚本发布</h2><p>在这里登录了以后填写一个表单👉 <a href="https://greasyfork.org/en/script_versions/new">Post a new script (greasyfork.org)</a></p><p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/tampermonkey/image_99.png" srcset="/img/loading.gif" lazyload alt=""></p><p>点击发布就完事儿了！！</p><p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/emoji/ciruno.gif" srcset="/img/loading.gif" lazyload alt=""></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>记一次拖了一个学期的 dubug 经历</title>
     <link href="/post/5a8a6c8d/"/>
     <url>/post/5a8a6c8d/</url>
