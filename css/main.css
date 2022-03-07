@@ -1987,8 +1987,7 @@ input {
   cursor: url("https://github.com/Trotyl15/Trotyl15.github.io/blob/master/img/cursor2.cur?raw=true"), auto;
 }
 a,
-body a,
-img {
+body a {
   cursor: url("https://github.com/Trotyl15/Trotyl15.github.io/blob/master/img/cursor3.cur?raw=true"), auto;
 }
 /* 
