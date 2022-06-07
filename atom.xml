@@ -6,7 +6,7 @@
   <link href="http://blog.trotyl.xyz/atom.xml" rel="self"/>
   
   <link href="http://blog.trotyl.xyz/"/>
-  <updated>2022-02-01T05:10:33.248Z</updated>
+  <updated>2022-06-07T03:40:50.158Z</updated>
   <id>http://blog.trotyl.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL 数据库和 SQL 的学习笔记</title>
+    <link href="http://blog.trotyl.xyz/post/4d712855/"/>
+    <id>http://blog.trotyl.xyz/post/4d712855/</id>
+    <published>2022-05-31T15:41:00.000Z</published>
+    <updated>2022-06-07T03:40:50.158Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/others/05BF466E1360CC64351C9467ADBB0960.jpg&quot; srcset=&quot;/img/loading.gif&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="SQL" scheme="http://blog.trotyl.xyz/tags/SQL/"/>
+    
+    <category term="MySQL" scheme="http://blog.trotyl.xyz/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>从0开始学习油猴脚本的编写到发布</title>
