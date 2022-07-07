@@ -6,7 +6,7 @@
   <link href="http://blog.trotyl.xyz/atom.xml" rel="self"/>
   
   <link href="http://blog.trotyl.xyz/"/>
-  <updated>2022-06-07T03:45:12.884Z</updated>
+  <updated>2022-07-07T17:14:49.373Z</updated>
   <id>http://blog.trotyl.xyz/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flask 的常用模块和命令</title>
+    <link href="http://blog.trotyl.xyz/post/36c70eb9/"/>
+    <id>http://blog.trotyl.xyz/post/36c70eb9/</id>
+    <published>2022-06-26T15:42:00.000Z</published>
+    <updated>2022-07-07T17:14:49.373Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本健忘症晚期患者自用&lt;/p&gt;
+&lt;h1 id=&quot;模块&quot;&gt;&lt;a href=&quot;#模块&quot; class=&quot;headerlink&quot; title=&quot;模块&quot;&gt;&lt;/a&gt;模块&lt;/h1&gt;&lt;h2 id=&quot;Basebones-App&quot;&gt;&lt;a href=&quot;#Basebones-App&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="http://blog.trotyl.xyz/tags/python/"/>
+    
+    <category term="flask" scheme="http://blog.trotyl.xyz/tags/flask/"/>
+    
+    <category term="heroku" scheme="http://blog.trotyl.xyz/tags/heroku/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL 数据库和 SQL 的学习笔记</title>
