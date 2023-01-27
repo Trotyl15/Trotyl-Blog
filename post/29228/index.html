@@ -303,7 +303,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：February 1, 2022 12:11 AM
+                  本文最后更新于：October 25, 2022 10:39 PM
                 
               </p>
             
@@ -346,13 +346,13 @@
 </center>
 
 <p>当插入结点“2”时，“2”应该放在“1”的右子结点</p>
-<h1 id="五、删除结点的思路"><a href="#五、删除结点的思路" class="headerlink" title="五、删除结点的思路"></a>五、删除结点的思路</h1><h2 id="第一种情况"><a href="#第一种情况" class="headerlink" title="第一种情况"></a>第一种情况</h2><h3 id="——删除叶子结点（如：2，5，9，12）"><a href="#——删除叶子结点（如：2，5，9，12）" class="headerlink" title="——删除叶子结点（如：2，5，9，12）"></a>——删除叶子结点（如：2，5，9，12）</h3><p>1） 定位结点 targetNode</p>
+<h1 id="五、删除结点的思路"><a href="#五、删除结点的思路" class="headerlink" title="五、删除结点的思路"></a>五、删除结点的思路</h1><h2 id="第一种情况"><a href="#第一种情况" class="headerlink" title="第一种情况"></a>第一种情况</h2><h3 id="——删除叶子结点（如：1，5，9，12）"><a href="#——删除叶子结点（如：1，5，9，12）" class="headerlink" title="——删除叶子结点（如：1，5，9，12）"></a>——删除叶子结点（如：1，5，9，12）</h3><p>1） 定位结点 targetNode</p>
 <p>2）找到targetNode的父结点 parent</p>
 <p>3）确定targetNode是parent的左子结点还是右子结点</p>
 <p>4）根据前面的情况对应删除</p>
 <p>左子结点：<code>parent.left = null</code>;</p>
 <p>右子结点：<code>parent.right = =null</code>;</p>
-<h2 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h2><h3 id="——删除只有一颗子树的结点（如：1）"><a href="#——删除只有一颗子树的结点（如：1）" class="headerlink" title="——删除只有一颗子树的结点（如：1）"></a>——删除只有一颗子树的结点（如：1）</h3><p>1） 定位结点 targetNode</p>
+<h2 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h2><h3 id="——删除只有一颗子树的结点（如：3）"><a href="#——删除只有一颗子树的结点（如：3）" class="headerlink" title="——删除只有一颗子树的结点（如：3）"></a>——删除只有一颗子树的结点（如：3）</h3><p>1） 定位结点 targetNode</p>
 <p>2）找到targetNode的父结点 parent</p>
 <p>3）确定targetNode的子结点是左结点还是右子结点</p>
 <ul>
@@ -373,7 +373,7 @@
 <p>1） 定位结点 targetNode</p>
 <p>2）找到targetNode的父结点 parent</p>
 <p>3）从targetNode的右子树找到最小的结点</p>
-<p>4）用一个临时变量，将右子树最小的结点值保存 temp = 12</p>
+<p>4）用一个临时变量，将右子树最小的结点值保存 temp = 11</p>
 <p>5）删除该最小结点</p>
 <p>6）<code>targetNode.value = temp;</code>    </p>
 <p><img src="https://gitee.com/Trotyl15/blogImage/raw/master/img/note/d&amp;a/BST2.png" srcset="/img/loading.gif" lazyload alt=""></p>
@@ -791,7 +791,7 @@
     //点击body时触发事件
     $("body").click(function (e) {
       //需要显示的词语
-      var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+      var a = new Array("👻","🍊","🍉","🍋","❄","🌈","🥕","🦝","🐨");
       //设置词语给span标签
       var $i = $("<span/>").text(a[a_idx]);
       //下标等于原来下标+1  余 词语总数
