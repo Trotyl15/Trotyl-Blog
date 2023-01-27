@@ -546,12 +546,14 @@
       //设置词语给span标签
       var $i = $("<span/>").text(a[a_idx]);
       //下标等于原来下标+1  余 词语总数
-      a_idx = (a_idx + 1) % a.length;
+      a_idx = Math.floor(Math.random()*a.length);
+      // console.log(a_idx);
       //获取鼠标指针的位置，分别相对于文档的左和右边缘。
       //获取x和y的指针坐标
       var x = e.pageX, y = e.pageY;
       //在鼠标的指针的位置给$i定义的span标签添加css样式
       $i.css({
+        "font-size":"20px",
         "z-index": 999,
         "top": y - 20,
         "left": x,
