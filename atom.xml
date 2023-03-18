@@ -6,7 +6,7 @@
   <link href="http://blog.trotyl.xyz/atom.xml" rel="self"/>
   
   <link href="http://blog.trotyl.xyz/"/>
-  <updated>2022-07-07T17:14:49.373Z</updated>
+  <updated>2023-03-18T01:22:39.655Z</updated>
   <id>http://blog.trotyl.xyz/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于 Mapbox 实现 PyQt5上的离线地图</title>
+    <link href="http://blog.trotyl.xyz/post/b65dbbb5/"/>
+    <id>http://blog.trotyl.xyz/post/b65dbbb5/</id>
+    <published>2023-03-18T01:08:00.000Z</published>
+    <updated>2023-03-18T01:22:39.655Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;懒得看的话可以直接 clone 我的 repository：&lt;a href=&quot;https://github.com/Trotyl15/Offline-Mapbox-in-PyQt5&quot;&gt;Trotyl15/Offline-Mapbox-in-PyQt5</summary>
+        
+      
+    
+    
+    
+    
+    <category term="jQuery" scheme="http://blog.trotyl.xyz/tags/jQuery/"/>
+    
+    <category term="Python" scheme="http://blog.trotyl.xyz/tags/Python/"/>
+    
+    <category term="PyQt5" scheme="http://blog.trotyl.xyz/tags/PyQt5/"/>
+    
+    <category term="JavaScript" scheme="http://blog.trotyl.xyz/tags/JavaScript/"/>
+    
+    <category term="Mapbox" scheme="http://blog.trotyl.xyz/tags/Mapbox/"/>
+    
+  </entry>
   
   <entry>
     <title>Flask 的常用模块和命令</title>

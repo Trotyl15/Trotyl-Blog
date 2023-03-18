@@ -40,10 +40,26 @@
                 <meta name="keywords" content="">
                 
                             <title>
-                                Archives - Trotyl&#39;s Blog
+                                基于 Mapbox 实现 PyQt5上的离线地图 - Trotyl&#39;s Blog
                             </title>
 
                             <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -73,7 +89,7 @@
 </head>
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
     <div class="container">
         <a class="navbar-brand" href="/">
@@ -213,9 +229,54 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Archive">
+            <span class="h2" id="subtitle" title="基于 Mapbox 实现 PyQt5上的离线地图">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-03-17 21:08" pubdate>
+        March 17, 2023 9:08 PM
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      798 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -228,64 +289,139 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">16 posts in total.</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/post/10412/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">图｜Graph</span>
-      <time style="float: right;">08-16</time>
-    </a>
-  
-    
-    <a href="/post/35477/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">多路查找树｜Multi-Way Search Tree</span>
-      <time style="float: right;">08-14</time>
-    </a>
-  
-    
-    <a href="/post/8178/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">平衡二叉树｜AVL Tree</span>
-      <time style="float: right;">08-08</time>
-    </a>
-  
-    
-    <a href="/post/29228/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">二叉排序树｜Binary Sort Tree</span>
-      <time style="float: right;">08-07</time>
-    </a>
-  
-    
-    <a href="/post/63785/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">我的第一篇博客</span>
-      <time style="float: right;">08-03</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">基于 Mapbox 实现 PyQt5上的离线地图</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：March 17, 2023 9:22 PM
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>懒得看的话可以直接 clone 我的 repository：<a target="_blank" rel="noopener" href="https://github.com/Trotyl15/Offline-Mapbox-in-PyQt5">Trotyl15/Offline-Mapbox-in-PyQt5 (github.com)</a> <del>记得给个小星星🧐</del></p>
+<p><span class="heimu" title="你知道的太多了">到底是谁先流行的 Folium？？一点也不好用！😭</span></p>
+<p>我一共试了 Folium, Google Map 和 Mapbox，Folium 不能动态更新 marker，Google Map不能离线，只有 Mapbox 还行。。还没试 Leaflet，谁有空谁试吧😇（记得告诉我行不行）</p>
+<h2 id="获取-Maptile"><a href="#获取-Maptile" class="headerlink" title="获取 Maptile"></a>获取 Maptile</h2><p>我用的是 <a target="_blank" rel="noopener" href="https://www.openstreetmap.org/">OpenStreetMap</a> 和 <a target="_blank" rel="noopener" href="http://maperitive.net/">Maperitive</a></p>
+<ol>
+<li>用 OpenStreetMap 获取需要地图的<code>.osm</code>文件</li>
+<li>用 Maperitive 把<code>.osm</code>转换成<code>.png</code></li>
+</ol>
+<h2 id="Web-部分"><a href="#Web-部分" class="headerlink" title="Web 部分"></a>Web 部分</h2><p>创建一个html，可以叫<code>map.html</code></p>
+<h3 id="获取需要的文件"><a href="#获取需要的文件" class="headerlink" title="获取需要的文件"></a>获取需要的文件</h3><ol>
+<li>建议自己注册一个 mapbox 账户，输入 token 然后按照步骤嵌入地图到 html</li>
+<li>用浏览器打开html后打开 Developer Tool，在 source 里找到需要的js, css文件和其他文件（如sprite等）下载下来</li>
+<li>html里引入需要文件，如 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&#x27;./api/assets/mapbox-gl.js&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>&lt;href=&#x27;./api/assets/mapbox-gl.css&#x27; rel=&#x27;stylesheet/&gt;<br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;jquery-3.6.4.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+ 我写个一个字符的 JavaScript 就想用 jQuery 所以我这里也引入了 jQuery</li>
+</ol>
+<h3 id="Host-Files-on-Local-Server"><a href="#Host-Files-on-Local-Server" class="headerlink" title="Host Files on Local Server"></a>Host Files on Local Server</h3><p>把文件放进对应路径后写一个<code>server.py</code>用来 host 文件<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xl"><span class="hljs-keyword">import</span> http.server<br><span class="hljs-keyword">import</span> socketserver<br><br>PORT = <span class="hljs-number">8888</span><br><br>Handler = http.server.SimpleHTTPRequestHandler<br><br><span class="hljs-keyword">with</span> socketserver.TCPServer((<span class="hljs-string">&quot;&quot;</span>, PORT), Handler) <span class="hljs-keyword">as</span> httpd:<br>    httpd.serve_forever()<br></code></pre></td></tr></table></figure></p>
+<h3 id="Setup-Config"><a href="#Setup-Config" class="headerlink" title="Setup Config"></a>Setup Config</h3><p>在 html 里按自己要求设置一下 Mapbox 的参数，比如我是这样的<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br><span class="javascript">	<span class="hljs-keyword">var</span> map = <span class="hljs-keyword">new</span> mapboxgl.Map(&#123;</span><br><span class="javascript">                container: <span class="hljs-string">&#x27;map&#x27;</span>,</span><br>                style: &#123;<br><span class="javascript">                    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">8</span>,</span><br><span class="javascript">                    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Mapbox Streets&quot;</span>,</span><br><span class="javascript">                    <span class="hljs-string">&quot;sprite&quot;</span>: <span class="hljs-string">&quot;http://localhost:8888/mapbox_build/sprite/sprite&quot;</span>,</span><br><span class="javascript">                    <span class="hljs-comment">//  &quot;glyphs&quot;: &quot;http://localhost:8888/mapbox_build/fonts/&#123;fontstack&#125;/&#123;range&#125;.pbf&quot;,</span></span><br><span class="javascript">                    <span class="hljs-string">&quot;sources&quot;</span>: &#123;</span><br><span class="javascript">                        <span class="hljs-string">&quot;osm-tiles&quot;</span>: &#123;</span><br><span class="javascript">                            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;raster&quot;</span>,</span><br><span class="javascript">                            <span class="hljs-string">&#x27;tiles&#x27;</span>: [</span><br><span class="javascript">                                <span class="hljs-string">&quot;http://localhost:8888/tiles/&#123;z&#125;/&#123;x&#125;/&#123;y&#125;.png&quot;</span></span><br>                            ],<br><br>                        &#125;<br>                    &#125;,<br><span class="javascript">                    <span class="hljs-string">&quot;layers&quot;</span>: [&#123;</span><br><span class="javascript">                        <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;123&quot;</span>,</span><br><span class="javascript">                        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;raster&quot;</span>,</span><br><span class="javascript">                        <span class="hljs-string">&quot;source&quot;</span>: <span class="hljs-string">&quot;osm-tiles&quot;</span>,</span><br><span class="javascript">                        <span class="hljs-string">&quot;source-layer&quot;</span>: <span class="hljs-string">&quot;osmtiles&quot;</span></span><br>                    &#125;]<br>                &#125;,<br>                center: [-71.6516848, 48.5107057],<br>                zoom: 15<br>            &#125;);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure><br>现在这里所有东西都是本地文件，已经可以离线用了</p>
+<h2 id="嵌入-PyQt5"><a href="#嵌入-PyQt5" class="headerlink" title="嵌入 PyQt5"></a>嵌入 PyQt5</h2><p>用 PyQt 的 webengin 嵌入 html，新建<code>.py</code>文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">from</span> PyQt5.QtWidgets <span class="hljs-keyword">import</span> QApplication, QWidget, QHBoxLayout, QVBoxLayout<br><span class="hljs-keyword">from</span> PyQt5.QtWebEngineWidgets <span class="hljs-keyword">import</span> QWebEngineView  <span class="hljs-comment"># pip install PyQtWebEngine</span><br><span class="hljs-keyword">from</span> PyQt5 <span class="hljs-keyword">import</span> QtCore<br><span class="hljs-keyword">from</span> PyQt5.QtCore <span class="hljs-keyword">import</span> *<br><br><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">Mapbox in PyQt5</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyApp</span>(<span class="hljs-params">QWidget</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self</span>):</span><br>        <span class="hljs-built_in">super</span>().__init__()<br>        self.setWindowTitle(<span class="hljs-string">&#x27;Mapbox in PyQt Example&#x27;</span>)<br>        self.window_width, self.window_height = <span class="hljs-number">600</span>, <span class="hljs-number">400</span><br>        self.setMinimumSize(self.window_width, self.window_height)<br><br>        layout = QVBoxLayout()<br>        self.setLayout(layout)<br><br>        webView = QWebEngineView()<br>        webView.load(QUrl(<span class="hljs-string">&#x27;http://localhost:8888/map.html&#x27;</span>))<br>        layout.addWidget(webView)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    app = QApplication(sys.argv)<br>    app.setStyleSheet(<span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">        QWidget &#123;</span><br><span class="hljs-string">            font-size: 35px;</span><br><span class="hljs-string">        &#125;</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span>)<br><br>    myApp.show()<br><br>    <span class="hljs-keyword">try</span>:<br>        sys.exit(app.exec_())<br>    <span class="hljs-keyword">except</span> SystemExit:<br>        print(<span class="hljs-string">&#x27;Closing Window...&#x27;</span>)<br></code></pre></td></tr></table></figure></p>
+<h2 id="Python-和-Html-的交互"><a href="#Python-和-Html-的交互" class="headerlink" title="Python 和 Html 的交互"></a>Python 和 Html 的交互</h2><p>因为我需要实时更改 mapbox marker 的位置，所以我用了一个json来存 coordinate 的参数</p>
+<h3 id="json"><a href="#json" class="headerlink" title="json:"></a>json:</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<span class="hljs-attr">&quot;coordinate&quot;</span>: [<span class="hljs-number">-71.65108479999981</span>, <span class="hljs-number">48.51130570000019</span>]&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="js"><a href="#js" class="headerlink" title="js:"></a>js:</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-keyword">let</span> marker = <span class="hljs-keyword">new</span> mapboxgl.<span class="hljs-constructor">Marker()</span>;<br><br>set<span class="hljs-constructor">Interval(<span class="hljs-params">function</span>()</span> &#123;      <br>	$.get<span class="hljs-constructor">JSON(<span class="hljs-string">&quot;map.json&quot;</span>, <span class="hljs-params">function</span> (<span class="hljs-params">json</span>)</span> &#123;<br>		console.log(json);<br>		marker.set<span class="hljs-constructor">LngLat(<span class="hljs-params">json</span>.<span class="hljs-params">coordinate</span>)</span>;<br>		.add<span class="hljs-constructor">To(<span class="hljs-params">map</span>)</span>;<br>	&#125;);                   <br>&#125;,<span class="hljs-number">10</span>);<br></code></pre></td></tr></table></figure>
+<h3 id="python"><a href="#python" class="headerlink" title="python:"></a>python:</h3><p>写入json的function<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql">def reloadMap():<br>    <span class="hljs-keyword">with</span> <span class="hljs-keyword">open</span>(<span class="hljs-string">&quot;map.json&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>) <span class="hljs-keyword">as</span> jsonFile:<br>        <span class="hljs-keyword">data</span> = json.load(jsonFile)<br><br>    <span class="hljs-keyword">data</span>[<span class="hljs-string">&quot;coordinate&quot;</span>] = [<span class="hljs-keyword">data</span>[<span class="hljs-string">&quot;coordinate&quot;</span>][<span class="hljs-number">0</span>]+<span class="hljs-number">0.00001</span>,<span class="hljs-keyword">data</span>[<span class="hljs-string">&quot;coordinate&quot;</span>][<span class="hljs-number">1</span>]+<span class="hljs-number">0.00001</span>]<br>    <br>    <span class="hljs-keyword">with</span> <span class="hljs-keyword">open</span>(<span class="hljs-string">&quot;map.json&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>) <span class="hljs-keyword">as</span> jsonFile:<br>        json.dump(<span class="hljs-keyword">data</span>, jsonFile)<br></code></pre></td></tr></table></figure><br>用PyQt自带的QTimer在新的线程上重复调用<code>reloadMap()</code><br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">timer = QTimer<span class="hljs-params">()</span><br>timer.timeout.<span class="hljs-keyword">connect</span><span class="hljs-params">(reloadMap)</span>  <span class="hljs-comment"># execute `reloadMap`</span><br>timer.<span class="hljs-keyword">set</span>Interval<span class="hljs-params">(50)</span>  <span class="hljs-comment"># 1000ms = 1s</span><br>timer.start<span class="hljs-params">()</span><br></code></pre></td></tr></table></figure></p>
+<h2 id="撒花"><a href="#撒花" class="headerlink" title="撒花"></a>撒花</h2><p>有问题的话欢迎评论呀！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/emoji/rei.gif" srcset="/img/loading.gif" lazyload height="250"></p>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/jQuery/">jQuery</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                      <a class="hover-with-bg" href="/tags/PyQt5/">PyQt5</a>
+                    
+                      <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Mapbox/">Mapbox</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/36c70eb9/">
+                        <span class="hidden-mobile">Flask 的常用模块和命令</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('/js/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appid":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appkey":"WV76W9zkR1pcORcdd3UjPpKA","placeholder":"｜在上方留下你的邮箱，它不会被公开显示，收到回复的话会有邮件提醒&#10｜Leave your email above to get notifications for replies","path":"window.location.pathname","avatar":"robohash","meta":["nick","mail","link"],"pageSize":10,"lang":"en","highlight":true,"recordIP":true,"serverURLs":"https://cFjrGe19.api.lncldglobal.com","emojiMaps":{"tieba-1":"tieba/tieba-1.png","tieba-2":"tieba/tieba-2.png","tieba-3":"tieba/tieba-3.png","tieba-4":"tieba/tieba-4.png","tieba-5":"tieba/tieba-5.png","tieba-6":"tieba/tieba-6.png","tieba-7":"tieba/tieba-7.png","tieba-8":"tieba/tieba-8.png","tieba-9":"tieba/tieba-9.png","tieba-10":"tieba/tieba-10.png","tieba-11":"tieba/tieba-11.png","tieba-12":"tieba/tieba-12.png","tieba-13":"tieba/tieba-13.png","tieba-14":"tieba/tieba-14.png","tieba-15":"tieba/tieba-15.png","tieba-16":"tieba/tieba-16.png","tieba-17":"tieba/tieba-17.png","tieba-18":"tieba/tieba-18.png","tieba-19":"tieba/tieba-19.png","tieba-20":"tieba/tieba-20.png","tieba-21":"tieba/tieba-21.png","tieba-22":"tieba/tieba-22.png","tieba-23":"tieba/tieba-23.png","tieba-24":"tieba/tieba-24.png","tieba-25":"tieba/tieba-25.png","tieba-26":"tieba/tieba-26.png","tieba-27":"tieba/tieba-27.png","tieba-28":"tieba/tieba-28.png","tieba-29":"tieba/tieba-29.png","tieba-30":"tieba/tieba-30.png","tieba-31":"tieba/tieba-31.png","tieba-32":"tieba/tieba-32.png","tieba-33":"tieba/tieba-33.png","tieba-34":"tieba/tieba-34.png","tieba-35":"tieba/tieba-35.png","tieba-36":"tieba/tieba-36.png","tieba-37":"tieba/tieba-37.png","tieba-38":"tieba/tieba-38.png","tieba-39":"tieba/tieba-39.png","tieba-40":"tieba/tieba-40.png","tieba-41":"tieba/tieba-41.png","tieba-42":"tieba/tieba-42.png","tieba-43":"tieba/tieba-43.png","tieba-44":"tieba/tieba-44.png","tieba-45":"tieba/tieba-45.png","tieba-46":"tieba/tieba-46.png","tieba-47":"tieba/tieba-47.png","tieba-48":"tieba/tieba-48.png","tieba-49":"tieba/tieba-49.png","tieba-50":"tieba/tieba-50.png","tieba-51":"tieba/tieba-51.png","tieba-52":"tieba/tieba-52.png","tieba-56":"tieba/tieba-56.png","tieba-57":"tieba/tieba-57.png","tieba-59":"tieba/tieba-59.png","tieba-60":"tieba/tieba-60.png","tieba-61":"tieba/tieba-61.png","paroxie-1":"paroxie/01.png","paroxie-2":"paroxie/02.png","paroxie-3":"paroxie/03.png","paroxie-4":"paroxie/04.png","paroxie-5":"paroxie/05.png","paroxie-6":"paroxie/06.png","paroxie-7":"paroxie/07.png","paroxie-8":"paroxie/08.png","paroxie-9":"paroxie/09.png","paroxie-10":"paroxie/10.png","paroxie-11":"paroxie/11.png","paroxie-12":"paroxie/12.png","paroxie-13":"paroxie/13.png","paroxie-14":"paroxie/14.png","paroxie-15":"paroxie/15.png","paroxie-16":"paroxie/16.png","EveOneCat-1":"EveOneCat/EveOneCat_1.png","EveOneCat-2":"EveOneCat/EveOneCat_2.png","EveOneCat-3":"EveOneCat/EveOneCat_3.png","EveOneCat-4":"EveOneCat/EveOneCat_4.png","EveOneCat-5":"EveOneCat/EveOneCat_5.png","EveOneCat-6":"EveOneCat/EveOneCat_6.png","EveOneCat-7":"EveOneCat/EveOneCat_7.png","EveOneCat-8":"EveOneCat/EveOneCat_8.png","EveOneCat-9":"EveOneCat/EveOneCat_9.png","EveOneCat-10":"EveOneCat/EveOneCat_10.png","EveOneCat-11":"EveOneCat/EveOneCat_11.png","EveOneCat-12":"EveOneCat/EveOneCat_12.png","EveOneCat-13":"EveOneCat/EveOneCat_13.png","EveOneCat-14":"EveOneCat/EveOneCat_14.png","EveOneCat-15":"EveOneCat/EveOneCat_15.png","EveOneCat-16":"EveOneCat/EveOneCat_16.png","EveOneCat-17":"EveOneCat/EveOneCat_17.png","EveOneCat-18":"EveOneCat/EveOneCat_18.png","EveOneCat-19":"EveOneCat/EveOneCat_19.png","EveOneCat-20":"EveOneCat/EveOneCat_20.png","miharo-1":"miharo/miharo-1.png","miharo-2":"miharo/miharo-2.png","miharo-3":"miharo/miharo-3.png","miharo-4":"miharo/miharo-4.png","miharo-5":"miharo/miharo-5.png","miharo-6":"miharo/miharo-6.png","miharo-7":"miharo/miharo-7.png","miharo-8":"miharo/miharo-8.png","miharo-9":"miharo/miharo-9.png","miharo-10":"miharo/miharo-10.png","miharo-11":"miharo/miharo-11.png","miharo-12":"miharo/miharo-12.png","miharo-13":"miharo/miharo-13.png","miharo-14":"miharo/miharo-14.png","miharo-15":"miharo/miharo-15.png","miharo-16":"miharo/miharo-16.png","miharo-17":"miharo/miharo-17.png","miharo-18":"miharo/miharo-18.png","huaji-1":"huaji/huaji-1.png","huaji-2":"huaji/huaji-2.png","huaji-3":"huaji/huaji-3.png","huaji-4":"huaji/huaji-4.png","huaji-5":"huaji/huaji-5.png","huaji-6":"huaji/huaji-6.png","huaji-7":"huaji/huaji-7.png","huaji-8":"huaji/huaji-8.png","huaji-9":"huaji/huaji-9.png","huaji-10":"huaji/huaji-10.png","huaji-11":"huaji/huaji-11.png","huaji-12":"huaji/huaji-12.png","huaji-13":"huaji/huaji-13.png","huaji-14":"huaji/huaji-14.png","huaji-15":"huaji/huaji-15.gif"},"enableQQ":true,"requiredFields":[],"appId":"cFjrGe19VYuw6oG028ogcCKX-MdYXbMMI","appKey":"WV76W9zkR1pcORcdd3UjPpKA","emojiCDN":"https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/emoji/"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -485,6 +621,8 @@
                     
                         
                             
+                                <script  src="/js/img-lazyload.js" ></script>
+                                    
                                         
                                                     
 
@@ -493,10 +631,16 @@
                                                                                                 
 
                                                                                                     
+                                                                                                        <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+                                                                                                            
 
                                                                                                                 
+                                                                                                                    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+                                                                                                                        
 
                                                                                                                             
+                                                                                                                                <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+                                                                                                                                    
 
                                                                                                                                         
                                                                                                                                             <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
