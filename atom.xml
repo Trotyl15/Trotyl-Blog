@@ -6,7 +6,7 @@
   <link href="http://blog.trotyl.xyz/atom.xml" rel="self"/>
   
   <link href="http://blog.trotyl.xyz/"/>
-  <updated>2023-03-18T01:57:42.345Z</updated>
+  <updated>2023-04-05T23:53:33.432Z</updated>
   <id>http://blog.trotyl.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Deploying Hexo Anywhere using Github Action</title>
+    <link href="http://blog.trotyl.xyz/post/a664806d/"/>
+    <id>http://blog.trotyl.xyz/post/a664806d/</id>
+    <published>2023-03-31T06:05:00.000Z</published>
+    <updated>2023-04-05T23:53:33.432Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;According to &lt;a href=&quot;https://docs.github.com/en/actions&quot;&gt;Github Action’s documentation&lt;/a&gt;, this is a tool that helps you</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Hexo" scheme="http://blog.trotyl.xyz/tags/Hexo/"/>
+    
+    <category term="Github Action" scheme="http://blog.trotyl.xyz/tags/Github-Action/"/>
+    
+  </entry>
   
   <entry>
     <title>基于 Mapbox 实现 PyQt5上的离线地图</title>
