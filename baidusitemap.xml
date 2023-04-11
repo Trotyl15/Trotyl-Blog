@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://blog.trotyl.xyz/post/a664806d/</loc>
-    <lastmod>2023-04-11</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.trotyl.xyz/post/61834/</loc>
-    <lastmod>2023-04-11</lastmod>
-  </url>
-  <url>
     <loc>http://blog.trotyl.xyz/post/22dee00c/</loc>
     <lastmod>2023-04-11</lastmod>
   </url>
@@ -61,11 +53,19 @@
     <lastmod>2023-04-11</lastmod>
   </url>
   <url>
-    <loc>http://blog.trotyl.xyz/post/3587/</loc>
+    <loc>http://blog.trotyl.xyz/post/38733/</loc>
     <lastmod>2023-04-11</lastmod>
   </url>
   <url>
-    <loc>http://blog.trotyl.xyz/post/38733/</loc>
+    <loc>http://blog.trotyl.xyz/post/a664806d/</loc>
+    <lastmod>2023-04-11</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.trotyl.xyz/post/61834/</loc>
+    <lastmod>2023-04-11</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.trotyl.xyz/post/3587/</loc>
     <lastmod>2023-04-11</lastmod>
   </url>
 </urlset> 
