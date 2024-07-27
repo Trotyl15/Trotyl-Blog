@@ -285,7 +285,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      785 字
+      784 字
     </span>
   
 
@@ -337,7 +337,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：April 5, 2023 7:53 PM
+                  本文最后更新于：April 5, 2023 8:01 PM
                 
               </p>
             
@@ -367,101 +367,14 @@
 <li>Create a new directory under your root folder <code>.github/workflows/deploy.yml</code></li>
 <li><p>Confilg the yaml file</p>
 <p> Here’s mine: <strong>(Remember to change the <code>env</code> variables and time zone under <code>Configuration environment</code>)</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Action name</span><br><span class="hljs-attr">name:</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">Auto</span> <span class="hljs-string">Deploy</span><br><br><span class="hljs-attr">on:</span><br>  <span class="hljs-comment"># Trigger condition 1: main branch receives a push </span><br>  <span class="hljs-attr">push:</span><br>    <span class="hljs-attr">branches:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">main</span><br>  <span class="hljs-comment"># Trigger condition 2: Run workflow button manually pressed</span><br>  <span class="hljs-attr">workflow_dispatch:</span><br><br><span class="hljs-comment"># change this enviroenment varibles to your own</span><br><span class="hljs-attr">env:</span><br>  <span class="hljs-attr">GIT_USER:</span> <span class="hljs-string">GitUserId</span><br>  <span class="hljs-attr">GIT_EMAIL:</span> <span class="hljs-string">gituser@email.com</span><br>  <span class="hljs-comment"># Deploy to this repo after generated</span><br>  <span class="hljs-attr">GIT_DEPLOY_REPO:</span> <span class="hljs-string">GitUser/My-Blog</span><br>  <span class="hljs-comment"># Deploy to this branch after generated</span><br>  <span class="hljs-attr">GIT_DEPLOY_BRANCH:</span> <span class="hljs-string">master</span><br>  <span class="hljs-comment"># Hexo&#x27;s source repo (the public one)</span><br>  <span class="hljs-attr">GIT_SOURCE_REPO:</span> <span class="hljs-string">git@github.com:GitUser/My-Blog.git</span><br><br><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">build:</span><br>    <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">on</span> <span class="hljs-string">node</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">matrix.node_version</span> <span class="hljs-string">&#125;&#125;</span> <span class="hljs-string">and</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">matrix.os</span> <span class="hljs-string">&#125;&#125;</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attr">if:</span> <span class="hljs-string">github.event.repository.owner.id</span> <span class="hljs-string">==</span> <span class="hljs-string">github.event.sender.id</span><br>    <span class="hljs-attr">strategy:</span><br>      <span class="hljs-attr">matrix:</span><br>        <span class="hljs-attr">os:</span> [<span class="hljs-string">ubuntu-18.04</span>]<br>        <span class="hljs-attr">node_version:</span> [<span class="hljs-number">12.</span><span class="hljs-string">x</span>]<br><br>    <span class="hljs-attr">steps:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span> <span class="hljs-string">deploy</span> <span class="hljs-string">repo</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">repository:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">env.GIT_DEPLOY_REPO</span> <span class="hljs-string">&#125;&#125;</span><br>          <span class="hljs-attr">ref:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">env.GIT_DEPLOY_BRANCH</span> <span class="hljs-string">&#125;&#125;</span><br>          <span class="hljs-attr">path:</span> <span class="hljs-string">.deploy_git</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Use</span> <span class="hljs-string">Node.js</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">matrix.node_version</span> <span class="hljs-string">&#125;&#125;</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v1</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">node-version:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">matrix.node_version</span> <span class="hljs-string">&#125;&#125;</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Configuration</span> <span class="hljs-string">environment</span><br>        <span class="hljs-attr">env:</span><br>          <span class="hljs-attr">HEXO_DEPLOY_PRI:</span> <span class="hljs-string">$&#123;&#123;secrets.HEXO_DEPLOY_PRI&#125;&#125;</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">|</span> <span class="hljs-comment"># Make sure you change the timezone</span><br>          <span class="hljs-string">sudo</span> <span class="hljs-string">timedatectl</span> <span class="hljs-string">set-timezone</span> <span class="hljs-string">&quot;Continent/City&quot;</span><br>          <span class="hljs-string">mkdir</span> <span class="hljs-string">-p</span> <span class="hljs-string">~/.ssh/</span><br>          <span class="hljs-string">echo</span> <span class="hljs-string">&quot;$HEXO_DEPLOY_PRI&quot;</span> <span class="hljs-string">&gt;</span> <span class="hljs-string">~/.ssh/id_rsa</span><br>          <span class="hljs-string">chmod</span> <span class="hljs-number">600</span> <span class="hljs-string">~/.ssh/id_rsa</span><br>          <span class="hljs-string">ssh-keyscan</span> <span class="hljs-string">-t</span> <span class="hljs-string">rsa</span> <span class="hljs-string">github.com</span> <span class="hljs-string">&gt;&gt;</span> <span class="hljs-string">~/.ssh/known_hosts</span><br>          <span class="hljs-string">ssh-keyscan</span> <span class="hljs-string">-t</span> <span class="hljs-string">rsa</span> <span class="hljs-string">e.coding.net</span> <span class="hljs-string">&gt;&gt;</span> <span class="hljs-string">~/.ssh/known_hosts</span><br>          <span class="hljs-string">ssh-keyscan</span> <span class="hljs-string">-t</span> <span class="hljs-string">rsa</span> <span class="hljs-string">gitee.com</span> <span class="hljs-string">&gt;&gt;</span> <span class="hljs-string">~/.ssh/known_hosts</span><br>          <span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-string">--global</span> <span class="hljs-string">user.name</span> <span class="hljs-string">$GIT_USER</span><br>          <span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-string">--global</span> <span class="hljs-string">user.email</span> <span class="hljs-string">$GIT_EMAIL</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">Hexo</span> <span class="hljs-comment"># Install Hexo</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br>          <span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-string">hexo-cli</span> <span class="hljs-string">-g</span><br><br>      <br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Cache</span> <span class="hljs-string">Modules</span> <span class="hljs-comment"># Cache Hexo extensions</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/cache@v1</span><br>        <span class="hljs-attr">id:</span> <span class="hljs-string">cache-modules</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">path:</span> <span class="hljs-string">node_modules</span><br>          <span class="hljs-attr">key:</span> <span class="hljs-string">$&#123;&#123;runner.OS&#125;&#125;-$&#123;&#123;hashFiles(&#x27;**/package-lock.json&#x27;)&#125;&#125;</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">Dependencies</span> <span class="hljs-comment"># Runs if the extension is not cached, or new extensions added</span><br>        <span class="hljs-attr">if:</span> <span class="hljs-string">steps.cache-modules.outputs.cache-hit</span> <span class="hljs-type">!=</span> <span class="hljs-string">&#x27;true&#x27;</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">|</span> <span class="hljs-comment"># Please make sure you have package-lock.json in your root repo (this one)</span><br>          <span class="hljs-string">npm</span> <span class="hljs-string">ci</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Generate</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br>          <span class="hljs-string">hexo</span> <span class="hljs-string">clean</span><br>          <span class="hljs-string">hexo</span> <span class="hljs-string">generate</span><br>          <br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br>          <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-string">deploy</span><br></code></pre></td></tr></table></figure>
 </li>
 </ol>
-<pre><code># Action name
-name: Hexo Auto Deploy
-
-on:
-  # Trigger condition 1: main branch receives a push 
-  push:
-    branches:
-      - main
-  # Trigger condition 2: Run workflow button manually pressed
-  workflow_dispatch:
-
-# change this enviroenment varibles to your own
-env:
-  GIT_USER: GitUserId
-  GIT_EMAIL: gituser@email.com
-  # Deploy to this repo after generated
-  GIT_DEPLOY_REPO: GitUser/My-Blog
-  # Deploy to this branch after generated
-  GIT_DEPLOY_BRANCH: master
-  # Hexo&#39;s source repo (the public one)
-  GIT_SOURCE_REPO: git@github.com:GitUser/My-Blog.git
-
-
-jobs:
-  build:
-    name: Build on node $&#123;&#123; matrix.node_version &#125;&#125; and $&#123;&#123; matrix.os &#125;&#125;
-    runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
-    strategy:
-      matrix:
-        os: [ubuntu-18.04]
-        node_version: [12.x]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Checkout deploy repo
-        uses: actions/checkout@v2
-        with:
-          repository: $&#123;&#123; env.GIT_DEPLOY_REPO &#125;&#125;
-          ref: $&#123;&#123; env.GIT_DEPLOY_BRANCH &#125;&#125;
-          path: .deploy_git
-
-      - name: Use Node.js $&#123;&#123; matrix.node_version &#125;&#125;
-        uses: actions/setup-node@v1
-        with:
-          node-version: $&#123;&#123; matrix.node_version &#125;&#125;
-
-      - name: Configuration environment
-        env:
-          HEXO_DEPLOY_PRI: $&#123;&#123;secrets.HEXO_DEPLOY_PRI&#125;&#125;
-        run: | # Make sure you change the timezone
-          sudo timedatectl set-timezone &quot;Continent/City&quot;
-          mkdir -p ~/.ssh/
-          echo &quot;$HEXO_DEPLOY_PRI&quot; &gt; ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa github.com &gt;&gt; ~/.ssh/known_hosts
-          ssh-keyscan -t rsa e.coding.net &gt;&gt; ~/.ssh/known_hosts
-          ssh-keyscan -t rsa gitee.com &gt;&gt; ~/.ssh/known_hosts
-          git config --global user.name $GIT_USER
-          git config --global user.email $GIT_EMAIL
-
-      - name: Install Hexo # Install Hexo
-        run: |
-          npm install hexo-cli -g
-
-
-      - name: Cache Modules # Cache Hexo extensions
-        uses: actions/cache@v1
-        id: cache-modules
-        with:
-          path: node_modules
-          key: $&#123;&#123;runner.OS&#125;&#125;-$&#123;&#123;hashFiles('**/package-lock.json')&#125;&#125;
-
-      - name: Install Dependencies # Runs if the extension is not cached, or new extensions added
-        if: steps.cache-modules.outputs.cache-hit != &#39;true&#39;
-        run: | # Please make sure you have package-lock.json in your root repo (this one)
-          npm ci
-
-      - name: Generate
-        run: |
-          hexo clean
-          hexo generate
-
-      - name: Deploy
-        run: |
-          npm run deploy
-</code></pre><h2 id="Push-Codes"><a href="#Push-Codes" class="headerlink" title="Push Codes"></a>Push Codes</h2><p>The finial step is just to push everything you have from you root directory to your private repo, and remember to check if the workflow ran successfully on the Github Actions page.</p>
+<h2 id="Push-Codes"><a href="#Push-Codes" class="headerlink" title="Push Codes"></a>Push Codes</h2><p>The finial step is just to push everything you have from you root directory to your private repo, and remember to check if the workflow ran successfully on the Github Actions page.</p>
 <hr>
 <p><img src="https://media.tenor.com/DN4JBeneqdkAAAAd/congratulations-evangelion.gif" srcset="/img/loading.gif" lazyload width="250"/></p>
 <p>Congrats! Now you can edit you blog anywhere <del>and have something to do when you’re slacking off at work</del> . <span class="heimu" title="你知道的太多了">pls.. hr, don’t see this.</span></p>
-<p>Feel free to leave a comment below for any questions and suggestions you have. </p>
+<p>Feel free to leave a comment below for any questions and suggestions you have.</p>
 
             </div>
             <hr>
