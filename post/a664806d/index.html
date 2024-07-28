@@ -285,7 +285,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      784 字
+      783 字
     </span>
   
 
@@ -337,7 +337,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：April 5, 2023 8:01 PM
+                  本文最后更新于：July 27, 2024 8:58 PM
                 
               </p>
             
@@ -347,14 +347,14 @@
 <p>Automate, customize, and execute your software development workflows right in your repository with GitHub Actions. You can discover, create, and share actions to perform any job you’d like, including CI/CD, and combine actions in a completely customized workflow.</p>
 </blockquote>
 <p><strong>TL;DR</strong>: CI/CD platform that automates your build, test, and deployment pipeline.</p>
-<p>After getting github action integrated, you no longer need to use any hexo/npm related commands when you deploy. It simplifies the process to just pushing your changes to a private repository.</p>
-<p>In the following guide, I would assume you already have your Hexo blog’s generated static files on a github repo.</p>
+<p>After getting github action integrated, you no longer need to use any hexo/npm related commands when you deploy. It simplifies the process to just pushing changes to a private repository.</p>
+<p>In the following guide, I would assume you already have your Hexo blog’s generated static files in a github repo.</p>
 <h1 id="Here’s-what-you-need-to-do"><a href="#Here’s-what-you-need-to-do" class="headerlink" title="Here’s what you need to do"></a>Here’s what you need to do</h1><h2 id="Initializing-Repository"><a href="#Initializing-Repository" class="headerlink" title="Initializing Repository"></a>Initializing Repository</h2><p>Initialize a <strong>private</strong> <span class="heimu" title="你知道的太多了">Important! There are sensitive files!</span>  repository on GitHub that will store all the files in your blog’s root directory. Call it whatever you want, I’m using <code>blog-backup</code>. </p>
 <h2 id="Add-SSH-Key"><a href="#Add-SSH-Key" class="headerlink" title="Add SSH Key"></a>Add SSH Key</h2><ol>
 <li>On your computer, open up git bash and use this command <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ssh-keygen -f github-deploy-key</span><br></code></pre></td></tr></table></figure>
  enter until you see the key’s randomart image.</li>
 <li><p>Go to the directory which you used git bashed at and find these two files:<code>github-deploy-key</code> and <code>github-deploy-key.pub</code></p>
-<p> The first one is the private key and second one is the private key. Keep them safe and don’t send them to anyone or accidentally push them to github…</p>
+<p> The first one is the private key and second one is the public key. Keep them safe and don’t send them to anyone or accidentally push them to github…</p>
 </li>
 <li><p>Head to your root file repository and go to <code>Settings</code> -&gt; <code>Secrets</code> -&gt; <code>New repository secret</code>. </p>
 <p> Use <code>HEXO_DEPLOY_PRI</code> for the name and paste the contents in your <code>github-deploy-key</code> for value and click <code>Add Secret</code>.</p>
@@ -397,6 +397,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/post/58452aca/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">ViTwo - 在线视频同步插件</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
@@ -716,6 +722,10 @@
 
 
                                                                                                                                                                                                             
+
+
+  <a title="GDPR-compliant Web Analytics" target="_blank" rel="noopener" href="https://clicky.com/101412297"><img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
+  <script async data-id="101412297" src="//static.getclicky.com/js"></script>
 
   
     <!-- Baidu Analytics -->

@@ -17,7 +17,7 @@
             name: '物凄いスペースシャトルでこいしが物凄いうた',
             artist: 'ななひら',
             url: '/songs/物凄いスペースシャトルでこいしが物凄いうた.mp3',
-            cover: 'https://gitee.com/Trotyl15/blogImage/raw/master/img/8211596578227_.pic.jpg',
+            cover: 'https://cdn.jsdelivr.net/gh/Trotyl15/blogImg/img/others/8211596578227_.pic.jpg',
             //lrc: '/songs/物凄いスペースシャトルでこいしが物凄いうた.lrc'
           },
           {
