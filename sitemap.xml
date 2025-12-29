@@ -44,6 +44,13 @@
   </url>
   
   <url>
+    <loc>http://blog.trotyl.xyz/post/10412/</loc>
+    
+    <lastmod>2025-12-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.trotyl.xyz/post/35477/</loc>
     
     <lastmod>2025-12-29</lastmod>
@@ -135,13 +142,6 @@
   </url>
   
   <url>
-    <loc>http://blog.trotyl.xyz/post/10412/</loc>
-    
-    <lastmod>2025-12-29</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.trotyl.xyz/post/29228/</loc>
     
     <lastmod>2025-12-29</lastmod>
@@ -214,20 +214,6 @@
   </url>
   
   <url>
-    <loc>http://blog.trotyl.xyz/tags/jQuery/</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.trotyl.xyz/tags/Tampermonkey/</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.trotyl.xyz/tags/SQL/</loc>
     <lastmod>2025-12-29</lastmod>
     <changefreq>daily</changefreq>
@@ -236,6 +222,20 @@
   
   <url>
     <loc>http://blog.trotyl.xyz/tags/MySQL/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.trotyl.xyz/tags/jQuery/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.trotyl.xyz/tags/Tampermonkey/</loc>
     <lastmod>2025-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
